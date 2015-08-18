@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap_form'
+gem 'bootstrap-wysihtml5-rails'
+gem "paperclip", "~> 4.3"
+
 
 gem "font-awesome-rails"
 
