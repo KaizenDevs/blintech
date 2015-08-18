@@ -1,0 +1,190 @@
+
+<!-- header -->
+<div class="header header_thin" style="background-image:url( <%= asset_path('slider_1_2.jpg') %> )">
+
+  <div class="header_title">
+    <h1>Nuestros procesos de <span>Blindaje</span></h1>
+  </div>
+
+</div>
+<!--/ header -->
+
+<!-- breadcrumbs -->
+<div class="middle_row row_white breadcrumbs">
+  <div class="container">
+    <p><a href="index.html">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="#"></a> <span class="current">Blindaje</span></p>
+    <a href="index.php" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
+  </div>
+</div>
+<!--/ breadcrumbs -->
+
+
+<!-- middle -->
+<div id="middle" class="full_width">
+  <div class="container clearfix">
+
+    <!-- content -->
+    <div class="content">
+
+      <div class="entry">
+
+        <div class="text_notice">
+          <p>Lorem ipsum dolor sit amet, consequat tincidunt, justo donec, suspendisse vel.<br>
+            Ullamcorper ac vel luctus suspendisse, quis facilisis, pede tincidunt dapibus nunc diam lacus magna </p>
+          </div>
+
+          <!-- pricing table -->
+          <div class="pricing_box">
+            <ul>
+              <li class="price_col price_col_light_blue">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel II</strong>
+
+                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li>Armas cortas usadas por</li>
+                      <li>Delicuencia común</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_blue col_active">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel III</strong>
+                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li>Petardos y granadas</li>
+                      <li>de Fragmentación</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_light_red">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel IV</strong>
+
+                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li>Petardos y granadas</li>
+                      <li>de Fragmentación</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_red">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel V</strong>
+                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li>Petardos y granadas</li>
+                      <li>de Fragmentación</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <!--/ pricing table -->
+
+
+
+          <div class="header_title">
+            <h1>Nuestros tipos de <span>Blindaje</span></h1>
+          </div>
+
+          <div class="slider slider_small" style="padding-left:25%; padding-bottom:5%; padding-top:5%">
+            <div class="slider_container clearfix" id="slider1">
+
+              <div class="slider-item video_slide">
+                <iframe src="http://player.vimeo.com/video/51333291?byline=0&amp;portrait=0&amp;title=0" width="430" height="242" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
+              <div class="slider-item">
+
+                <a href="#"><%= image_tag "slider_img_1.jpg" %></a>
+              </div>
+              <div class="slider-item text_slide">
+                <div class="inner">
+                  <h2>Example of Slide with Text</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sem nisi. Duis elit sem, ullamcorper a tempus ac, lacinia a nisl. Pellentesque tincidunt gravida molestie. Nullam in nulla eget turpis pretium commodo. Morbi tincidunt venenatis est eget consequat. </p>
+                  <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>
+                </div>
+              </div>
+              <div class="slider-item">
+                <%= image_tag "slider_img_2.jpg" %>
+              </div>
+            </div>
+            <div class="slider_pagination" id="slider_pag"></div>
+          </div>
+
+          <script>
+            jQuery(document).ready(function($) {
+              $('#slider1').carouFredSel({
+                pagination : "#slider_pag",
+                infinite: false,
+                auto: false,
+                height: "auto",
+                items: 1,
+                scroll: {
+                  fx: "fade",
+                  duration: 200
+                }
+              });
+            });
+          </script>
+
+          <div class="row clearfix">
+            <div class="col col_1_2">
+              <h4>BLINDAJE TRANSPARENTE</h4>
+
+              <p><%= image_tag "post_img_1", class: "frame_right" %>Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.  </p>
+            </div>
+            <div class="col col_1_2">
+              <h4>BLINDAJE OPACO</h4>
+              <p><%= image_tag "post_img_1", class: "frame_right" %>Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.  </p>
+            </div>
+
+          </div>
+
+        </div>
+        <!--/ content -->
+
+      </div>
+    </div>
+    <!--/ middle -->
+    <div class="clear"></div>
+  </div>
+
+  <!-- popular brands -->
+  <div class="middle_row row_light_gray brand_list">
+    <%= image_tag "banner.jpg" %>
+  </div>
+<!--/ popular brands -->
