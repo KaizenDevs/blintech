@@ -1,34 +1,22 @@
 <div class="header_top">
-    <div class="container">
+  <div class="container">
 
-      <div class="logo">
-        <a href="index.php"> <%= image_tag 'logo_01.png' %>  </a>
-      </div>
-
-      <!-- topmenu -->
-      <nav id="topmenu" class="clearfix">
-        <ul class="dropdown">
-                  <li class="menu-level-0 current-menu-ancestor"><a href="index.php"><span>Inicio</span></a>
-          </li>
-          <li class="menu-level-0"><a href="nosotros.php"><span>Empresa</span></a>
-
-                    </li>
-                    <li class="menu-level-0 mega-nav"><a href="blindaje.php"><span>Blindaje</span></a>
-
-                    </li>
-
-                  <li class="menu-level-0"><a href="alquiler.php"><span>Alquiler</span></a>
-
-          </li>
-          <li class="menu-level-0"><a href="mantenimiento.php"><span>Mantenimiento</span></a>
-
-          </li>
-                    <li class="menu-level-0"><a href="blog.php"><span>Noticias</span></a>
-
-          </li>
-          <li class="menu-level-0"><a href="contacto.php"><span>Contacto  <i class="fa fa-map-marker"></i></span></a></li>
-        </ul>
-      </nav>
-    <!--/ topmenu -->
+    <div class="logo">
+      <a href="/"> <%= image_tag 'logo_01.png' %>  </a>
     </div>
+
+    <!-- topmenu -->
+    <nav id="topmenu" class="clearfix">
+      <ul class="dropdown">
+        <li class="menu-level-0 current-menu-ancestor"><%= link_to "<span>Inicio</span>".html_safe , root_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_company_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Blindaje</span>".html_safe , pages_shield_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_rent_path %></li>
+        <li class="menu-level-0"><a href="mantenimiento.php"><span>Mantenimiento</span></a></li>
+        <li class="menu-level-0"><a href="blog.php"><span>Noticias</span></a></li>
+        <li class="menu-level-0"><a href="contacto.php"><span>Contacto <i class="fa fa-map-marker"></i></span></a></li>
+      </ul>
+    </nav>
+    <!--/ topmenu -->
   </div>
+</div>
