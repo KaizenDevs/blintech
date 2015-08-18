@@ -6,11 +6,8 @@ Rails.application.routes.draw do
   get 'pages/maintenance'
   get 'pages/news'
   get 'pages/contact'
-  get 'opinions/index'
 
-  get 'opinions/new'
-
-  get 'opinions/edit'
+  resources :opinions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
