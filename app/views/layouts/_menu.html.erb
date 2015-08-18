@@ -1,6 +1,5 @@
 <div class="header_top">
   <div class="container">
-
     <div class="logo">
       <a href="/"> <%= image_tag 'logo_01.png' %>  </a>
     </div>
@@ -12,9 +11,9 @@
         <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_company_path %></li>
         <li class="menu-level-0"><%= link_to "<span>Blindaje</span>".html_safe , pages_shield_path %></li>
         <li class="menu-level-0"><%= link_to "<span>Alquiler</span>".html_safe , pages_rent_path %></li>
-        <li class="menu-level-0"><a href="mantenimiento.php"><span>Mantenimiento</span></a></li>
-        <li class="menu-level-0"><a href="blog.php"><span>Noticias</span></a></li>
-        <li class="menu-level-0"><a href="contacto.php"><span>Contacto <i class="fa fa-map-marker"></i></span></a></li>
+        <li class="menu-level-0"><%= link_to "<span>Mantenimiento</span>".html_safe, pages_maintenance_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Contacto</span>".html_safe, pages_contact_path %></li>
       </ul>
     </nav>
     <!--/ topmenu -->
