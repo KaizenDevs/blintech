@@ -7,23 +7,23 @@
  *
  * @version
  * 2.1.382 (June 24 2010)
- * 
+ *
  * @copyright
  * Copyright (C) 2004-2009 Alex Gorbatchev.
  *
  * @license
  * This file is part of SyntaxHighlighter.
- * 
+ *
  * SyntaxHighlighter is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * SyntaxHighlighter is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
  */
@@ -67,12 +67,12 @@
 	position: relative !important;
 }
 
-.syntaxhighlighter .bold 
+.syntaxhighlighter .bold
 {
 	font-weight: bold !important;
 }
 
-.syntaxhighlighter .italic 
+.syntaxhighlighter .italic
 {
 	font-style: italic !important;
 }
@@ -86,7 +86,7 @@
 	white-space: pre !important;
 }
 
-.syntaxhighlighter .line table 
+.syntaxhighlighter .line table
 {
 	border-collapse: collapse !important;
 }
@@ -129,7 +129,7 @@
 	display: none !important;
 }
 
-.syntaxhighlighter .bar.show 
+.syntaxhighlighter .bar.show
 {
 	display: block !important;
 }
@@ -188,7 +188,7 @@
 
 .syntaxhighlighter.collapsed .toolbar .item.expandSource
 {
-	background-image: url(../images/icons/sh_icons.png) !important;
+	background-image: url(asset-path('icons/sh_icons.png')) !important;
 	background-position:0 -48px !important;
 	display: inline !important;
 	text-indent: 0 !important;
@@ -200,29 +200,29 @@
 
 .syntaxhighlighter .toolbar .item.viewSource
 {
-	background-image: url(../images/icons/sh_icons.png) !important;
+	background-image: url(asset-path('icons/sh_icons.png')) !important;
 	background-position:0 0 !important
 }
 
 .syntaxhighlighter .toolbar .item.printSource
 {
-	background-image: url(../images/icons/sh_icons.png) !important;
+	background-image: url(asset-path('icons/sh_icons.png')) !important;
 	background-position:0 -16px !important
 }
 
 .syntaxhighlighter .toolbar .item.copyToClipboard
 {
-	background-image: url(../images/icons/sh_icons.png) !important;
+	background-image: url(asset-path('icons/sh_icons.png')) !important;
 	background-position:0 -64px !important
 }
 
 .syntaxhighlighter .toolbar .item.about
 {
-	background-image: url(../images/icons/sh_icons.png) !important;
-	background-position:0 -32px !important;	
+	background-image: url(asset-path('icons/sh_icons.png')) !important;
+	background-position:0 -32px !important;
 }
 
-/** 
+/**
  * Print view.
  * Colors are based on the default theme without background.
  */
@@ -262,51 +262,51 @@
 
 .syntaxhighlighter.printing .plain,
 .syntaxhighlighter.printing .plain a
-{ 
+{
 	color: #000 !important;
 }
 
 .syntaxhighlighter.printing .comments,
 .syntaxhighlighter.printing .comments a
-{ 
+{
 	color: #008200 !important;
 }
 
 .syntaxhighlighter.printing .string,
 .syntaxhighlighter.printing .string a
 {
-	color: blue !important; 
+	color: blue !important;
 }
 
 .syntaxhighlighter.printing .keyword
-{ 
-	color: #069 !important; 
-	font-weight: bold !important; 
+{
+	color: #069 !important;
+	font-weight: bold !important;
 }
 
-.syntaxhighlighter.printing .preprocessor 
-{ 
-	color: gray !important; 
+.syntaxhighlighter.printing .preprocessor
+{
+	color: gray !important;
 }
 
-.syntaxhighlighter.printing .variable 
-{ 
-	color: #a70 !important; 
+.syntaxhighlighter.printing .variable
+{
+	color: #a70 !important;
 }
 
 .syntaxhighlighter.printing .value
-{ 
-	color: #090 !important; 
+{
+	color: #090 !important;
 }
 
 .syntaxhighlighter.printing .functions
-{ 
-	color: #ff1493 !important; 
+{
+	color: #ff1493 !important;
 }
 
 .syntaxhighlighter.printing .constants
-{ 
-	color: #0066CC !important; 
+{
+	color: #0066CC !important;
 }
 
 .syntaxhighlighter.printing .script
@@ -316,18 +316,18 @@
 
 .syntaxhighlighter.printing .color1,
 .syntaxhighlighter.printing .color1 a
-{ 
-	color: #808080 !important; 
+{
+	color: #808080 !important;
 }
 
 .syntaxhighlighter.printing .color2,
 .syntaxhighlighter.printing .color2 a
-{ 
-	color: #ff1493 !important; 
+{
+	color: #ff1493 !important;
 }
 
 .syntaxhighlighter.printing .color3,
 .syntaxhighlighter.printing .color3 a
-{ 
-	color: red !important; 
+{
+	color: red !important;
 }

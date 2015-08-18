@@ -1,5 +1,5 @@
 .jslider .jslider-bg i,
-.jslider .jslider-pointer { background: url(../images/jslider.round.blue.png) no-repeat 0 0; }
+.jslider .jslider-pointer { background:url(asset-path('jslider.round.blue.png')) no-repeat 0 0; }
 
 .jslider { display: block; width: 100%; height: 1em; position: relative; top: 0.6em;}
 .jslider table { width: 100%; border-collapse: collapse; border: 0; }
