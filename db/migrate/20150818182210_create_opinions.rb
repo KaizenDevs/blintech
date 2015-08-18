@@ -4,6 +4,7 @@ class CreateOpinions < ActiveRecord::Migration
       t.string :name
       t.text :opinion
       t.string :position
+      t.boolean :visible
 
       t.timestamps null: false
     end
