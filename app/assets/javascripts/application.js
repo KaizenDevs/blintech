@@ -13,4 +13,32 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+
+//= require cusel-min
+//= require custom
+//= require general
+//= require hoverIntent
+//= require jquery.carouFredSel.min
+//= require jquery.customInput
+//= require jquery.easing.min
+//= require jquery.gmap.min
+//= require jquery.jscrollpane.min
+//= require jquery.mousewheel
+//= require jquery.placeholder.min
+//= require jquery.prettyPhoto
+//= require jquery.slider.bundle
+//= require jquery.tools.min
+//= require jquery.touchSwipe.min
+//= require shBrushPlain
+//= require shCore
+//= require jquery-migrate.min
+//= require jquery.min
+//= require modernizr.min
+//= require respond.min
+
+//= require jquery.themepunch.plugins.min
+//= require jquery.themepunch.revolution.min
+
 //= require_tree .
+
