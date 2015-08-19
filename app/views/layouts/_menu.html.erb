@@ -1,0 +1,21 @@
+<div class="header_top">
+  <div class="container">
+    <div class="logo">
+      <a href="/"> <%= image_tag 'logo_01.png' %>  </a>
+    </div>
+
+    <!-- topmenu -->
+    <nav id="topmenu" class="clearfix">
+      <ul class="dropdown">
+        <li class="menu-level-0 current-menu-ancestor"><%= link_to "<span>Inicio</span>".html_safe , root_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_company_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Blindaje</span>".html_safe , pages_shield_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Alquiler</span>".html_safe , pages_rent_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Mantenimiento</span>".html_safe, pages_maintenance_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Contacto</span>".html_safe, pages_contact_path %></li>
+      </ul>
+    </nav>
+    <!--/ topmenu -->
+  </div>
+</div>
