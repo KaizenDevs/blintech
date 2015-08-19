@@ -1,0 +1,53 @@
+<%= bootstrap_form_for @vehicle, :html => { :multipart => true } do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+          Puedes agregar hasta 5 imagenes por vehículos (sin embargo, no es obligatorio). En las vistas de vehículos se mostrará la primera foto que agregues.
+          <div class="row" id="image-for-article">
+            <% if current_page == "new" %>
+              <%= f.fields_for :vehicle_images do |vehicle_image| %>
+                <div class="form-group reg-email">
+                  <div>
+                    <%= vehicle_image.file_field :image, class: "input-file", label: "Imagen: " %>
+                  </div>
+                </div>
+              <% end %>
+            <% elsif current_page == "edit" %>
+              <table class="table">
+                <tr>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+                <tr>
+              <% @vehicle.vehicle_images.each do |vehicle_image| %>
+                <td><%= image_tag(vehicle_image.image.url(:medium)) %></td>
+              <% end %>
+                </tr>
+              </table>
+              <%= f.fields_for :vehicle_images do |vehicle_image| %>
+                <div class="form-group reg-email">
+                  <div>
+                    <%= vehicle_image.file_field :image, class: "input-file", label: "Imagen: " %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <%= f.text_field :name, label: "Nombre del vehículo:" %>
+          <%= f.text_field :engine, label: "Motor:" %>
+          <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Tipo de combustible:" %>
+          <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
+          <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
+          <%= f.text_area :description, label: "Descripción:" %>
+          <%= f.submit form_submit %>
+      </div>
+    </div>
+<% end %>
+
+<hr>
+
+<%= link_to vehicles_path do %>
+  <button class="btn btn-default" style="margin-top: 20px;"><span class="fa fa-arrow-left"></span> Atrás</button>
+<% end %>
