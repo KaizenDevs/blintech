@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ Page.create(
+    content_1: 'Protega su carro',
+    content_2: 'Second-hand classics from <span>$25.990</span>' ,
+    content_3: 'NEW & 2nd HAND',
+    content_4: 'More than <span>3500</span> vehicles in our offer',
+    content_5: 'QUALITY OF SERVICE',
+    content_6: 'We guarantee <span>BEST PRICES</span> for second-hand cars',
+    content_7: 'SUPER SPORTS',
+    content_8: 'Only the finest breed of <span>Supercars</span>'
+    )

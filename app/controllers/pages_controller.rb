@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+    @page = Page.find(params[:id])
   end
 
   def company

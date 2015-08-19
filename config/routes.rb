@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  mount Mercury::Engine => '/'
+  root to: 'pages#index', id: '1'
   get 'pages/company'
   get 'pages/shield'
   get 'pages/rent'
