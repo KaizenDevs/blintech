@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap_form'
 gem 'bootstrap-wysihtml5-rails'
-gem "paperclip", "~> 4.3"
+gem "paperclip"
 gem "font-awesome-rails"
 gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 gem 'annotate'
