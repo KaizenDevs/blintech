@@ -13,10 +13,13 @@
 </head>
 <body>
   <div class="body_wrap homepage">
+
     <%= render 'layouts/menu' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render 'layouts/footer' %>
+
   </div>
-</div>
 </body>
 </html>

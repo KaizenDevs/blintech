@@ -13,13 +13,12 @@ Rails.application.routes.draw do
   get 'pages/news'
   get 'pages/contact'
 
-  get 'vehicles/index'
+  devise_for :users
 
-  get 'vehicles/show'
-
-  get 'vehicles/new'
-
-  get 'vehicles/edit'
+  devise_scope :user do
+    get "/admin" => "devise/sessions#new"
+    get "/sign_up" => "devise/registrations#new"
+  end
 
   resources :opinions
   resources :categories
@@ -28,6 +27,8 @@ Rails.application.routes.draw do
 
   put '/', to: 'pages#save_page', id: '1'
 
+
+  resources :vehicles
 
 
   # The priority is based upon order of creation: first created -> highest priority.
