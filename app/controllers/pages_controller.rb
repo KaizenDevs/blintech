@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
     @page = Page.find(params[:id])
+    @opinions = Opinion.where(visible: true)
   end
 
   def company
