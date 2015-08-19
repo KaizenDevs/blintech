@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818193108) do
+ActiveRecord::Schema.define(version: 20150819164255) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +46,29 @@ ActiveRecord::Schema.define(version: 20150818193108) do
     t.string   "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "vehicle_images", force: :cascade do |t|
+    t.integer  "vehicle_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "vehicle_images", ["vehicle_id"], name: "index_vehicle_images_on_vehicle_id"
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "shielding"
+    t.string   "engine"
+    t.integer  "gas"
+    t.integer  "transmission"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

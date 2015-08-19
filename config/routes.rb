@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   get 'pages/news'
   get 'pages/contact'
 
+  get 'vehicles/index'
+
+  get 'vehicles/show'
+
+  get 'vehicles/new'
+
+  get 'vehicles/edit'
+
   resources :opinions
   resources :categories
   resources :news

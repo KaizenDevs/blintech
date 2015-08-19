@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  shielding: 1
+  engine: MyString
+  gas: 1
+
+two:
+  name: MyString
+  shielding: 1
+  engine: MyString
+  gas: 1
