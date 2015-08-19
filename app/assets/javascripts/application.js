@@ -31,8 +31,6 @@
 
 
 //= require jquery.customInput
-
-//= require jquery.gmap.min
 //= require jquery.jscrollpane.min
 //= require jquery.mousewheel
 //= require jquery.placeholder.min
