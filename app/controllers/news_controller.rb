@@ -1,48 +1,48 @@
 class NewsController < ApplicationController
   def index
-      @news = News.all
-    end
+    @news = News.all
+  end
 
-    def show
-      @news = News.find(params[:id])
-      @categories = Category.all
-    end
+  def show
+    @news = News.find(params[:id])
+    @categories = Category.all
+  end
 
-    def new
-      @news = News.new
-    end
+  def new
+    @news = News.new
+  end
 
-    def edit
-      @news = News.find(params[:id])
-    end
+  def edit
+    @news = News.find(params[:id])
+  end
 
-    def create
-      @news = News.new(news_params)
-      if @news.save
-        flash[:notice] = "La noticia ha sido creada con éxito."
-        redirect_to news_index_path
-      else
-        flash[:alert] = "La noticia no se ha podido crear. Inténtalo de nuevo."
-        render 'new'
-      end
-    end
-
-    def update
-      @news = News.find(params[:id])
-      if @news.update(news_params)
-        flash[:notice] = "La noticia se ha actualizado con éxito."
-        redirect_to news_index_path
-      else
-        flash[:alert] = "La noticia no se ha podido actualizar. Inténtalo de nuevo."
-        render 'edit'
-      end
-    end
-
-    def destroy
-      @news = News.find(params[:id])
-      @news.destroy
+  def create
+    @news = News.new(news_params)
+    if @news.save
+      flash[:notice] = "La noticia ha sido creada con éxito."
       redirect_to news_index_path
+    else
+      flash[:alert] = "La noticia no se ha podido crear. Inténtalo de nuevo."
+      render 'new'
     end
+  end
+
+  def update
+    @news = News.find(params[:id])
+    if @news.update(news_params)
+      flash[:notice] = "La noticia se ha actualizado con éxito."
+      redirect_to news_index_path
+    else
+      flash[:alert] = "La noticia no se ha podido actualizar. Inténtalo de nuevo."
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @news = News.find(params[:id])
+    @news.destroy
+    redirect_to news_index_path
+  end
 
    private
    def news_params

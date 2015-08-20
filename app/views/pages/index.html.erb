@@ -290,52 +290,55 @@
   <!-- latest_offers -->
   <div class="middle_row latest_offers">
     <div class="container clearfix">
-          <h2 style="text-align:center">Nuestra Empresa</h2>
+      <h2 style="text-align:center">Nuestra Empresa</h2>
     </div>
 
-        <div id="latest_offers">
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_01.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia </a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_02.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_03.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_04.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_05.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_06.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_07.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_08.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_09.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-        </div>
+    <div id="latest_offers">
+      <% @news.each do |notice| %>
+        <%= link_to image_tag(notice.image.url, :border => 0), notice %>        
+        <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
+      <% end %>
+      <div class="latest_item">
+        <a href="offers-details.html"><%=  image_tag 'prod_img_01.jpg' %></a>
+        <a href="offers-details.html"></a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_02.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_03.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_04.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_05.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_06.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_07.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_08.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_09.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+    </div>
+    <a class="prev" id="latest_offers_prev" href="#"></a>
+    <a class="next" id="latest_offers_next" href="#"></a>
 
-        <a class="prev" id="latest_offers_prev" href="#"></a>
-        <a class="next" id="latest_offers_next" href="#"></a>
-
-        <script>
+    <script>
         jQuery(document).ready(function($) {
       var screenRes = $(window).width();
 
@@ -368,7 +371,7 @@
         vis_items.eq(0).animate({opacity: 0.15},100);
       }
         });
-        </script>
+    </script>
   </div>
     <!--/ latest_offers -->
 
