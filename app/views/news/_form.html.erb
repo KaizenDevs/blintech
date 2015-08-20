@@ -1,13 +1,21 @@
+<style>
+  label {
+    display: block;
+  }
+</style>
+<script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>
+
 <%= bootstrap_form_for @news, :html => { :multipart => true } do |f| %>
     <div class="row">
       <div class="col-md-12">
           <%= f.collection_select( :category_id, Category.all, :id, :name, label: "Categoría:")%>
           <%= f.text_field :title, label: "Título:" %>
+          <hr>
           <%= f.file_field :image, label: "Agrega una imagen:" %>
           <%= f.text_area :content, label: "Contenido:" %> <br>
           <%= f.text_field :author, label: "Nombre y apellidos del autor:" %>
           <%= f.text_area :about, label: "Sobre el autor:" %>
-          <%= f.file_field :author_image, label: "Image del autor:" %>
+          <%= f.file_field :author_image, label: "Imagen del autor:" %>
           <label for="radio">Destacada (aparecerá en la página principal):</label>
           <%= f.radio_button :highlight, true, label: "Sí" %>
           <%= f.radio_button :highlight, false, label: "No" %>
@@ -24,10 +32,6 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-
-    $('#news_content').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
-
+    CKEDITOR.replace( 'news[content]' );
   })
 </script>

@@ -1,9 +1,15 @@
+<style>
+  label {
+    display: block;
+  }
+</style>
+
 <%= bootstrap_form_for @opinion do |f| %>
     <div class="row">
       <div class="col-md-6">
-          <%= f.text_field :name, label: "Nombre y Apellido Completo:" %>
-          <%= f.text_field :position, label: "Cargo:" %>
-          <%= f.text_area :opinion, label: "Opinión:" %>
+          <%= f.text_field :name, label: "Nombre y Apellido Completo:" %> <br>
+          <%= f.text_field :position, label: "Cargo:" %> <br>
+          <%= f.text_area :opinion, label: "Opinión:" %> <br>
           <label for="radio">Visible:</label>
           <%= f.radio_button :visible, true, label: "Sí" %>
           <%= f.radio_button :visible, false, label: "No" %>
