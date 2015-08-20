@@ -15,6 +15,7 @@
         <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
         <li class="menu-level-0"><%= link_to "<span>Contacto  <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %></li>
         <% if user_signed_in? %>
+          <li class="menu-level-0"><%= link_to "<span>Vehículos</span>".html_safe, vehicles_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, news_index_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Categorías</span>".html_safe, categories_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Opiniones</span>".html_safe, opinions_path %></li>

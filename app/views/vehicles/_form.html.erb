@@ -1,7 +1,16 @@
+<style>
+  label {
+    display: block;
+  }
+  select {
+    height: 30px;
+  }
+</style>
+
 <%= bootstrap_form_for @vehicle, :html => { :multipart => true } do |f| %>
     <div class="row">
       <div class="col-md-6">
-          Puedes agregar hasta 5 imagenes por vehículos (sin embargo, no es obligatorio). En las vistas de vehículos se mostrará la primera foto que agregues.
+          Puedes agregar hasta 20 imagenes por vehículos (sin embargo, no es obligatorio). En las vistas de vehículos se mostrará la primera foto que agregues.
           <div class="row" id="image-for-article">
             <% if current_page == "new" %>
               <%= f.fields_for :vehicle_images do |vehicle_image| %>
@@ -37,7 +46,7 @@
           </div>
           <%= f.text_field :name, label: "Nombre del vehículo:" %>
           <%= f.text_field :engine, label: "Motor:" %>
-          <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Tipo de combustible:" %>
+
           <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
           <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
           <%= f.text_area :description, label: "Descripción:" %>

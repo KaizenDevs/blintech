@@ -13,7 +13,7 @@
 #
 
 class VehicleImage < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>", :offer => "310x134#", :rent => "270x190#", convert_options: { offer: " -gravity center -crop '310x310+0+0'", rent: " -gravity center -crop '310x310+0+0'", blog: " -gravity center -crop '310x310+0+0'" } }, :default_url => "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   belongs_to :vehicle
 end

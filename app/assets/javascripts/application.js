@@ -42,5 +42,6 @@
 //= require shCore
 //= require shBrushPlain
 
+//= require cocoon
 
 //= require_tree .

@@ -14,5 +14,10 @@
 #
 
 class Vehicle < ActiveRecord::Base
-  has_many :vehicle_images
+  has_many :vehicle_images, dependent: :destroy
+  accepts_nested_attributes_for :vehicle_images, :limit => 20, :reject_if => :all_blank, allow_destroy: true
+
+  enum transmission: [:mecánico, :automático]
+  enum gas: [:gasolina, :"a gas", :eléctrico]
+  enum shielding: [:II, :III, :IV, :V]
 end
