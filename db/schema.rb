@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819173002) do
+ActiveRecord::Schema.define(version: 20150820000004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20150819173002) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "mercury_images", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "news", force: :cascade do |t|
@@ -53,18 +62,29 @@ ActiveRecord::Schema.define(version: 20150819173002) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.text     "content_1"
-    t.text     "content_2"
-    t.text     "content_3"
-    t.text     "content_4"
-    t.text     "content_5"
-    t.text     "content_6"
-    t.text     "content_7"
-    t.text     "content_8"
-    t.text     "content_9"
-    t.text     "content_10"
+    t.text     "content1"
+    t.text     "content2"
+    t.text     "content3"
+    t.text     "content4"
+    t.text     "content5"
+    t.text     "content6"
+    t.text     "content7"
+    t.text     "content8"
+    t.text     "content9"
+    t.text     "content10"
+    t.text     "image1"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "vehicle_images", force: :cascade do |t|

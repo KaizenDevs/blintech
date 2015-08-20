@@ -15,10 +15,10 @@ gem "paperclip"
 gem "font-awesome-rails"
 gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 gem 'annotate'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'byebug'
 	gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-

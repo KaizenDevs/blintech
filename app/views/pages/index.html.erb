@@ -1,88 +1,89 @@
 <!-- <h1>Pages#index</h1>
 <p>Find me in app/views/pages/index.html.erb</p>
- -->
+-->
 
 <!-- header -->
 <div class="header" style="background:#000">
 
-    <!-- header slider -->
-    <div class="fullwidthbanner-container">
+  <!-- header slider -->
+  <div class="fullwidthbanner-container">
     <div class="fullwidthbanner">
-          <ul>
+      <ul>
         <li data-transition="fade" data-slotamount="1" data-masterspeed="500">
 
           <%= image_tag('slider_1_1.jpg', data: { fullwidthcentering: "on" }) %>
 
-                    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+
+          <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+          <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
           <div class="caption sfl white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong><%= @page.content_1.html_safe %></strong></a>
-                    </div>
-                    <div class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                         <%= @page.content_2.html_safe %>
-                    </div>
+           <a href="#"><strong data-mercury="full" id="page_content1"><%= @page.content1.html_safe %></strong></a>
+         </div>
+         <div data-mercury="full" id="page_content2" class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
+           <%= @page.content2.html_safe %>
+         </div>
 
-        </li>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
+       </li>
+       <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 
-          <%= image_tag('slider_1_2.jpg', data: { fullwidthcentering: "on" }) %>
+        <%= image_tag('slider_1_2.jpg', data: { fullwidthcentering: "on" }) %>
 
-                    <div class="caption sft text_line" data-x="550" data-y="250" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    <div class="caption sfb text_line" data-x="550" data-y="360" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+        <div class="caption sft text_line" data-x="550" data-y="250" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+        <div class="caption sfb text_line" data-x="550" data-y="360" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
 
-          <div class="caption sft white_text big_title" data-x="550" data-y="280" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>NEW & 2nd HAND</strong></a>
-                    </div>
-                    <div class="caption sfb white_text subtitle" data-x="550" data-y="317" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                         More than <span>3500</span> vehicles in our offer
-                    </div>
-        </li>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
+        <div class="caption sft white_text big_title" data-x="550" data-y="280" data-speed="900" data-start="500" data-easing="easeOutExpo">
+        <a href="#"><strong data-mercury="full" id="page_content3"><%= @page.content3.html_safe %></strong></a>
+       </div>
+       <div data-mercury="full" id="page_content4"  class="caption sfb white_text subtitle" data-x="550" data-y="317" data-speed="900" data-start="700" data-easing="easeOutExpo">
+         <%= @page.content4.html_safe %>
+       </div>
+     </li>
+     <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 
-          <%= image_tag('slider_1_3.jpg', data: { fullwidthcentering: "on" }) %>
+      <%= image_tag('slider_1_3.jpg', data: { fullwidthcentering: "on" }) %>
 
-                    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+      <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+      <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
 
-          <div class="caption sfr white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>QUALITY OF SERVICE</strong></a>
-                    </div>
-                    <div class="caption sfl white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                        We guarantee <span>BEST PRICES</span> for second-hand cars
-                    </div>
-        </li>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
+      <div class="caption sfr white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
+       <a href="#"><strong data-mercury="full" id="page_content5"><%= @page.content5.html_safe %></strong></a>
+     </div>
+     <div data-mercury="full" id="page_content6" class="caption sfl white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
+      <%= @page.content6.html_safe %>
+    </div>
+  </li>
+  <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 
-          <%= image_tag('slider_1_4.jpg', data: { fullwidthcentering: "on" }) %>
+    <%= image_tag('slider_1_4.jpg', data: { fullwidthcentering: "on" }) %>
 
-                    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+    <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
+    <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
 
-          <div class="caption sft black_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>SUPER SPORTS</strong></a>
-                    </div>
-                    <div class="caption sfb black_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                       Only the finest breed of <span>Supercars</span>
-                    </div>
-        </li>
-            </ul>
-        </div>
-  </div>
+    <div class="caption sft black_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
+     <a href="#"><strong data-mercury="full" id="page_content7"><%= @page.content7.html_safe %></strong/a>
+   </div>
+   <div data-mercury="full" id="page_content8" class="caption sfb black_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
+     <%= @page.content8.html_safe %>
+   </div>
+ </li>
+</ul>
+</div>
+</div>
 
-    <script>
+<script>
 
 
-    jQuery(document).ready(function($) {
+  jQuery(document).ready(function($) {
 
-      if ($.fn.cssOriginal!=undefined)
-        $.fn.css = $.fn.cssOriginal;
+    if ($.fn.cssOriginal!=undefined)
+      $.fn.css = $.fn.cssOriginal;
 
-      $('.fullwidthbanner').revolution({
-          delay:5000,
-          startwidth:950,
-          startheight:617,
+    $('.fullwidthbanner').revolution({
+      delay:5000,
+      startwidth:950,
+      startheight:617,
 
-          onHoverStop:"off",            // Stop Banner Timet at Hover on Slide on/off
+          onHoverStop:"on",            // Stop Banner Timet at Hover on Slide on/off
           hideThumbs:0,
           navigationType:"bullet",        // bullet, thumb, none
           navigationArrows:"none",        // nexttobullets, solo (old name verticalcentered), none
@@ -107,155 +108,155 @@
           shadow:0                //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
 
         });
-      });
-  </script>
-    <!--/ header slider -->
+});
+</script>
+<!--/ header slider -->
 
 </div>
 <!--/ header -->
 
 
-    <!-- car types -->
-    <div class="middle_row row_gray">
-        <div class="container clearfix">
+<!-- car types -->
+<div class="middle_row row_gray">
+  <div class="container clearfix">
 
-            <div class="car_types_list">
-                <h2>Somos Expertos en Blindaje <br><i class="fa fa-bullseye"></i></h2>
-                <ul>
-                    <li class="type_hover cart_type_1">
-                        <a href="#" class="front"><strong>PROTECCIÓN <br></strong> <em>Leer más</em></a>
-                        <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                    </li>
-                    <li class="type_hover cart_type_2">
-                        <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                        <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                    </li>
-                    <li class="type_hover cart_type_3">
-                        <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                        <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                    </li>
-                    <li class="type_hover cart_type_4">
-                        <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                        <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
-                    </li>
+    <div class="car_types_list">
+      <h2>Somos Expertos en Blindaje <br><i class="fa fa-bullseye"></i></h2>
+      <ul>
+        <li class="type_hover cart_type_1">
+          <a href="#" class="front"><strong>PROTECCIÓN <br></strong> <em>Leer más</em></a>
+          <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+        </li>
+        <li class="type_hover cart_type_2">
+          <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+          <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+        </li>
+        <li class="type_hover cart_type_3">
+          <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+          <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+        </li>
+        <li class="type_hover cart_type_4">
+          <a href="#" class="front"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+          <a href="#" class="back"><strong>PROTECCIÓN</strong> <em>Leer más</em></a>
+        </li>
 
-                </ul>
-                <a href="#" class="link_more">CONOZCA NUESTROS SERVICIOS</a>
-            </div>
-            <script>
-            jQuery(document).ready(function($) {
-                $('.type_hover').hover(function(){
-                    $(this).addClass('flip');
-                },function(){
-                    $(this).removeClass('flip');
-                });
-            });
-            </script>
-
-        </div>
+      </ul>
+      <a href="#" class="link_more">CONOZCA NUESTROS SERVICIOS</a>
     </div>
-    <!--/ car types -->
+    <script>
+      jQuery(document).ready(function($) {
+        $('.type_hover').hover(function(){
+          $(this).addClass('flip');
+        },function(){
+          $(this).removeClass('flip');
+        });
+      });
+    </script>
+
+  </div>
+</div>
+<!--/ car types -->
 
 
 <!-- middle -->
 
 
 
-  <div class="middle_row row_light_gray">
-    <div class="container clearfix">
-      <!-- week offer -->
-            <div class="week_offer">
-              <h2>Noticias</h2>
-                <div class="offer_box">
-                  <div class="offer_image"><a href="offers-details.html"><%= image_tag 'week_offer.jpg' %></a></div>
-                    <div class="offer_text">
-                      <h3><a href="offers-details.html">Nuevo Modelo de Blindaje</a></h3>
-                        <div class="offer_price">LEER MÁS</div>
-                        <div class="offer_descr">
-                        Lorem ipsum dolor sit amet, lectus tempor non enim, quisque in consequat tincidunt, justo donec, suspendisse vel. Distinctio quis nunc tempor. Sagittis nec, rerum eleifend quam tempus.
-                        </div>
-                    </div>
-                    <div class="link_more"><a href="#">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
-                </div>
-            </div>
-            <!--/ week offer -->
-            <!-- special offer -->
-            <div class="special_offers">
-              <h2>ALQUILER</h2>
+<div class="middle_row row_light_gray">
+  <div class="container clearfix">
+    <!-- week offer -->
+    <div class="week_offer">
+      <h2>Noticias</h2>
+      <div class="offer_box">
+        <div class="offer_image"><a href="offers-details.html"><%= image_tag 'week_offer.jpg' %></a></div>
+        <div class="offer_text">
+          <h3><a href="offers-details.html">Nuevo Modelo de Blindaje</a></h3>
+          <div class="offer_price">LEER MÁS</div>
+          <div class="offer_descr">
+            Lorem ipsum dolor sit amet, lectus tempor non enim, quisque in consequat tincidunt, justo donec, suspendisse vel. Distinctio quis nunc tempor. Sagittis nec, rerum eleifend quam tempus.
+          </div>
+        </div>
+        <div class="link_more"><a href="#">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
+      </div>
+    </div>
+    <!--/ week offer -->
+    <!-- special offer -->
+    <div class="special_offers">
+      <h2>ALQUILER</h2>
 
-                <div id="special_offers">
-                  <div class="special_item">
-                      <div class="special_image">
-                      <a href="offers-details.html"><%= image_tag 'special_offer_1.jpg' %></a>
-                        </div>
-                        <div class="special_text">
-                          <h3><a href="offers-details.html">Range Rover Evoque</a></h3>
-                            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-                            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-                            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-                            <div class="special_price">Más detalles</div>
-                        </div>
-                    </div>
+      <div id="special_offers">
+        <div class="special_item">
+          <div class="special_image">
+            <a href="offers-details.html"><%= image_tag 'special_offer_1.jpg' %></a>
+          </div>
+          <div class="special_text">
+            <h3><a href="offers-details.html">Range Rover Evoque</a></h3>
+            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
+            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
+            <div class="info_row"><span>Categoría_03</span> Post_03</div>
+            <div class="special_price">Más detalles</div>
+          </div>
+        </div>
 
-                    <div class="special_item">
-                      <div class="special_image">
-                      <a href="offers-details.html"><%= image_tag 'special_offer_2.jpg' %></a>
-                        </div>
-                        <div class="special_text">
-                          <h3><a href="offers-details.html">Alfa Romeo Mito</a></h3>
-                              <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-                            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-                            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-                            <div class="special_price">Más detalles</div>
-                        </div>
-                    </div>
+        <div class="special_item">
+          <div class="special_image">
+            <a href="offers-details.html"><%= image_tag 'special_offer_2.jpg' %></a>
+          </div>
+          <div class="special_text">
+            <h3><a href="offers-details.html">Alfa Romeo Mito</a></h3>
+            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
+            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
+            <div class="info_row"><span>Categoría_03</span> Post_03</div>
+            <div class="special_price">Más detalles</div>
+          </div>
+        </div>
 
-                    <div class="special_item">
-                      <div class="special_image">
-                      <a href="offers-details.html"><%= image_tag 'special_offer_3.jpg' %></a>
-                        </div>
-                        <div class="special_text">
-                          <h3><a href="offers-details.html">Mercedes CLA 220d</a></h3>
-                              <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-                            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-                            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-                            <div class="special_price">Más detalles</div>
-                        </div>
-                    </div>
+        <div class="special_item">
+          <div class="special_image">
+            <a href="offers-details.html"><%= image_tag 'special_offer_3.jpg' %></a>
+          </div>
+          <div class="special_text">
+            <h3><a href="offers-details.html">Mercedes CLA 220d</a></h3>
+            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
+            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
+            <div class="info_row"><span>Categoría_03</span> Post_03</div>
+            <div class="special_price">Más detalles</div>
+          </div>
+        </div>
 
-                    <div class="special_item">
-                      <div class="special_image">
-                      <a href="offers-details.html"><%= image_tag 'special_offer_4.jpg' %></a>
-                        </div>
-                        <div class="special_text">
-                          <h3><a href="offers-details.html">Tesla Model S Prestige</a></h3>
-                              <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-                            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-                            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-                            <div class="special_price">Más detalles</div>
-                        </div>
-                    </div>
+        <div class="special_item">
+          <div class="special_image">
+            <a href="offers-details.html"><%= image_tag 'special_offer_4.jpg' %></a>
+          </div>
+          <div class="special_text">
+            <h3><a href="offers-details.html">Tesla Model S Prestige</a></h3>
+            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
+            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
+            <div class="info_row"><span>Categoría_03</span> Post_03</div>
+            <div class="special_price">Más detalles</div>
+          </div>
+        </div>
 
-                    <div class="special_item">
-                      <div class="special_image">
-                      <a href="offers-details.html"><%= image_tag 'special_offer_5.jpg' %></a>
-                        </div>
-                        <div class="special_text">
-                          <h3><a href="offers-details.html">Renault</a></h3>
-                              <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-                            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-                            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-                            <div class="special_price">Más detalles</div>
-                        </div>
-                    </div>
+        <div class="special_item">
+          <div class="special_image">
+            <a href="offers-details.html"><%= image_tag 'special_offer_5.jpg' %></a>
+          </div>
+          <div class="special_text">
+            <h3><a href="offers-details.html">Renault</a></h3>
+            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
+            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
+            <div class="info_row"><span>Categoría_03</span> Post_03</div>
+            <div class="special_price">Más detalles</div>
+          </div>
+        </div>
 
-                </div>
-                <a class="prev" id="special_offers_prev" href="#"></a>
-              <a class="next" id="special_offers_next" href="#"></a>
+      </div>
+      <a class="prev" id="special_offers_prev" href="#"></a>
+      <a class="next" id="special_offers_next" href="#"></a>
 
-                <div class="link_more"><a href="#">Conozca nuestros vehículos <i class="fa fa-arrow-circle-right"></i></a></div>
+      <div class="link_more"><a href="#">Conozca nuestros vehículos <i class="fa fa-arrow-circle-right"></i></a></div>
 
-                <script>
+      <script>
         jQuery(document).ready(function($) {
           function carSpecicalInit() {
             var car_specical = $('#special_offers');
@@ -281,11 +282,11 @@
             resizeTimer = setTimeout(carSpecicalInit, 100);
           });
         });
-          </script>
-            </div>
-            <!--/ special offer -->
+      </script>
     </div>
+    <!--/ special offer -->
   </div>
+</div>
 
   <!-- latest_offers -->
   <div class="middle_row latest_offers">
@@ -295,7 +296,7 @@
 
     <div id="latest_offers">
       <% @news.each do |notice| %>
-        <%= link_to image_tag(notice.image.url, :border => 0), notice %>        
+        <%= link_to image_tag(notice.image.url, :border => 0), notice %>
         <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
       <% end %>
       <div class="latest_item">
@@ -339,37 +340,39 @@
     <a class="next" id="latest_offers_next" href="#"></a>
 
     <script>
-        jQuery(document).ready(function($) {
+      jQuery(document).ready(function($) {
+
       var screenRes = $(window).width();
 
-            $('#latest_offers').carouFredSel({
-                prev : "#latest_offers_prev",
-                next : "#latest_offers_next",
-                infinite: false,
-                circular: true,
-                auto: false,
-                width: '100%',
-                scroll: {
-                    items : 1,
+      $('#latest_offers').carouFredSel({
+        prev : "#latest_offers_prev",
+        next : "#latest_offers_next",
+        infinite: false,
+        circular: true,
+        auto: false,
+        width: '100%',
+        scroll: {
+          items : 1,
           onBefore: function (data) {
             if (screenRes > 900) {
-            data.items.visible.eq(0).animate({opacity: 0.15},300);
-            data.items.old.eq(-1).animate({opacity: 1},300);
-            data.items.visible.eq(-1).animate({opacity: 0.15},300);
+              data.items.visible.eq(0).animate({opacity: 0.15},300);
+              data.items.old.eq(-1).animate({opacity: 1},300);
+              data.items.visible.eq(-1).animate({opacity: 0.15},300);
             }
-                },
+          },
           onAfter: function (data) {
             if (screenRes > 900) {
-            data.items.old.eq(0).animate({opacity: 1},300);
+              data.items.old.eq(0).animate({opacity: 1},300);
             }
-                }
-                }
-            });
+          }
+        }
+      });
       if (screenRes > 900) {
         var vis_items = $("#latest_offers").triggerHandler("currentVisible");
         vis_items.eq(-1).animate({opacity: 0.15},100);
         vis_items.eq(0).animate({opacity: 0.15},100);
       }
+
         });
     </script>
   </div>
@@ -377,48 +380,51 @@
 
     <!-- testimonials -->
     <div class="middle_row row_white testimonials">
-    <div class="container">
-      <div class="slider_container clearfix" id="testimonials">
-        
-        <% @opinions.each do |opinion| %>
-          <div class="slider-item">
-            <div class="quote-text">
-            <p><%= opinion.opinion %></p>
-            </div>
-            <div class="quote-author"><span><%= opinion.name %></span>, <%= opinion.position %></div>
-          </div>
-        <% end %>
-      </div>
-      <a class="prev" id="testimonials_prev" href="#"></a>
-      <a class="next" id="testimonials_next" href="#"></a>
-    <script>
-      jQuery(document).ready(function($) {
-        $('#testimonials').carouFredSel({
-          next : "#testimonials_next",
-          prev : "#testimonials_prev",
-          infinite: false,
-          items: 1,
-          auto: false,
-          scroll: {
-            items : 1,
-            fx: "crossfade",
-            easing: "linear",
-            duration: 300
-          }
-        });
-      });
-    </script>
+      <div class="container">
+        <div class="slider_container clearfix" id="testimonials">
 
+          <% @opinions.each do |opinion| %>
+            <div class="slider-item">
+              <div class="quote-text">
+              <p><%= opinion.opinion %></p>
+              </div>
+              <div class="quote-author"><span><%= opinion.name %></span>, <%= opinion.position %></div>
+            </div>
+          <% end %>
+        </div>
+        <a class="prev" id="testimonials_prev" href="#"></a>
+        <a class="next" id="testimonials_next" href="#"></a>
+        <script>
+          jQuery(document).ready(function($) {
+            $('#testimonials').carouFredSel({
+              next : "#testimonials_next",
+              prev : "#testimonials_prev",
+              infinite: false,
+              items: 1,
+              auto: false,
+              scroll: {
+                items : 1,
+                fx: "crossfade",
+                easing: "linear",
+                duration: 300
+              }
+            });
+          });
+        </script>
     </div>
   </div>
-    <!--/ testimonials -->
 
-    <!-- popular brands -->
-  <div class="middle_row row_light_gray brand_list">
 
-         <%= image_tag 'banner.jpg' %>
-
-  </div>
-    <!--/ popular brands -->
-
+<!--/ testimonials -->
+<!-- popular brands -->
+<div class="middle_row row_light_gray brand_list">
+  <img id="page_image1" data-mercury="image"  src="<%= render inline: @page.image1 %>">
+</div>
+<!--/ popular brands -->
 <!--/ middle -->
+
+<script>
+  $('.fullwidthbanner a').click(function(event) {
+    event.preventDefault();
+  });
+</script>
