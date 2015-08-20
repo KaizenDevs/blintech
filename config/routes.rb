@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'sliders/edit'
+
+  namespace :mercury do
+    resources :images
+  end
   mount Mercury::Engine => '/'
   root to: 'pages#index', id: '1'
   get 'pages/company'
@@ -19,6 +24,11 @@ Rails.application.routes.draw do
   resources :opinions
   resources :categories
   resources :news
+  resources :sliders, only: [:edit,:update]
+
+  put '/', to: 'pages#save_page', id: '1'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
