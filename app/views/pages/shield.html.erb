@@ -3,7 +3,7 @@
 <div class="header header_thin" style="background-image:url( <%= asset_path('slider_1_2.jpg') %> )">
 
   <div class="header_title">
-    <h1>Nuestros procesos de <span>Blindaje</span></h1>
+    <h1 id="content18" data-mercury="full"><%=raw @page.content18 %></h1>
   </div>
 
 </div>
@@ -27,10 +27,9 @@
 
       <div class="entry">
 
-        <div class="text_notice">
-          <p>Lorem ipsum dolor sit amet, consequat tincidunt, justo donec, suspendisse vel.<br>
-            Ullamcorper ac vel luctus suspendisse, quis facilisis, pede tincidunt dapibus nunc diam lacus magna </p>
-          </div>
+        <div class="text_notice" id="content1" data-mercury="full">
+          <%=raw @page.content1 %>
+        </div>
 
           <!-- pricing table -->
           <div class="pricing_box">
@@ -40,13 +39,14 @@
                   <div class="price_col_head">
                     <strong>Nivel II</strong>
 
-                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                    <span class="price"><div id="page_image1" data-mercury="image">
+                      <%= image_tag @page.image1, class: "frame_right" %></div></span>
                   </div>
                   <div class="price_col_body">
-                    <ul>
+                    <ul style="height: 220px">
 
-                      <li>Armas cortas usadas por</li>
-                      <li>Delicuencia común</li>
+                      <li><span id="content2" data-mercury="full"><%=raw @page.content2 %></span></li>
+                      <li id="content3" data-mercury="full"><%=raw @page.content3 %></li>
                     </ul>
 
                   </div>
@@ -58,13 +58,13 @@
                 <div class="price_item">
                   <div class="price_col_head">
                     <strong>Nivel III</strong>
-                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                      <span class="price"><span id="page_image2" data-mercury="image"><%= image_tag @page.image2, class: "frame_right" %></span></span>
                   </div>
                   <div class="price_col_body">
                     <ul>
 
-                      <li>Petardos y granadas</li>
-                      <li>de Fragmentación</li>
+                      <li><span id="content4" data-mercury="full"><%=raw @page.content4 %></span></li>
+                      <li><span id="content5" data-mercury="full"><%=raw @page.content5 %></span></li>
                     </ul>
 
                   </div>
@@ -77,13 +77,13 @@
                   <div class="price_col_head">
                     <strong>Nivel IV</strong>
 
-                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                    <span class="price" id="page_image3" data-mercury="image"><%= image_tag @page.image3, class: "frame_right" %></span>
                   </div>
                   <div class="price_col_body">
                     <ul>
 
-                      <li>Petardos y granadas</li>
-                      <li>de Fragmentación</li>
+                      <li><span id="content6" data-mercury="full"><%=raw @page.content6 %></span></li>
+                      <li><span id="content7" data-mercury="full"><%=raw @page.content7 %></span></li>
                     </ul>
 
                   </div>
@@ -95,13 +95,13 @@
                 <div class="price_item">
                   <div class="price_col_head">
                     <strong>Nivel V</strong>
-                    <span class="price"><%= image_tag "prod_img_cuadro.jpg", class: "frame_right" %></span>
+                    <span class="price" id="page_image4" data-mercury="image"><%= image_tag @page.image4, class: "frame_right" %></span>
                   </div>
                   <div class="price_col_body">
                     <ul>
 
-                      <li>Petardos y granadas</li>
-                      <li>de Fragmentación</li>
+                      <li><span id="content8" data-mercury="full"><%=raw @page.content8 %></span></li>
+                      <li><span id="content9" data-mercury="full"><%=raw @page.content9 %></span></li>
                     </ul>
 
                   </div>
@@ -117,7 +117,7 @@
 
 
           <div class="header_title">
-            <h1>Nuestros tipos de <span>Blindaje</span></h1>
+            <h1 id="content10" data-mercury="full"><%=raw @page.content10 %></h1>
           </div>
 
           <div class="slider slider_small" style="padding-left:25%; padding-bottom:5%; padding-top:5%">
@@ -128,17 +128,17 @@
               </div>
               <div class="slider-item">
 
-                <a href="#"><%= image_tag "slider_img_1.jpg" %></a>
+                <a href="#" id="page_image5" data-mercury="image"><%= image_tag @page.image5 %></a>
               </div>
               <div class="slider-item text_slide">
                 <div class="inner">
-                  <h2>Example of Slide with Text</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sem nisi. Duis elit sem, ullamcorper a tempus ac, lacinia a nisl. Pellentesque tincidunt gravida molestie. Nullam in nulla eget turpis pretium commodo. Morbi tincidunt venenatis est eget consequat. </p>
-                  <p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>
+                  <h2 id="content11" data-mercury="full"><%=raw @page.content11 %></h2>
+                  <p id="content12" data-mercury="full"><%=raw @page.content12 %> </p>
+                  <p id="content13" data-mercury="full"><%=raw @page.content13 %></p>
                 </div>
               </div>
-              <div class="slider-item">
-                <%= image_tag "slider_img_2.jpg" %>
+              <div class="slider-item" id="page_image6" data-mercury="image">
+                <%= image_tag @page.image6 %>
               </div>
             </div>
             <div class="slider_pagination" id="slider_pag"></div>
@@ -162,13 +162,15 @@
 
           <div class="row clearfix">
             <div class="col col_1_2">
-              <h4>BLINDAJE TRANSPARENTE</h4>
+              <h4 id="content14" data-mercury="full"><%=raw @page.content14 %></h4>
 
-              <p><%= image_tag "post_img_1", class: "frame_right" %>Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.  </p>
+              <p><div>
+                <img src="<%= asset_path(@page.image7) %>" width="312px" class="frame_right" id="page_image7" data-mercury="image">
+              </div><div id="content15" data-mercury="full"><%=raw @page.content15 %></div>  </p>
             </div>
             <div class="col col_1_2">
-              <h4>BLINDAJE OPACO</h4>
-              <p><%= image_tag "post_img_1", class: "frame_right" %>Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.  </p>
+              <h4 id="content16" data-mercury="full"><%=raw @page.content16 %></h4>
+              <p><div><img src="<%= asset_path(@page.image8) %>" width="312px" class="frame_right" id="page_image8" data-mercury="image"></div><div id="content17" data-mercury="full"><%=raw @page.content17 %></div>  </p>
             </div>
 
           </div>

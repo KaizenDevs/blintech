@@ -50,6 +50,13 @@ class PagesController < ApplicationController
 
   def save_page
     page = Page.find(params[:id])
+    puts "************************************************"
+    puts "************************************************"
+    puts params
+    puts page.content4 == nil
+    puts params[:content].has_key?(:content4)
+    puts "************************************************"
+    puts "************************************************"
     page.content1 = params[:content][:content1][:value] if page.content1 != nil
     page.content2 = params[:content][:content2][:value] if page.content2 != nil
     page.content3 = params[:content][:content3][:value] if page.content3 != nil
@@ -65,12 +72,17 @@ class PagesController < ApplicationController
     page.content13 = params[:content][:content13][:value] if page.content13 != nil
     page.content14 = params[:content][:content14][:value] if page.content14 != nil
     page.content15 = params[:content][:content15][:value] if page.content15 != nil
+    page.content16 = params[:content][:content16][:value] if page.content16 != nil
+    page.content17 = params[:content][:content17][:value] if page.content17 != nil
+    page.content18 = params[:content][:content18][:value] if page.content18 != nil
     page.image1 = params[:content][:page_image1][:attributes][:src] if page.image1 != nil && params[:content] && params[:content][:page_image1][:attributes]
     page.image2 = params[:content][:page_image2][:attributes][:src] if page.image2 != nil && params[:content] && params[:content][:page_image2][:attributes]
     page.image3 = params[:content][:page_image3][:attributes][:src] if page.image3 != nil && params[:content] && params[:content][:page_image3][:attributes]
     page.image4 = params[:content][:page_image4][:attributes][:src] if page.image4 != nil && params[:content] && params[:content][:page_image4][:attributes]
     page.image5 = params[:content][:page_image5][:attributes][:src] if page.image5 != nil && params[:content] && params[:content][:page_image5][:attributes]
     page.image6 = params[:content][:page_image6][:attributes][:src] if page.image6 != nil && params[:content] && params[:content][:page_image6][:attributes]
+    page.image7 = params[:content][:page_image7][:attributes][:src] if page.image7 != nil && params[:content] && params[:content][:page_image7][:attributes]
+    page.image8 = params[:content][:page_image8][:attributes][:src] if page.image8 != nil && params[:content] && params[:content][:page_image8][:attributes]
     if page.id == 1
       page.banner = params[:content][:page_banner][:attributes][:src] if page.banner != nil && params[:content] && params[:content][:page_banner][:attributes]
     else
