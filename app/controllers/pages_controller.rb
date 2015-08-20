@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def company
+    @page = Page.find(2)
   end
 
   def shield

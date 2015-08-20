@@ -20,6 +20,21 @@
     id:1
   )
 
+  Page.create(
+  	id: 2,
+  	content1: 'Conoce más de <span>BLINTECH</span>',
+    content2: 'Suspendisse Dictum Feugiat Nisl Ut Dapibus. Mauris' ,
+    content3: '',
+    content4: '',
+    content5: '',
+    content6: '',
+    content7: '',
+    content8: '',
+    content9: '',
+    content10: '',
+    image1: ""
+  )
+
   Opinion.create([
     {name: "FULANITO_01", position: "cliente", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"},
 	{name: "FULANITO_02", position: "proveedor", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"}
