@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   end
 
   def rent
+    @page = Page.find(params[:id])
     @vehicles = Vehicle.all
     @last_vehicles = Vehicle.last(6)
   end
