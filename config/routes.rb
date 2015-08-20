@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'pages/company', id: '2'
   get 'pages/shield', id: '3'
   get 'pages/rent', id: '4'
-  get 'pages/maintenance'
+  get 'pages/maintenance', id: '5'
   get 'pages/news'
   get 'pages/contact'
 
@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   put '/pages/company', to: 'pages#save_page', id: '2'
   put '/pages/shield', to: 'pages#save_page', id: '3'
   put '/pages/rent', to: 'pages#save_page', id: '4'
+  put '/pages/maintenance', to: 'pages#save_page', id: '5'
 
 end

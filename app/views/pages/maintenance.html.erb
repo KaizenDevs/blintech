@@ -1,37 +1,43 @@
 
 <!-- header -->
 <div class="header header_thin" style="background-image:url(<%= asset_path('slider_1_2.jpg') %>)">
-    <div class="header_title">
-        <h1> <span>Mantenimiento</span> Automotriz</h1>
+    <div data-mercury="full" id="content1" class="header_title">
+        <%= @page.content1.html_safe %>
     </div>
 </div>
 <!--/ header -->
+
 <!-- breadcrumbs -->
 <div class="middle_row row_white breadcrumbs">
-    <div class="container">
-        <p><a href="index.php">Inicio</a>    <span class="separator">&rsaquo;</span> <span class="current">Mantenimiento</span></p>
-        <a href="index.php" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
-    </div>
+  <div class="container">
+    <p><a href="/">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="#"></a> <span class="current">Mantenimiento</span></p>
+    <%= link_to "<i class='fa fa-user'></i> Contáctenos".html_safe, pages_contact_path, class: "link_search" %>
+  </div>
 </div>
 <!--/ breadcrumbs -->
-<!-- middle -->   
+
+<!-- middle -->
 <div id="middle" class="full_width">
     <div class="container clearfix">
         <!-- content -->
         <div class="content">
             <article class="post-detail">
-                <div class="post-title">
-                    <h1 style="text-align:center">Shortcodes: Columns inside Full width page</h1>
+                <div data-mercury="full" id="content2" class="post-title">
+                    <%= @page.content2.html_safe %>
                 </div>
                 <div class="entry">
-                    <img src="<%= asset_path('post_img_big_3.jpg') %>" alt="" class="frame_center">
+                    <img class="frame_center" id="page_image1" data-mercury="image"  src="<%= render inline: Page.find(5).image1 %>">
                     <blockquote>
                         <div class="inner">
-                            <p>Nam ornare pharetra sem vitae blandit. Aliquam sed massa vitae risus sodales molestie vitae sit amet arcu. Nunc egestas dapibus a pellentesque pellentesque. </p>
+                            <p data-mercury="full" id="content3">
+                                <%= @page.content3.html_safe %>
+                            </p>
                         </div>
                     </blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. <strong>Proin quis tortor orci</strong>. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. </p>
-                </div>                         
+                    <p data-mercury="full" id="content4">
+                        <%= @page.content4.html_safe %>
+                    </p>
+                </div>
             </article>
         </div>
         <!--/ content -->

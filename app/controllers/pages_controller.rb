@@ -27,6 +27,7 @@ class PagesController < ApplicationController
   end
 
   def maintenance
+    @page = Page.find(5)
   end
 
   def news

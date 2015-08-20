@@ -54,9 +54,19 @@
 
   Page.create(
     id:4,
-    content1: "<h2>¡Vehículos con la más alta tecnología!</h2>",
+    content1: "<h1><span>Alquiler</span> de vehículos blindados y convenconales</h1>",
+    content2: "<h2>¡Vehículos con la más alta tecnología!</h2>",
     image1: "<%= asset_path('banner-282×579.jpg') %>"
   )
+
+  Page.create(
+    id:5,
+    content1: '<h1><span>Mantenimiento</span> Automotriz</h1>',
+    content2: '<h1 style="text-align:center">Shortcodes: Columns inside Full width page</h1>',
+    content3: 'Nam ornare pharetra sem vitae blandit. Aliquam sed massa vitae risus sodales molestie vitae sit amet arcu. Nunc egestas dapibus a pellentesque pellentesque.',
+    content4: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. <strong>Proin quis tortor orci</strong>. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi.',
+    image1: "<%= asset_path('post_img_big_3.jpg') %>"
+    )
 
   Opinion.create([
     {name: "FULANITO_01", position: "cliente", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"},
