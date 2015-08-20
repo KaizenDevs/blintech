@@ -7,23 +7,51 @@
     <!-- topmenu -->
     <nav id="topmenu" class="clearfix">
       <ul class="dropdown">
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0 current-menu-ancestor"><%= link_to "<span>Inicio</span>".html_safe , root_path %></li>
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/company"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_company_path %></li>
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/shield"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Blindaje</span>".html_safe , pages_shield_path %></li>
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/rent"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Alquiler</span>".html_safe , pages_rent_path %></li>
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/maintenance"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Mantenimiento</span>".html_safe, pages_maintenance_path %></li>
+          <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/new"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
-        <li class="menu-level-0"><%= link_to "<span>Contacto  <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %></li>
-        <% if user_signed_in? %>
+
+        <li class="menu-level-0">
+        <%= link_to "<span>Contacto <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %>
+        <% if user_signed_in? %><a style="float:right;" href="/editor/pages/contact"><span><i class='fa fa-edit'></i></span></a><% end %>
+        </li>
+      </ul>
+      <% if user_signed_in? %>
+        <ul class="dropdown">
+          <li class="menu-level-0"><%= link_to "<span>Slides Home</span>".html_safe, sliders_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Vehículos</span>".html_safe, vehicles_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, news_index_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Categorías</span>".html_safe, categories_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Opiniones</span>".html_safe, opinions_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Contraseña</span>".html_safe, edit_user_registration_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Salir</span>".html_safe, destroy_user_session_path, method: :delete %></li>
-        <% end %>
-      </ul>
+        </ul>
+      <% end %>
     </nav>
     <!--/ topmenu -->
   </div>
 </div>
+<% if user_signed_in? %>
+<style>
+  #topmenu ul {
+    font-size:12px;
+    line-height:5px;
+  }
+  #topmenu ul li {
+    padding:0;
+    margin: 3px 10px 0 5px;
+  }
+  #topmenu ul li.edit-icon {
+    margin:0;
+  }
+</style>
+<% end %>
