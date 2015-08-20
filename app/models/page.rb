@@ -3,18 +3,35 @@
 # Table name: pages
 #
 #  id         :integer          not null, primary key
-#  content_1  :text
-#  content_2  :text
-#  content_3  :text
-#  content_4  :text
-#  content_5  :text
-#  content_6  :text
-#  content_7  :text
-#  content_8  :text
-#  content_9  :text
-#  content_10 :text
+#  content1   :text
+#  content2   :text
+#  content3   :text
+#  content4   :text
+#  content5   :text
+#  content6   :text
+#  content7   :text
+#  content8   :text
+#  content9   :text
+#  content10  :text
+#  image1     :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  content11  :text
+#  content12  :text
+#  content13  :text
+#  content14  :text
+#  content15  :text
+#  content16  :text
+#  content17  :text
+#  content18  :text
+#  image2     :text
+#  image3     :text
+#  image4     :text
+#  image5     :text
+#  image6     :text
+#  image7     :text
+#  image8     :text
+#  banner     :text
 #
 
 class Page < ActiveRecord::Base
