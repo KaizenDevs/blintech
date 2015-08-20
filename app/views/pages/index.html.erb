@@ -167,10 +167,12 @@
     <div class="week_offer">
       <h2>Noticias</h2>
         <div class="offer_box">
-          <% if @last_news %>
-            <div class="offer_image"><a href="offers-details.html"><%= image_tag @last_news.image.url %></a></div>
+          <% if @last_news == nil %>
+            <p>No hay noticias en nuestra base de datos</p>
+          <% else %>
+            <div class="offer_image"><a href="<%= @last_news %>"><%= image_tag @last_news.image.url %></a></div>
             <div class="offer_text">
-              <h3><a href="offers-details.html"><%= @last_news.title %></a></h3>
+              <h3><a href="<%= @last_news %>"><%= @last_news.title %></a></h3>
               <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
               <div class="offer_descr">
                 <%= raw @last_news.content.split(" ").first(25).join(" ") %>...
@@ -186,19 +188,23 @@
       <h2>ALQUILER</h2>
 
       <div id="special_offers">
-        <% @vehicles.each do |vehicle| %>
-          <div class="special_item">
-            <div class="special_image">
-              <a href="offers-details.html"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
-            </div>
-            <div class="special_text">
-              <h3><a href="offers-details.html"><%= vehicle.name %></a></h3>
-              <div class="info_row"><span>Nivel de Blindaje:</span> <%= vehicle.shielding %></div>
-              <div class="info_row"><span>Motor:</span> <%= vehicle.engine %></div>
-              <div class="info_row"><span>Combustible</span> <%= vehicle.gas.capitalize %></div>
-              <div class="special_price"><%= link_to 'Más detalles', vehicle_path(vehicle) %></div>
-            </div>
-          </div>
+        <% if @vehicles.empty? %>
+          <p>No hay vehiculos en nuestra base de datos</p>
+        <% else %>
+          <% @vehicles.each do |vehicle| %>          
+            <div class="special_item">
+              <div class="special_image">
+                <a href="offers-details.html"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
+              </div>
+              <div class="special_text">
+                <h3><a href="offers-details.html"><%= vehicle.name %></a></h3>
+                <div class="info_row"><span>Nivel de Blindaje:</span> <%= vehicle.shielding %></div>
+                <div class="info_row"><span>Motor:</span> <%= vehicle.engine %></div>
+                <div class="info_row"><span>Combustible</span> <%= vehicle.gas.capitalize %></div>
+                <div class="special_price"><%= link_to 'Más detalles', vehicle_path(vehicle) %></div>
+              </div>
+            </div>          
+          <% end %>
         <% end %>
       </div>
       <a class="prev" id="special_offers_prev" href="#"></a>
@@ -245,46 +251,16 @@
     </div>
 
     <div id="latest_offers">
-      <% @news.each do |notice| %>
-        <%= link_to image_tag(notice.image.url, :border => 0), notice %>
-        <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
+
+      <% if @news.empty? %>
+        <p style="color:white;">No hay noticias en nuestra base de datos</p>
+      <% else %>
+        <% @news.each do |notice| %>
+          <%= link_to image_tag(notice.image.url, :border => 0), notice %>
+          <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
+        <% end %>   
       <% end %>
-      <div class="latest_item">
-        <a href="offers-details.html"><%=  image_tag 'prod_img_01.jpg' %></a>
-        <a href="offers-details.html"></a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_02.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_03.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_04.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_05.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_06.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_07.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_08.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
-      <div class="latest_item">
-      <a href="offers-details.html"><%=  image_tag 'prod_img_09.jpg' %></a>
-      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-      </div>
+         
     </div>
     <a class="prev" id="latest_offers_prev" href="#"></a>
     <a class="next" id="latest_offers_next" href="#"></a>

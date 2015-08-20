@@ -27,24 +27,12 @@
       <!-- sorting, pages -->
       <div class="list_manage">
         <div class="inner clearfix">
-          <form action="#" method="post" class="form_sort">
-            <span class="manage_title">organizar por:</span>
-            <select class="select_styled white_select" name="sort_list" id="sort_list">
-              <option value="1">último agregado</option>
-              <option value="2" selected>Nivel de blindaje</option>
-
-            </select>
-          </form>
-
-          <div class="pages_jump">
-            <span class="manage_title">ir a la página:</span>
-            <form action="#" method="post">
-              <input type="text" name="jumptopage" value="15" class="inputSmall"><input type="submit" class="btn-arrow" value="Go">
-            </form>
-          </div>
-
           <div class="pages">
-            <span class="manage_title">Página : &nbsp;<strong>1 de 25</strong></span> <a href="#" class="link_prev">Previous</a><a href="#" class="link_next">Next</a>
+            <% if @vehicles.empty? %>            
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% else %>
+              <%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %>
+            <% end %>
           </div>
 
         </div>
@@ -78,11 +66,13 @@
       <!-- pagination -->
       <div class="tf_pagination">
         <div class="inner">
-          <a class="page_prev" href="#"><span></span>PREV</a>
-          <a class="page_next" href="#"><span></span>NEXT</a>
-
-          <span class="page-numbers page_current">1</span> <a href="#" class="page-numbers">2</a>  <a href="#" class="page-numbers">3</a> <a href="#" class="page-numbers">4</a> <a href="#" class="page-numbers">5</a> <a href="#" class="page-numbers">6</a> <a href="#" class="page-numbers">7</a> &hellip;  <a href="#" class="page-numbers">18</a>
-
+          <span class="page-numbers page_current">
+            <% if @vehicles.empty? %>            
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% else %>
+              <span class="manage_title"><strong><%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
+            <% end %>
+          </span> 
         </div>
       </div>
       <!--/ pagination -->
