@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
- Page.create(
+  Page.create(
     content1: 'Protega su carro',
     content2: 'Second-hand classics from <span>$25.990</span>' ,
     content3: 'NEW & 2nd HAND',
@@ -16,11 +16,18 @@
     content8: 'Only the finest breed of <span> Supercars</span>',
     content9: 'SUPER SPORTS 9',
     content10: 'Only the finest breed of <span> 10 Supercars</span>',
-    image1: "<%= asset_path('banner.jpg') %>"
+    image1: "<%= asset_path('banner.jpg') %>",
+    id:1
+  )
 
-    )
-
-Opinion.create([
-	{name: "FULANITO_01", position: "cliente", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"},
+  Opinion.create([
+    {name: "FULANITO_01", position: "cliente", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"},
 	{name: "FULANITO_02", position: "proveedor", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"}
-])
+  ])
+
+  Slider.create([
+    {id:1, :image => File.new("#{Rails.root}/app/assets/images/slider_1_1.jpg"),:name => "Image Seed"},
+    {id:2, :image => File.new("#{Rails.root}/app/assets/images/slider_1_2.jpg"),:name => "Image Seed"},
+    {id:3, :image => File.new("#{Rails.root}/app/assets/images/slider_1_3.jpg"),:name => "Image Seed"},
+    {id:4, :image => File.new("#{Rails.root}/app/assets/images/slider_1_4.jpg"),:name => "Image Seed"}
+  ])

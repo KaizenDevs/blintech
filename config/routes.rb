@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sliders/edit'
 
   namespace :mercury do
     resources :images
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   resources :opinions
   resources :categories
   resources :news
-  resources :sliders, only: [:edit,:update]
+  resources :sliders, only: [:edit,:update, :index]
 
   put '/', to: 'pages#save_page', id: '1'
 
