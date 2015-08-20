@@ -23,6 +23,7 @@ class PagesController < ApplicationController
   def rent
     @page = Page.find(params[:id])
     @vehicles = Vehicle.all
+    @vehicles = Vehicle.paginate(:page => params[:page], :per_page => 9)
     @last_vehicles = Vehicle.last(6)
   end
 
@@ -39,6 +40,7 @@ class PagesController < ApplicationController
       @params = params
       @news = News.all.reverse
     end
+    @news = News.paginate(:page => params[:page], :per_page => 5)
     @categories = Category.all
   end
 
