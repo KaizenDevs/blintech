@@ -17,9 +17,10 @@
 <div id="middle" class="cols2">
   <div class="container clearfix">
 
-    <div class="title2">
-      <h2>Vehículos con la más alta tecnología!</h2>
+    <div   data-mercury="full" id="content1" class="title2">
+      <%= @page.content1.html_safe %>
     </div>
+
     <!-- content -->
     <div class="content">
 
@@ -91,7 +92,10 @@
 
     <!-- sidebar -->
     <div class="sidebar">
-      <%= image_tag "banner-282×579.jpg", class: "frame_right" %>
+      <%#= image_tag "banner-282×579.jpg", class: "frame_right" %>
+
+      <img id="page_image1" data-mercury="image"  src="<%= render inline: Page.find(4).image1 %>">
+
       <div class="clear"></div>
       <div class="widget-container widget_popular">
         <h3 class="widget-title">Últimos Vehículos</h3>
@@ -111,3 +115,6 @@
 
 </div>
 </div>
+<style>
+  .cuselScrollArrows{width:100px;}
+</style>
