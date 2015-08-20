@@ -10,5 +10,6 @@ class AddContentAndImagesColumnsToPages < ActiveRecord::Migration
   	add_column :pages, :image4, :text
   	add_column :pages, :image5, :text
   	add_column :pages, :image6, :text
+    add_column :pages, :banner, :text
   end
 end

@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150820165251) do
     t.text     "image4"
     t.text     "image5"
     t.text     "image6"
+    t.text     "banner"
   end
 
   create_table "sliders", force: :cascade do |t|

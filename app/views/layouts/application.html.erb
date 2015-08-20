@@ -13,7 +13,6 @@
 </head>
 <body>
   <div class="body_wrap homepage">
-
     <%= render 'layouts/menu' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -21,12 +20,11 @@
     <!--/ testimonials -->
     <!-- popular brands -->
     <div class="middle_row row_light_gray brand_list">
-      <img id="page_image1" data-mercury="image"  src="<%= render inline: Page.find(1).image1 %>">
+      <img id="page_banner" data-mercury="image"  src="<%= render inline: Page.find(1).banner %>">
     </div>
     <!--/ popular brands -->
     <!--/ middle -->
     <%= render 'layouts/footer' %>
-
   </div>
 </body>
 </html>

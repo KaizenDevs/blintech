@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   end
   mount Mercury::Engine => '/'
   root to: 'pages#index', id: '1'
-  get 'pages/company'
-  get 'pages/shield'
+  get 'pages/company', id: '2'
+  get 'pages/shield', id: '3'
   get 'pages/rent'
   get 'pages/maintenance'
   get 'pages/news'
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :sliders, only: [:edit,:update, :index]
 
   put '/', to: 'pages#save_page', id: '1'
-
+  put '/pages/company', to: 'pages#save_page', id: '2'
 
   resources :vehicles
 
