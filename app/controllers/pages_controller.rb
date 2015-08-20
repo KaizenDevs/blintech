@@ -4,6 +4,10 @@ class PagesController < ApplicationController
     @opinions = Opinion.where(visible: true)
     # Como se llaman todas las noticias
     @news = News.where(highlight: true)
+    @image1 = Slider.find(1)
+    @image2 = Slider.find(2)
+    @image3 = Slider.find(3)
+    @image4 = Slider.find(4)
   end
 
   def company

@@ -1,2 +1,27 @@
-<h1>Sliders#edit</h1>
-<p>Find me in app/views/sliders/edit.html.erb</p>
+<div style="height: 150px"></div>
+<div class="container">
+  <h1>Listado Slides</h1>
+
+  <%= image_tag @slider.image.url(:thumb) %>
+
+  <%= form_for(@slider) do |slider| %>
+  <h3 class="right-line text-left">Editar Slide</h3>
+  <p class="small">las imagenes deben ser de 1680 × 617</p>
+  <br>
+  <div class="field form-group">
+    <%= slider.label :name, "Nombre del slide:", class: "lead lead-lg" %>
+    <%= slider.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= slider.label :image, "Imagen para el slide:", class: "lead lead-lg" %>
+    <%= slider.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="actions form-group text-center">
+    <%= slider.submit "Guardar Slide", class: "btn btn-ar btn-lg btn-success" %>
+  </div>
+</div>
+<% end %>
+</div>
+<div style="height: 150px"></div>
