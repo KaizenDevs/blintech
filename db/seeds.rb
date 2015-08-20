@@ -81,6 +81,17 @@
     image1: "<%= asset_path('post_img_big_3.jpg') %>"
     )
 
+	Page.create(
+    id:6,
+    content1: 'Contáctenos:',
+    content2: '<strong>  Blintech</strong>',
+    content3: 'Cra 50 No. 30 -24 <br>Medellín - COL.',
+    content4: '<em>Teléfono:</em> <span>+57 (4) 444 50 00</span>',
+    content5: '<em>Email:</em> <a href="mailto:contact@newssetter.com">info@blintech.com.co</a>',
+    content6: 'Acerca de nuestra empresa',
+    content7: 'Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus eegx vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet. Curabitur vulprutate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet.'    
+    )
+
   Opinion.create([
     {name: "FULANITO_01", position: "cliente", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"},
 	{name: "FULANITO_02", position: "proveedor", opinion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", visible: "true"}

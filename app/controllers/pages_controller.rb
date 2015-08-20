@@ -45,6 +45,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @page = Page.find(params[:id])
     @contact = Contact.new
   end
 
