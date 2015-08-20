@@ -1,4 +1,5 @@
 class SlidersController < ApplicationController
+  before_action :authenticate_user!
   def edit
     @slider = Slider.find(params[:id])
   end
