@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :news
   resources :sliders, only: [:edit,:update, :index]
+  resources :contacts
 
   put '/', to: 'pages#save_page', id: '1'
   put '/pages/company', to: 'pages#save_page', id: '2'

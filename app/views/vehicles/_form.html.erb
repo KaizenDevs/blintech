@@ -46,7 +46,7 @@
           </div>
           <%= f.text_field :name, label: "Nombre del vehículo:" %>
           <%= f.text_field :engine, label: "Motor:" %>
-          <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Tipo de combustible:" %>
+
           <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
           <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
           <%= f.text_area :description, label: "Descripción:" %>
