@@ -90,11 +90,16 @@ ActiveRecord::Schema.define(version: 20150820175832) do
     t.text     "content13"
     t.text     "content14"
     t.text     "content15"
+    t.text     "content16"
+    t.text     "content17"
+    t.text     "content18"
     t.text     "image2"
     t.text     "image3"
     t.text     "image4"
     t.text     "image5"
     t.text     "image6"
+    t.text     "image7"
+    t.text     "image8"
     t.text     "banner"
   end
 
