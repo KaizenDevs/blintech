@@ -290,52 +290,55 @@
   <!-- latest_offers -->
   <div class="middle_row latest_offers">
     <div class="container clearfix">
-          <h2 style="text-align:center">Nuestra Empresa</h2>
+      <h2 style="text-align:center">Nuestra Empresa</h2>
     </div>
 
-        <div id="latest_offers">
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_01.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia </a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_02.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_03.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_04.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_05.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_06.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_07.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_08.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-            <div class="latest_item">
-            <a href="offers-details.html"><%=  image_tag 'prod_img_09.jpg' %></a>
-            <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
-            </div>
-        </div>
+    <div id="latest_offers">
+      <% @news.each do |notice| %>
+        <%= link_to image_tag(notice.image.url, :border => 0), notice %>        
+        <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
+      <% end %>
+      <div class="latest_item">
+        <a href="offers-details.html"><%=  image_tag 'prod_img_01.jpg' %></a>
+        <a href="offers-details.html"></a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_02.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_03.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_04.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_05.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_06.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_07.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_08.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+      <div class="latest_item">
+      <a href="offers-details.html"><%=  image_tag 'prod_img_09.jpg' %></a>
+      <a href="offers-details.html"><i class="fa fa-newspaper-o"></i> Titular noticia</a>
+      </div>
+    </div>
+    <a class="prev" id="latest_offers_prev" href="#"></a>
+    <a class="next" id="latest_offers_next" href="#"></a>
 
-        <a class="prev" id="latest_offers_prev" href="#"></a>
-        <a class="next" id="latest_offers_next" href="#"></a>
-
-        <script>
+    <script>
         jQuery(document).ready(function($) {
       var screenRes = $(window).width();
 
@@ -368,38 +371,27 @@
         vis_items.eq(0).animate({opacity: 0.15},100);
       }
         });
-        </script>
+    </script>
   </div>
     <!--/ latest_offers -->
 
     <!-- testimonials -->
     <div class="middle_row row_white testimonials">
     <div class="container">
-
-            <div class="slider_container clearfix" id="testimonials">
-                <div class="slider-item">
-                    <div class="quote-text">
-                    <p><a href="#">Blintech</a> Rhoncus arcu gravida diam fringilla interdum, id amet felis. Ultricies vel, tempus sem mauris porttitor etiam, nunc enim ipsum ipsum nunc luctus ornare, magna eget et nec aut ultrices nonummy, wisi fusce massa suspendisse amet.</p>
-                    </div>
-                    <div class="quote-author"><span>Fulanito_01</span>, Cliente</div>
-                </div>
-                <div class="slider-item">
-                    <div class="quote-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                    <div class="quote-author"><span>Fulanito_02</span>, Cliente</div>
-                </div>
-                <div class="slider-item">
-                    <div class="quote-text">
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. We have to say it has made us delighted we chose Medica.</p>
-                    </div>
-                    <div class="quote-author"><span>Fulanito_03</span>, Cliente</div>
-                </div>
+      <div class="slider_container clearfix" id="testimonials">
+        
+        <% @opinions.each do |opinion| %>
+          <div class="slider-item">
+            <div class="quote-text">
+            <p><%= opinion.opinion %></p>
             </div>
-            <a class="prev" id="testimonials_prev" href="#"></a>
-            <a class="next" id="testimonials_next" href="#"></a>
-            <script>
+            <div class="quote-author"><span><%= opinion.name %></span>, <%= opinion.position %></div>
+          </div>
+        <% end %>
+      </div>
+      <a class="prev" id="testimonials_prev" href="#"></a>
+      <a class="next" id="testimonials_next" href="#"></a>
+    <script>
       jQuery(document).ready(function($) {
         $('#testimonials').carouFredSel({
           next : "#testimonials_next",
@@ -415,9 +407,9 @@
           }
         });
       });
-            </script>
+    </script>
 
-        </div>
+    </div>
   </div>
     <!--/ testimonials -->
 
