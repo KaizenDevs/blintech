@@ -27,14 +27,14 @@
         <% @news.each do |news| %>
           <div class="post-item">
             <div class="post-title">
-              <h2><a href="post_01.php"><%= news.title %></a></h2>
+              <h2><a href="<%= news_path(news) %>"><%= news.title %></a></h2>
             </div>
             <div class="post-aside clearfix">
-              <div class="post-image"><a href="blog-details.html"><%= image_tag news.image.url(:blog) %></a></div>
+              <div class="post-image"><a href="<%= news_path(news) %>"><%= image_tag news.image.url(:blog) %></a></div>
               <div class="post-meta">
                 <div class="info_row"><span>Fecha:</span> <%= news.created_at.strftime("%m. %d. %y.") %></div>
                 <div class="info_row"><span>Escrito por:</span> <%= news.author %></div>
-                <a href="blog-details.html" class="link_more">VER MÁS <span>&gt;</span></a>
+                <a href="<%= news_path(news) %>" class="link_more">VER MÁS <span>&gt;</span></a>
               </div>
               <div class="entry">
                 <%=raw news.content.split(" ").first(50).join(" ") %>...
