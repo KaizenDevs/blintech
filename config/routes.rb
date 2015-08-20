@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'pages/rent', id: '4'
   get 'pages/maintenance', id: '5'
   get 'pages/news'
-  get 'pages/contact'
+  get 'pages/contact', id: '6'
 
   devise_for :users
 
@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   put '/pages/shield', to: 'pages#save_page', id: '3'
   put '/pages/rent', to: 'pages#save_page', id: '4'
   put '/pages/maintenance', to: 'pages#save_page', id: '5'
+  put '/pages/contact', to: 'pages#save_page', id: '6'
 
 end

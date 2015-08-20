@@ -66,20 +66,19 @@
     <div class="content">
 
       <div class="contact_box">
-       <h2>Contáctenos:</h2>
+       <h2 id="content1" data-mercury="full"><%= @page.content1.html_safe %></h2>
        <div class="box_content clearfix">
          <div class="left_side contact-address">
-          <div class="name"><strong>  Blintech</strong></div>
-          <div class="address">Cra 50 No. 30 -24 <br>Medellín - COL.</div>
+          <div class="name" id="content2" data-mercury="full"><%= @page.content2.html_safe %></div>
+          <div class="address" id="content3" data-mercury="full"><%= @page.content3.html_safe %></div>
 
-          <div class="row phone"><em>Teléfono:</em> <span>+57 (4) 444 50 00</span></div>
-          <div class="row mail"><em>Email:</em> <a href="mailto:contact@newssetter.com">info@blintech.com.co</a></div>
+          <div class="row phone" id="content4" data-mercury="full"><%= @page.content4.html_safe %></div>
+          <div class="row mail" id="content5" data-mercury="full"><%= @page.content5.html_safe %></div>
 
         </div>
         <div class="right_side">
-         <h3>Acerca de nuestra empresa</h3>
-         <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus eegx vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet. Curabitur vulprutate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet.</p>
-
+         <h3 class="row mail" id="content6" data-mercury="full"><%= @page.content6.html_safe %></h3>
+         <p id="content7" data-mercury="full"><%= @page.content7.html_safe %></p>
        </div>
      </div>
    </div>
