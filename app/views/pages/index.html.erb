@@ -167,15 +167,17 @@
     <div class="week_offer">
       <h2>Noticias</h2>
         <div class="offer_box">
-          <div class="offer_image"><a href="offers-details.html"><%= image_tag @last_news.image.url %></a></div>
-          <div class="offer_text">
-            <h3><a href="offers-details.html"><%= @last_news.title %></a></h3>
-            <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
-            <div class="offer_descr">
-              <%= raw @last_news.content.split(" ").first(25).join(" ") %>...
+          <% if @last_news %>
+            <div class="offer_image"><a href="offers-details.html"><%= image_tag @last_news.image.url %></a></div>
+            <div class="offer_text">
+              <h3><a href="offers-details.html"><%= @last_news.title %></a></h3>
+              <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
+              <div class="offer_descr">
+                <%= raw @last_news.content.split(" ").first(25).join(" ") %>...
+              </div>
             </div>
-          </div>
-          <div class="link_more"><a href="<%= pages_news_path %>">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
+            <div class="link_more"><a href="<%= pages_news_path %>">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
+          <% end %>
         </div>
     </div>
     <!--/ week offer -->
