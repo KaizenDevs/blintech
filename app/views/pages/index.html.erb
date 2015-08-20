@@ -166,17 +166,17 @@
     <!-- week offer -->
     <div class="week_offer">
       <h2>Noticias</h2>
-      <div class="offer_box">
-        <div class="offer_image"><a href="offers-details.html"><%= image_tag 'week_offer.jpg' %></a></div>
-        <div class="offer_text">
-          <h3><a href="offers-details.html">Nuevo Modelo de Blindaje</a></h3>
-          <div class="offer_price">LEER MÁS</div>
-          <div class="offer_descr">
-            Lorem ipsum dolor sit amet, lectus tempor non enim, quisque in consequat tincidunt, justo donec, suspendisse vel. Distinctio quis nunc tempor. Sagittis nec, rerum eleifend quam tempus.
+        <div class="offer_box">
+          <div class="offer_image"><a href="offers-details.html"><%= image_tag @last_news.image.url %></a></div>
+          <div class="offer_text">
+            <h3><a href="offers-details.html"><%= @last_news.title %></a></h3>
+            <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
+            <div class="offer_descr">
+              <%= raw @last_news.content.split(" ").first(25).join(" ") %>...
+            </div>
           </div>
+          <div class="link_more"><a href="<%= pages_news_path %>">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
         </div>
-        <div class="link_more"><a href="#">Más artículos <i class="fa fa-arrow-circle-right"></i></a></div>
-      </div>
     </div>
     <!--/ week offer -->
     <!-- special offer -->
@@ -184,71 +184,20 @@
       <h2>ALQUILER</h2>
 
       <div id="special_offers">
-        <div class="special_item">
-          <div class="special_image">
-            <a href="offers-details.html"><%= image_tag 'special_offer_1.jpg' %></a>
+        <% @vehicles.each do |vehicle| %>
+          <div class="special_item">
+            <div class="special_image">
+              <a href="offers-details.html"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
+            </div>
+            <div class="special_text">
+              <h3><a href="offers-details.html"><%= vehicle.name %></a></h3>
+              <div class="info_row"><span>Nivel de Blindaje:</span> <%= vehicle.shielding %></div>
+              <div class="info_row"><span>Motor:</span> <%= vehicle.engine %></div>
+              <div class="info_row"><span>Combustible</span> <%= vehicle.gas.capitalize %></div>
+              <div class="special_price"><%= link_to 'Más detalles', vehicle_path(vehicle) %></div>
+            </div>
           </div>
-          <div class="special_text">
-            <h3><a href="offers-details.html">Range Rover Evoque</a></h3>
-            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-            <div class="special_price">Más detalles</div>
-          </div>
-        </div>
-
-        <div class="special_item">
-          <div class="special_image">
-            <a href="offers-details.html"><%= image_tag 'special_offer_2.jpg' %></a>
-          </div>
-          <div class="special_text">
-            <h3><a href="offers-details.html">Alfa Romeo Mito</a></h3>
-            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-            <div class="special_price">Más detalles</div>
-          </div>
-        </div>
-
-        <div class="special_item">
-          <div class="special_image">
-            <a href="offers-details.html"><%= image_tag 'special_offer_3.jpg' %></a>
-          </div>
-          <div class="special_text">
-            <h3><a href="offers-details.html">Mercedes CLA 220d</a></h3>
-            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-            <div class="special_price">Más detalles</div>
-          </div>
-        </div>
-
-        <div class="special_item">
-          <div class="special_image">
-            <a href="offers-details.html"><%= image_tag 'special_offer_4.jpg' %></a>
-          </div>
-          <div class="special_text">
-            <h3><a href="offers-details.html">Tesla Model S Prestige</a></h3>
-            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-            <div class="special_price">Más detalles</div>
-          </div>
-        </div>
-
-        <div class="special_item">
-          <div class="special_image">
-            <a href="offers-details.html"><%= image_tag 'special_offer_5.jpg' %></a>
-          </div>
-          <div class="special_text">
-            <h3><a href="offers-details.html">Renault</a></h3>
-            <div class="info_row"><span>Categoría_01:</span> Post_01</div>
-            <div class="info_row"><span>Categoría_02:</span> Post_02</div>
-            <div class="info_row"><span>Categoría_03</span> Post_03</div>
-            <div class="special_price">Más detalles</div>
-          </div>
-        </div>
-
+        <% end %>
       </div>
       <a class="prev" id="special_offers_prev" href="#"></a>
       <a class="next" id="special_offers_next" href="#"></a>

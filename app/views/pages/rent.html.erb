@@ -53,126 +53,23 @@
       <!-- offers list -->
       <div class="offer_list clearfix">
 
-        <div class="offer_item clearfix">
-          <div class="offer_image">
-          <a href="producto.php"><%= image_tag "prod_img_01.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Mercedes-Benz ML 350 BlueTEC 4MATIC 7G</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, Used vehicle, Automatic transmission, Diesel, 190 kW (258 PS), Fuel consumption combined: 6.8 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$32.690</div>
-              <span class="offer_miliage">55,689 KM</span>
-              <span class="offer_regist">08/2011</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_02.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Porsche CAYENNE S DIESEL V8 4.2</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, New vehicle, Automatic transmission, Diesel, 281 kW (382 PS), Fuel consumption combined: 14.3 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$56.300</div>
-              <span class="offer_miliage">237,391 KM</span>
-              <span class="offer_regist">12/2012</span>
+        <% @vehicles.each do |vehicle| %>
+          <div class="offer_item clearfix">
+            <div class="offer_image">
+            <a href="<%= vehicle_path(vehicle) %>"><%= image_tag vehicle.vehicle_images.first.image.url(:rent) %></a></div>
+            <div class="offer_aside">
+              <h2><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></h2>
+              <div class="offer_descr">
+                <p><%= vehicle.description %></p>
+              </div>
+              <div class="offer_data">
+                <div class="offer_price">Blindaje <%= vehicle.shielding %></div>
+                <span class="offer_miliage"><%= vehicle.transmission.capitalize %></span>
+                <span class="offer_regist"><%= vehicle.gas.capitalize %></span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_03.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Infiniti FX 37 AWD Aut. S Premium</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, New vehicle, Automatic transmission, Diesel, 281 kW (382 PS), Fuel consumption combined: 14.3 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$47.000</div>
-              <span class="offer_miliage">27,391 KM</span>
-              <span class="offer_regist">08/2010</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_04.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Volvo XC60 D5 AWD Aut. RE-Design</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, New vehicle, Automatic transmission, Diesel, 281 kW (382 PS), Fuel consumption combined: 14.3 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$26.750</div>
-              <span class="offer_miliage">50,584 KM</span>
-              <span class="offer_regist">05/2011</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_05.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">BMW X5 Adaptive Drive Head-Up Display</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, New vehicle, Automatic transmission, Diesel, 281 kW (382 PS), Fuel consumption combined: 14.3 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$33.300</div>
-              <span class="offer_miliage">15,785 KM</span>
-              <span class="offer_regist">10/2012</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_06.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Land Rover Sport SDV6 HSE</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, New vehicle, Automatic transmission, Diesel, 281 kW (382 PS), Fuel consumption combined: 14.3 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$44.300</div>
-              <span class="offer_miliage">197,391 KM</span>
-              <span class="offer_regist">07/2009</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_07.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Audi Q7 4.2 TDI S-LINE PANORAMA</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, Used vehicle, Manual transmission, LPG & DIesel, 158 kW (215 PS), Fuel consumption combined: 8.9 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$48.500</div>
-              <span class="offer_miliage">18,085 KM</span>
-              <span class="offer_regist">03/2011</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="offer_item clearfix">
-          <div class="offer_image"><a href="producto.php"><%= image_tag "prod_img_08.jpg" %></a></div>
-          <div class="offer_aside">
-            <h2><a href="producto.php">Volkswagen Touareg V6 TDI R-Line</a></h2>
-            <div class="offer_descr">
-              <p>Off-road Vehicle/Pickup Truck, Used vehicle, Automatic transmission, Diesel, 408 kW (555 PS), Fuel consumption combined: 15.4 l/100 km</p>
-            </div>
-            <div class="offer_data">
-              <div class="offer_price">$63.300</div>
-              <span class="offer_miliage">7,785 KM</span>
-              <span class="offer_regist">12/2011</span>
-            </div>
-          </div>
-        </div>
+        <% end %>
 
       </div>
       <!--/ offers list -->
@@ -199,12 +96,9 @@
       <div class="widget-container widget_popular">
         <h3 class="widget-title">Últimos Vehículos</h3>
         <ul>
-          <li><a href="#">Luxury Compact SUVs: the new</a></li>
-          <li><a href="#">Ferrari has unveiled its £1m Enzo</a></li>
-          <li><a href="#">We’ve tested the 2013 Mercedes-Benz</a></li>
-          <li><a href="#">2013 Subaru BRZ Limited vs. Route</a></li>
-          <li><a href="#">Sed ut perspiciatis unde omnis iste natus error sit</a></li>
-          <li><a href="#">Totam rem aperiam eaque</a></li>
+          <% @last_vehicles.each do |vehicle| %>
+            <li><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></li>
+          <% end %>
         </ul>
       </div>
 
