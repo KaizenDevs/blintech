@@ -3,9 +3,7 @@
 <div class="container">
   <h1>Listando Vehículos</h1>
   <p>Recuerda crear marcas aquí antes de crear vehículos.</p>
-  <%= link_to new_vehicle_path do %>
-    <button class="btn-success" style="margin-bottom: 5px"><span class="fa fa-plus"> Nuevo Vehículo</span></button>
-  <% end %>
+  <%= link_to ' Nuevo Vehículo'.html_safe, new_vehicle_path, class: 'fa fa-plus btn-edit' %>
   <table class="table">
     <tr>
       <th>Nombre</th>

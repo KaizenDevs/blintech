@@ -272,7 +272,7 @@ hr { border: solid #d4d4d4; border-width: 1px 0 0; clear: both; margin: 10px 0 2
 
 /* Links
 ===================================*/
-a, a:visited { color: #c70412; text-decoration: none; outline:none; }
+a { color: #c70412; text-decoration: none; outline:none; }
 a:hover, a:focus { color: #bf0411; }
 
 /* Lists
@@ -917,6 +917,7 @@ p.wp-caption-text, .frame_caption {
 	top:0;
 	z-index:5;
 	border-bottom: solid 2px #c70412;
+	background: #111;
 	}
 
 .header_top .container {
@@ -5629,3 +5630,26 @@ input.btn-submit,
 
 .valid{border:1px solid #70A41B!important; overflow:hide;} /*#70A41B*/
 .error{overflow:hide; border:1px solid #c70412!important; }
+
+a.btn-edit{
+
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #3761D5;
+	border-radius: 6px;
+	color: #3761D5;
+	font-weight: 600;
+	display: inline-block;
+	margin: 10px 0;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+a.btn-edit:hover{
+	background: #3761D5;
+	color: white !important;
+	text-decoration: none;
+}
+
+a.btn-edit:visited{
+	color: #3761D5;
+}
