@@ -87,7 +87,7 @@
     content4: '<em>Teléfono:</em> <span>+57 (4) 444 50 00</span>',
     content5: '<em>Email:</em> <a href="mailto:contact@newssetter.com">info@blintech.com.co</a>',
     content6: 'Acerca de nuestra empresa',
-    content7: 'Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus eegx vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet. Curabitur vulprutate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet.'    
+    content7: 'Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus eegx vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet. Curabitur vulprutate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet.'
     )
 
   Opinion.create([
@@ -101,3 +101,5 @@
     {id:3, :image => File.new("#{Rails.root}/app/assets/images/slider_1_3.jpg"),:name => "Image Seed"},
     {id:4, :image => File.new("#{Rails.root}/app/assets/images/slider_1_4.jpg"),:name => "Image Seed"}
   ])
+
+  Slider.create(id: 5, name: "Video Sección Blindaje", video: "http://player.vimeo.com/video/51333291?byline=0&amp;portrait=0&amp;title=0" )

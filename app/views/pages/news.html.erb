@@ -9,8 +9,8 @@
 <!-- breadcrumbs -->
 <div class="middle_row row_white breadcrumbs">
 	<div class="container">
-		<p><a href="index.php">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="blog.php">Blog</a>  <span class="separator">&rsaquo;</span> </p>
-		<a href="contacto.php" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
+		<p><a href="<%= root_path(id: 1) %>">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="<%= pages_news_path %>">Blog</a>  <span class="separator">&rsaquo;</span> </p>
+		<a href="<%= pages_contact_path(id: 6) %>" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
 	</div>
 </div>
 <!--/ breadcrumbs -->
@@ -50,8 +50,8 @@
 			<div class="tf_pagination">
 				<div class="inner">
 					<span class="page-numbers page_current">
-						<% if @news.empty? %>            
-						  <span class="manage_title"><strong>No hay noticias en nuestro registro</strong></span> 
+						<% if @news.empty? %>
+						  <span class="manage_title"><strong>No hay noticias en nuestro registro</strong></span>
 						<% else %>
 						  <span class="manage_title"><strong><%= will_paginate @news, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
 						<% end %>

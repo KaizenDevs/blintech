@@ -49,6 +49,7 @@
 
           <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
           <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
+          <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Categoría de blindaje:" %>
           <%= f.text_area :description, label: "Descripción:" %>
           <%= f.submit form_submit %>
       </div>
