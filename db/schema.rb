@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821001827) do
+ActiveRecord::Schema.define(version: 20150821015747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,8 +151,14 @@ ActiveRecord::Schema.define(version: 20150821001827) do
     t.integer  "gas"
     t.integer  "transmission"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.text     "description1"
+    t.text     "description2"
+    t.text     "internal_features"
+    t.text     "external_features"
+    t.text     "safety_features"
+    t.text     "extras"
   end
 
   add_foreign_key "news", "categories"
