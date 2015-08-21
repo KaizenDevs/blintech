@@ -1,3 +1,8 @@
+	<style>
+	div.cusel.select_styled.cuselScrollArrows {
+		width: 100px;
+	}
+	</style>
 	<!-- header -->
 	<div class="header header_thin" style="background-image:url(images/temp/slider_1_1.jpg)">
 
@@ -142,7 +147,6 @@
 		<li><a href="#t_overview"><span>RESUMEN</span></a></li>
 		<li><a href="#t_description"><span>DESCRIPCIÓN</span></a></li>
 		<li><a href="#t_contacts"><span>CONTÁCTENOS</span></a></li>
-		<li><a href="#t_send"><span>ENVIAR A UN AMIGO</span></a></li>
 	</ul>
 	<div id="t_overview" class="tabcontent clearfix">
 		<div class="col col_1_4">
@@ -199,89 +203,44 @@
 	<div id="t_description" class="tabcontent clearfix">
 		<h3>Descripción</h3>
 		<div class="col col_1_2 alpha">
-			<p>Hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse.</p>
-
-			<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet.</p>
+			<p><%= @vehicle.description %></p>
 		</div>
-		<div class="col col_1_2">
-			<p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet acus lacus orna acus lacus orna.</p>
-
-			<p>Curabitur Vulputate, Ligula Lacinia Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet regularsao.</p>
-		</div>
-
 	</div>
 
 	<div id="t_contacts" class="tabcontent clearfix">
-		<form action="#" class="details_form ajax_form" id="offer_contact">
-			<div class="form_col_1">
-				<div class="row input_styled inlinelist">
-					<label class="label_title">Formulario:</label>
-					<input type="radio" name="title" value="mrs" id="mrs" checked> <label for="mrs">Señora</label>
-					<input type="radio" name="title" value="mr" id="mr"> <label for="mr">Señor.</label>
-					<input type="radio" name="title" value="company" id="company"> <label for="company">Empresa</label>
-				</div>
-				<div class="row">
-					<label class="label_title">Nombre completo:</label>
-					<input type="text" name="yourname" id="name" class="inputField required" value="">
-				</div>
-				<div class="row">
-					<label class="label_title">e-mail:</label>
-					<input type="text" name="email" id="email" class="inputField required" value="">
-				</div>
-			</div>
-			<!--/ form col 1 -->
-			<div class="form_col_2">
-				<div class="row">
-					<label class="label_title">Mensaje:</label>
-					<textarea rows="4" cols="5" name="message" id="message" class="textareaField required"></textarea>
-				</div>
-				<div class="row rowSubmit">
-					<a href="#" class="link_reset" onclick="document.getElementById('offer_contact').reset();return false">Limpiar todos los campos</a>
-					<input type="submit" value="Enviar Mensaje" id="send" class="btn_send">
-				</div>
-			</div>
-			<!--/ form col 2 -->
-
-		</form>
+		<%= form_for @contact do |contact| %>
+      <div class="form_col_1">
+        <div class="row alignleft field_text">
+          <%= contact.label :name, "Nombre:", class: "label_title" %>
+          <%= contact.text_field :name, required: true, class: "inputField required" %>
+        </div>
+        <div class="row alignleft field_text omega">
+          <%= contact.label :email, "Email:", class: "label_title" %>
+          <%= contact.text_field :email, required: true, class: "inputField required" %>
+        </div>
+        <div class="row field_select alignleft" style="width:100px;">
+          <%= contact.label :reason, "Motivo:", class: "label_title" %><br>
+          <%= contact.select :reason, options_for_select(Contact.reasons.keys), {}, { :class => "select_styled" } %>
+        </div>
+        <div class="row field_text alignleft omega">
+          <%= contact.label :phone, "Teléfono:", class: "label_title" %>
+          <%= contact.text_field :phone, class: "inputField" %>
+        </div>
+      </div>
+      <div class="form_col_2">
+        <div class="row">
+          <%= contact.label :message, "Mensaje:", class: "label_title" %>
+          <%= contact.text_area :message, class: "textareaField required", required: true %>
+        </div>
+      </div>
+      <div class="form_col_3">
+        <a onclick="document.getElementById('new_contact').reset();return false" href="#" class="link-reset">Limpiar todos los campos</a>
+        <div class="row rowSubmit clearfix">
+          <%= contact.submit "Enviar mensaje", class: "btn btn-submit" %>
+        </div>
+      </div>
+	  <% end %>
 	</div>
-
-	<div id="t_send" class="tabcontent clearfix feedback_ajax_form">
-		<form action="#" class="details_form" id="offer_send_friend">
-			<div class="form_col_1">
-				<div class="row">
-					<label class="label_title">Tu e-mail:</label>
-					<input type="text" name="email_from" name="email_from" class="inputField required" value="">
-				</div>
-				<div class="row">
-					<label class="label_title">E-mail de tu amigo:</label>
-					<input type="text" name="email" id="email_f" class="inputField required" value="">
-				</div>
-			</div>
-			<!--/ form col 1 -->
-			<div class="form_col_2 col_thin">
-				<div class="row">
-					<label class="label_title">Mensaje:</label>
-					<textarea rows="4" cols="5" name="message" name="message_f" class="textareaField required">Check out this cool car:
-						http://mobile.de/auto-inserat/mercedes-benz-ml-63</textarea>
-					</div>
-					<div class="row rowSubmit">
-						<a href="#" class="link_reset" onclick="document.getElementById('offer_send_friend').reset();return false">Reset All Form Fields</a>
-						<input type="submit" value="SEND MESSAGE" id="send_f" class="btn_send">
-					</div>
-				</div>
-				<!--/ form col 2 -->
-				<div class="form_col_3">
-					<div class="row">
-						<label class="label_title">Compartir en:</label>
-						<a href="#" class="btn_share"><img src="images/btn_share_tweet.png" alt=""></a>
-						<a href="#" class="btn_share"><img src="images/btn_share_like.png" alt=""></a>
-						<a href="#" class="btn_share"><img src="images/btn_share_g1.png" alt=""></a>
-					</div>
-				</div>
-				<!--/ form col 3 -->
-
-			</form>
-		</div>
 	</div>
 	<!--/ details tabs -->
 
