@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
               <% @vehicle.vehicle_images.each do |vehicle_image| %>
-                <td><%= image_tag(vehicle_image.image.url(:medium)) %></td>
+                <td><%= image_tag(vehicle_image.image.url(:thumb)) %></td>
               <% end %>
                 </tr>
               </table>
@@ -50,7 +50,13 @@
           <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
           <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
           <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Categoría de blindaje:" %>
-          <%= f.text_area :description, label: "Descripción:" %>
+          <%= f.text_area :description, label: "Descripción General:" %>
+          <%= f.text_area :description1, label: "Descripción Columna 1 - Para vista del vehiculo:" %>
+          <%= f.text_area :description2, label: "Descripción Columna 2 - Para vista del vehiculo:" %>
+          <%= f.text_area :internal_features, label: "Caracteristicas internas (Separe cada una de estas con punto y coma. Ej: Luces;Cojineria;Frenos):" %>
+          <%= f.text_area :external_features, label: "Caracteristicas externas (Separe cada una de estas con punto y coma. Ej: Luces;Cojineria;Frenos):" %>          
+          <%= f.text_area :safety_features, label: "Caracteristicas de seguridad (Separe cada una de estas con punto y coma. Ej: Luces;Cojineria;Frenos):" %>
+          <%= f.text_area :extras, label: "Extras (Separe cada una de estas con punto y coma. Ej: Luces;Cojineria;Frenos):" %>
           <%= f.submit form_submit %>
       </div>
     </div>
