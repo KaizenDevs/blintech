@@ -7,7 +7,7 @@
 <%= bootstrap_form_for @category do |f| %>
     <div class="row">
       <div class="col-md-6">
-          <%= f.text_field :name, label: "Nombre:" %>
+          <%= f.text_field :name, required: true, label: "Nombre:" %>
           <%= f.submit form_submit %>
       </div>
     </div>

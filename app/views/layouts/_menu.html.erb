@@ -21,8 +21,8 @@
         <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
 
         <li class="menu-level-0">
-        <%= link_to "<span>Contacto <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %>
-        <% if user_signed_in? %><a style="float:right;" href="/editor/pages/contact"><span><i class='fa fa-edit'></i></span></a><% end %>
+          <%= link_to "<span>Contacto <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %>
+          <% if user_signed_in? %><a href="/editor/pages/contact"><i class='fa fa-edit'></i></a><% end %>
         </li>
       </ul>
       <% if user_signed_in? %>
@@ -51,8 +51,13 @@
     padding:0;
     margin: 3px 10px 0 5px;
   }
-  #topmenu ul li.edit-icon {
-    margin:0;
-  }
+   #topmenu ul li.last a{
+    display:inline-block;
+    border: none;
+    background:none;
+    margin: -3px -25px 0 5px;
+    padding:0;
+   }
+  #topmenu ul li.edit-icon { margin:0; }
 </style>
 <% end %>
