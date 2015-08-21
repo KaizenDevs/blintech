@@ -1,56 +1,38 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  namespace :mercury do
+    resources :images
+  end
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  mount Mercury::Engine => '/'
+  root to: 'pages#index', id: '1'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'pages/company', id: '2'
+  get 'pages/shield', id: '3'
+  get 'pages/rent', id: '4'
+  get 'pages/maintenance', id: '5'
+  get 'pages/news'
+  get 'pages/contact', id: '6'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  devise_for :users
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  devise_scope :user do
+    get "/admin" => "devise/sessions#new"
+    get "/sign_up" => "devise/registrations#new"
+  end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  resources :opinions
+  resources :categories
+  resources :news
+  resources :sliders, only: [:edit,:update, :index]
+  resources :contacts
+  resources :vehicles
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  put '/', to: 'pages#save_page', id: '1'
+  put '/pages/company', to: 'pages#save_page', id: '2'
+  put '/pages/shield', to: 'pages#save_page', id: '3'
+  put '/pages/rent', to: 'pages#save_page', id: '4'
+  put '/pages/maintenance', to: 'pages#save_page', id: '5'
+  put '/pages/contact', to: 'pages#save_page', id: '6'
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

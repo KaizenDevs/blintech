@@ -1,0 +1,345 @@
+	<style>
+	div.cusel.select_styled.cuselScrollArrows {
+		width: 100px;
+	}
+	</style>
+	<!-- header -->
+	<div class="header header_thin" style="background-image:url(images/temp/slider_1_1.jpg)">
+
+		<div class="header_title">
+			<h1><%= @vehicle.name %></h1>
+		</div>
+
+	</div>
+	<!--/ header -->
+
+	<!-- breadcrumbs -->
+	<div class="middle_row row_white breadcrumbs">
+		<div class="container">
+			<p><a href="<%= root_path %>">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="<%= pages_rent_path %>p">Alquiler</a> <span class="separator">&rsaquo;</span> <%= @vehicle.name %> </p>
+			<a href="<%= pages_rent_path %>" class="link_back">Página anterior</a>
+		</div>
+	</div>
+	<!--/ breadcrumbs -->
+
+	<!-- middle -->
+	<div id="middle" class="full_width">
+		<div class="container clearfix">
+
+			<!-- content -->
+			<div class="content">
+
+				<div class="offer_details clearfix">
+					<!-- offer left -->
+					<div class="offer_gallery">
+						<div class="gallery_images">
+							<div id="gallery_images">
+									<% @vehicle.vehicle_images.each do |vehicle_image| %>
+										<div class="gallery_image_item">
+											<img src="<%= vehicle_image.image.url %>" alt="">
+											<a href="<%= vehicle_image.image.url %>" data-rel="prettyPhoto[gal]">
+												<span><%= @vehicle.name %> <em class="ico_large"></em></span></a>
+											</div>
+									<% end %>
+								</div>
+							</div>
+
+											<div class="gallery_thumbs">
+												<div id="gallery_thumbs">
+													<% @vehicle.vehicle_images.each do |vehicle_images| %>
+														<a href="#"><img src="<%= vehicle_images.image.url(:rent_show) %>" alt=""></a>
+													<% end %>
+												</div>
+												<a href="#" class="prev" id="gallery_thumbs_prev"></a>
+												<a href="#" class="next" id="gallery_thumbs_next"></a>
+											</div>
+
+											<script>
+											jQuery(document).ready(function($) {
+												function carGalleryInit() {
+													$('#gallery_thumbs').children().each(function(i) {
+														$(this).addClass( 'itm'+i );
+														$(this).click(function() {
+															$('#gallery_images').trigger('slideTo',[i, 0, true]);
+															$('#gallery_thumbs a').removeClass('selected');
+															$(this).addClass('selected');
+															return false;
+														});
+													});
+													$('#gallery_thumbs a.itm0').addClass('selected');
+
+													$('#gallery_images').carouFredSel({
+														infinite: false,
+														circular: false,
+														auto: false,
+														width: '100%',
+														scroll: {
+															items : 1,
+															fx : "crossfade"
+														}
+													});
+													$('#gallery_thumbs').carouFredSel({
+														prev : "#gallery_thumbs_prev",
+														next : "#gallery_thumbs_next",
+														infinite: false,
+														circular: false,
+														auto: false,
+														width: '100%',
+														scroll: {
+															items : 1
+														}
+													});
+												}
+
+												$(window).load(function() {
+													carGalleryInit();
+												});
+												var resizeTimer;
+												$(window).resize(function() {
+													clearTimeout(resizeTimer);
+													resizeTimer = setTimeout(carGalleryInit, 100);
+												});
+											});
+	</script>
+
+</div>
+<!--/ offer left -->
+<!-- offer right -->
+<div class="offer_aside">
+	<div class="offer_price">
+		<strong><%= @vehicle.name %></strong><br>
+		<em>Nivel de blindaje: <%= @vehicle.shielding %></em>
+
+		<a href="<%= pages_contact_path %>" class="btn_save">Cotizar</a>
+	</div>
+
+	<div class="offer_data">
+		<ul>
+			<li><%= @vehicle.engine %></li>
+			<li><%= @vehicle.gas.capitalize %></li>
+			<li><%= @vehicle.transmission.capitalize %></li>
+		</ul>
+	</div>
+
+	<div class="offer_descr">
+		<p>
+			<%= @vehicle.description %>
+		</p>
+	</div>
+
+	<div class="offer_specification">
+		<ul>
+			<li><span class="spec_name">Capacidad de Motor:</span> <strong class="spec_value"><%= @vehicle.engine %></strong></li>
+			<li><span class="spec_name">Tanque tipo:</span> <strong class="spec_value"><%= @vehicle.gas.capitalize %></strong></li>
+			<li><span class="spec_name">Cambios:</span> <strong class="spec_value"><%= @vehicle.transmission.capitalize %></strong> </li>
+			<li><span class="spec_name">Blindaje:</span> <strong class="spec_value">Nivel Blindaje</strong> <%= @vehicle.shielding %></li>
+
+		</ul>
+	</div>
+
+</div>
+<!--/ offer right -->
+</div>
+
+<!-- details tabs -->
+<div class="details_tabs">
+	<ul class="tabs linked">
+		<li><a href="#t_overview"><span>RESUMEN</span></a></li>
+		<li><a href="#t_description"><span>DESCRIPCIÓN</span></a></li>
+		<li><a href="#t_contacts"><span>CONTÁCTENOS</span></a></li>
+	</ul>
+	<div id="t_overview" class="tabcontent clearfix">
+		<div class="col col_1_4">
+			<h3>Interior Features</h3>
+			<ul>
+				<li>Full Leather Interior</li>
+				<li>Central locking</li>
+				<li>Automatic air conditioning</li>
+				<li>Cruise control</li>
+				<li>Electric heated seats</li>
+				<li>Electric windows</li>
+				<li>Navigation system</li>
+				<li>Parking sensors</li>
+				<li>Power Assisted Steering</li>
+			</ul>
+		</div>
+		<div class="col col_1_4">
+			<h3>Exterior Features</h3>
+			<ul>
+				<li> 20” Alloy wheels</li>
+				<li>Pearl White metallic paint</li>
+				<li>Automatic air conditioning</li>
+				<li>Trailer coupling</li>
+				<li>Sunroof</li>
+				<li>Double Exhaust</li>
+				<li>Electric Mirrors</li>
+			</ul>
+		</div>
+		<div class="col col_1_4">
+			<h3>Safety Features</h3>
+			<ul>
+				<li>ABS</li>
+				<li>ESP with EDL + ASR</li>
+				<li>Four Wheel Drive</li>
+				<li>Immobilizer</li>
+				<li>Xenon headlights</li>
+				<li>Passenger Airbag</li>
+				<li>Curtain Airbags</li>
+				<li>Drivers knee airbag</li>
+			</ul>
+		</div>
+		<div class="col col_1_4">
+			<h3>Extras</h3>
+			<ul>
+				<li>Full Service History</li>
+				<li>2 year Warranty</li>
+				<li>CD / DVD / MP3 Audio</li>
+				<li>Auxiliary Audio Input</li>
+				<li>Vehicle Anti-Theft</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="t_description" class="tabcontent clearfix">
+		<h3>Descripción</h3>
+		<div class="col col_1_2 alpha">
+			<p><%= @vehicle.description %></p>
+		</div>
+	</div>
+
+	<div id="t_contacts" class="tabcontent clearfix">
+		<%= form_for @contact do |contact| %>
+      <div class="form_col_1">
+        <div class="row alignleft field_text">
+          <%= contact.label :name, "Nombre:", class: "label_title" %>
+          <%= contact.text_field :name, required: true, class: "inputField required" %>
+        </div>
+        <div class="row alignleft field_text omega">
+          <%= contact.label :email, "Email:", class: "label_title" %>
+          <%= contact.text_field :email, required: true, class: "inputField required" %>
+        </div>
+        <div class="row field_select alignleft" style="width:100px;">
+          <%= contact.label :reason, "Motivo:", class: "label_title" %><br>
+          <%= contact.select :reason, options_for_select(Contact.reasons.keys), {}, { :class => "select_styled" } %>
+        </div>
+        <div class="row field_text alignleft omega">
+          <%= contact.label :phone, "Teléfono:", class: "label_title" %>
+          <%= contact.text_field :phone, class: "inputField" %>
+        </div>
+      </div>
+      <div class="form_col_2">
+        <div class="row">
+          <%= contact.label :message, "Mensaje:", class: "label_title" %>
+          <%= contact.text_area :message, class: "textareaField required", required: true %>
+        </div>
+      </div>
+      <div class="form_col_3">
+        <div class="row rowSubmit clearfix">
+          <%= contact.submit "Enviar mensaje", class: "btn btn-submit" %>
+        </div>
+      </div>
+	  <% end %>
+	</div>
+	</div>
+	<!--/ details tabs -->
+
+	<div class="text_box">
+		<p>
+			<a href="#" class="btn btn_big btn_white"><span>Llámanos: <strong>+57 440 50 00</strong></span></a>
+			<a href="#" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
+		</p>
+		<p><em>lectus tempor non enim, quisque in consequat tincidunt, justo donec,<a href="#">Privacy Policy</a> for more info</em></p>
+	</div>
+
+</div>
+<!--/ content -->
+
+
+</div>
+</div>
+<!--/ middle -->
+
+<!-- latest_offers -->
+<div class="middle_row latest_offers">
+	<div class="container clearfix">
+		<h2>Conozca más de nuestra empresa</h2>
+	</div>
+
+	<div id="latest_offers">
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_01.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_02.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_03.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_04.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_05.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_06.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_07.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_08.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_09.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+	</div>
+
+	<a class="prev" id="latest_offers_prev" href="#"></a>
+	<a class="next" id="latest_offers_next" href="#"></a>
+
+	<script>
+	jQuery(document).ready(function($) {
+		var screenRes = $(window).width();
+
+		$('#latest_offers').carouFredSel({
+			prev : "#latest_offers_prev",
+			next : "#latest_offers_next",
+			infinite: false,
+			circular: true,
+			auto: false,
+			width: '100%',
+			scroll: {
+				items : 1,
+				onBefore: function (data) {
+					if (screenRes > 900) {
+						data.items.visible.eq(0).animate({opacity: 0.15},300);
+						data.items.old.eq(-1).animate({opacity: 1},300);
+						data.items.visible.eq(-1).animate({opacity: 0.15},300);
+					}
+				},
+				onAfter: function (data) {
+					if (screenRes > 900) {
+						data.items.old.eq(0).animate({opacity: 1},300);
+					}
+				}
+			}
+		});
+		if (screenRes > 900) {
+			var vis_items = $("#latest_offers").triggerHandler("currentVisible");
+			vis_items.eq(-1).animate({opacity: 0.15},100);
+			vis_items.eq(0).animate({opacity: 0.15},100);
+		}
+	});
+	</script>
+</div>
+	    <!--/ latest_offers -->

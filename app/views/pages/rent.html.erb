@@ -1,0 +1,110 @@
+
+<!-- header -->
+<div class="header header_thin" style="background-image:url( <%= asset_path('slider_1_2.jpg') %> )">
+
+  <div data-mercury="full" id="content1" class="header_title">
+    <%= @page.content1.html_safe %>
+  </div>
+
+</div>
+<!--/ header -->
+
+<!-- search -->
+
+<!--/ search -->
+
+<!-- middle -->
+<div id="middle" class="cols2">
+  <div class="container clearfix">
+
+    <div data-mercury="full" id="content2" class="title2">
+      <%= @page.content2.html_safe %>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+
+      <!-- sorting, pages -->
+      <div class="list_manage">
+        <div class="inner clearfix">
+          <div class="pages">
+            <% if @vehicles.empty? %>            
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% else %>
+              <%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+      <!--/ sorting, pages -->
+
+      <!-- offers list -->
+      <div class="offer_list clearfix">
+
+        <% @vehicles.each do |vehicle| %>
+          <div class="offer_item clearfix">
+            <div class="offer_image">
+            <a href="<%= vehicle_path(vehicle) %>"><%= image_tag vehicle.vehicle_images.first.image.url(:rent) %></a></div>
+            <div class="offer_aside">
+              <h2><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></h2>
+              <div class="offer_descr">
+                <p><%= vehicle.description %></p>
+              </div>
+              <div class="offer_data">
+                <div class="offer_price">Blindaje <%= vehicle.shielding %></div>
+                <span class="offer_miliage"><%= vehicle.transmission.capitalize %></span>
+                <span class="offer_regist"><%= vehicle.gas.capitalize %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+      <!--/ offers list -->
+
+      <!-- pagination -->
+      <div class="tf_pagination">
+        <div class="inner">
+          <span class="page-numbers page_current">
+            <% if @vehicles.empty? %>            
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% else %>
+              <span class="manage_title"><strong><%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
+            <% end %>
+          </span> 
+        </div>
+      </div>
+      <!--/ pagination -->
+
+    </div>
+    <!--/ content -->
+
+    <!-- sidebar -->
+    <div class="sidebar">
+      <%#= image_tag "banner-282×579.jpg", class: "frame_right" %>
+
+      <img id="page_image1" data-mercury="image"  src="<%= render inline: Page.find(4).image1 %>">
+
+      <div class="clear"></div>
+      <div class="widget-container widget_popular">
+        <h3 class="widget-title">Últimos Vehículos</h3>
+        <ul>
+          <% @last_vehicles.each do |vehicle| %>
+            <li><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <!--/ filter -->
+
+      <div class="box_bot"></div>
+    </div>
+  </div>
+  <!--/ sidebar -->
+
+</div>
+</div>
+<style>
+  .cuselScrollArrows{width:100px;}
+</style>

@@ -1,0 +1,30 @@
+@import "style";
+@import "screen";
+@import "custom";
+@import "font-awesome";
+@import 'cusel';
+@import "settings";
+@import 'jslider';
+@import 'prettyPhoto';
+@import 'shCore';
+@import 'shThemeDefault';
+@import url('http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,600,700|PT+Serif+Caption:400,400italic');
+
+.alert {
+  right: 15px;
+  top: 105px;
+  z-index: 1100;
+  position: fixed;
+  span{
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0,0,0,0.07);
+    // color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    z-index: 9999;
+  }
+}

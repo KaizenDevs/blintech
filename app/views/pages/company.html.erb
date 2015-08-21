@@ -1,0 +1,63 @@
+<!-- header -->
+<div class="header header_thin" style="background-image:url( <%= asset_path('slider_1_2.jpg') %> )">
+  <div class="header_title">
+    <h1 id="content1" data-mercury="full"><%= @page.content1.html_safe %></h1>
+  </div>
+</div>
+<!--/ header -->
+
+<!-- breadcrumbs -->
+<div class="middle_row row_white breadcrumbs">
+  <div class="container">
+    <p><%= link_to "Inicio", root_path %>    <span class="separator">&rsaquo;</span> <span class="current">Empresa</span></p>
+    <%= link_to "<i class='fa fa-user'></i> Contáctenos".html_safe, pages_contact_path, class: "link_search" %>
+  </div>
+</div>
+<!--/ breadcrumbs -->
+
+<!-- middle -->
+<div id="middle" class="full_width">
+  <div class="container clearfix">
+    <!-- content -->
+    <div class="content">
+      <div class="entry">
+        <h2 id="content2" data-mercury="full"><%= @page.content2.html_safe %></h2>
+        <div class="wp-caption alignright" style="width:350px">
+          <img id="page_image1" data-mercury="image" width="350" height="215"  src="<%= render inline: @page.image1 %>">
+          <p class="wp-caption-text">Imagen coporativa</p>
+        </div>
+
+        <p id="content3" data-mercury="full"><%= @page.content3.html_safe %></p>
+        <p id="content4" data-mercury="full"><%= @page.content4.html_safe %></p>
+        <div class="divider_space_thin"></div>
+
+        <h2 id="content5" data-mercury="full"><%= @page.content5.html_safe %></h2>
+
+        <div class="wp-caption alignleft" style="width:350px">          
+          <img id="page_image2" data-mercury="image" width="350" height="210"  src="<%= render inline: @page.image2 %>">
+          <p class="wp-caption-text">Imagen coporativa</p>
+        </div>
+
+        <p id="content6" data-mercury="full"><%= @page.content6.html_safe %></p>
+        <p id="content7" data-mercury="full"><%= @page.content7.html_safe %></p>
+        <p id="content8" data-mercury="full"><%= @page.content8.html_safe %></p>
+        <div class="divider_space_thin"></div>
+
+        <div class="center">
+          <h2 id="content9" data-mercury="full"><%= @page.content9.html_safe %></h2>
+          <div class="row clearfix">
+            <div class="col col_1_2">
+              <p id="content10" data-mercury="full"><%= @page.content10.html_safe %></p>
+            </div>
+
+            <div class="col col_1_2">
+              <p id="content11" data-mercury="full"><%= @page.content11.html_safe %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ content -->
+  </div>
+</div>
+<!--/ middle -->

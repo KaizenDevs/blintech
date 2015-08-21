@@ -1,0 +1,185 @@
+
+<!-- header -->
+<div class="header header_thin" style="background-image:url( <%= asset_path('slider_1_2.jpg') %> )">
+
+  <div class="header_title">
+    <h1 id="content18" data-mercury="full"><%=raw @page.content18 %></h1>
+  </div>
+
+</div>
+<!--/ header -->
+
+<!-- breadcrumbs -->
+<div class="middle_row row_white breadcrumbs">
+  <div class="container">
+    <p><a href="/">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="#"></a> <span class="current">Blindaje</span></p>
+    <%= link_to "<i class='fa fa-user'></i> Contáctenos".html_safe, pages_contact_path, class: "link_search" %>
+  </div>
+</div>
+<!--/ breadcrumbs -->
+
+<!-- middle -->
+<div id="middle" class="full_width">
+  <div class="container clearfix">
+
+    <!-- content -->
+    <div class="content">
+
+      <div class="entry">
+
+        <div class="text_notice" id="content1" data-mercury="full">
+          <%=raw @page.content1 %>
+        </div>
+
+          <!-- pricing table -->
+          <div class="pricing_box">
+            <ul>
+              <li class="price_col price_col_light_blue">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel II</strong>
+
+                    <span class="price"><div id="page_image1" data-mercury="image">
+                      <%= image_tag @page.image1, class: "frame_right" %></div></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul style="height: 220px">
+
+                      <li><span id="content2" data-mercury="full"><%=raw @page.content2 %></span></li>
+                      <li id="content3" data-mercury="full"><%=raw @page.content3 %></li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_blue col_active">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel III</strong>
+                      <span class="price"><span id="page_image2" data-mercury="image"><%= image_tag @page.image2, class: "frame_right" %></span></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li><span id="content4" data-mercury="full"><%=raw @page.content4 %></span></li>
+                      <li><span id="content5" data-mercury="full"><%=raw @page.content5 %></span></li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_light_red">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel IV</strong>
+
+                    <span class="price" id="page_image3" data-mercury="image"><%= image_tag @page.image3, class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li><span id="content6" data-mercury="full"><%=raw @page.content6 %></span></li>
+                      <li><span id="content7" data-mercury="full"><%=raw @page.content7 %></span></li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="price_col price_col_red">
+                <div class="price_item">
+                  <div class="price_col_head">
+                    <strong>Nivel V</strong>
+                    <span class="price" id="page_image4" data-mercury="image"><%= image_tag @page.image4, class: "frame_right" %></span>
+                  </div>
+                  <div class="price_col_body">
+                    <ul>
+
+                      <li><span id="content8" data-mercury="full"><%=raw @page.content8 %></span></li>
+                      <li><span id="content9" data-mercury="full"><%=raw @page.content9 %></span></li>
+                    </ul>
+
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <!--/ pricing table -->
+
+
+
+          <div class="header_title">
+            <h1 id="content10" data-mercury="full"><%=raw @page.content10 %></h1>
+          </div>
+
+          <div class="slider slider_small" style="padding-left:25%; padding-bottom:5%; padding-top:5%">
+            <div class="slider_container clearfix" id="slider1">
+
+              <div class="slider-item video_slide">
+                <iframe src="<%= @video %>?byline=0&amp;portrait=0&amp;title=0" width="430" height="242" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
+              <div class="slider-item">
+
+                <a href="#" id="page_image5" data-mercury="image"><%= image_tag @page.image5 %></a>
+              </div>
+              <div class="slider-item text_slide">
+                <div class="inner">
+                  <h2 id="content11" data-mercury="full"><%=raw @page.content11 %></h2>
+                  <p id="content12" data-mercury="full"><%=raw @page.content12 %> </p>
+                  <p id="content13" data-mercury="full"><%=raw @page.content13 %></p>
+                </div>
+              </div>
+              <div class="slider-item" id="page_image6" data-mercury="image">
+                <%= image_tag @page.image6 %>
+              </div>
+            </div>
+            <div class="slider_pagination" id="slider_pag"></div>
+          </div>
+
+          <script>
+            jQuery(document).ready(function($) {
+              $('#slider1').carouFredSel({
+                pagination : "#slider_pag",
+                infinite: false,
+                auto: false,
+                height: "auto",
+                items: 1,
+                scroll: {
+                  fx: "fade",
+                  duration: 200
+                }
+              });
+            });
+          </script>
+
+          <div class="row clearfix">
+            <div class="col col_1_2">
+              <h4 id="content14" data-mercury="full"><%=raw @page.content14 %></h4>
+
+              <p><div>
+                <img src="<%= asset_path(@page.image7) %>" width="312px" class="frame_right" id="page_image7" data-mercury="image">
+              </div><div id="content15" data-mercury="full"><%=raw @page.content15 %></div>  </p>
+            </div>
+            <div class="col col_1_2">
+              <h4 id="content16" data-mercury="full"><%=raw @page.content16 %></h4>
+              <p><div><img src="<%= asset_path(@page.image8) %>" width="312px" class="frame_right" id="page_image8" data-mercury="image"></div><div id="content17" data-mercury="full"><%=raw @page.content17 %></div>  </p>
+            </div>
+
+          </div>
+
+        </div>
+        <!--/ content -->
+
+      </div>
+    </div>
+    <!--/ middle -->
+    <div class="clear"></div>
+  </div>

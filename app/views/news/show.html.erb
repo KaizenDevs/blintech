@@ -1,0 +1,98 @@
+<!-- header -->
+<div class="header header_thin" style="background-image:url(images/temp/slider_1_1.jpg)">
+
+  <div class="header_title">
+    <strong>Bienvenido <span>a nuestro blog</span> Blintech</strong>
+  </div>
+
+</div>
+<!--/ header -->
+
+<!-- breadcrumbs -->
+<div class="middle_row row_white breadcrumbs">
+  <div class="container">
+    <p><a href="<%= root_path(id: 1) %>">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="<%= pages_news_path %>">Blog</a>  <span class="separator">&rsaquo;</span> </p>
+    <a href="<%= pages_contact_path(id: 6) %>" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
+  </div>
+</div>
+<!--/ breadcrumbs -->
+
+<!-- middle -->
+<div id="middle" class="cols2">
+  <div class="container clearfix">
+    <!-- content -->
+    <div class="content">
+
+      <!-- post details -->
+      <article class="post-item post-detail">
+        <div class="post-title">
+          <h1><%= @news.title %></h1>
+          </div>
+          <div class="post-aside clearfix">
+            <div class="post-image"><a href="blog-details.html"><%= image_tag(@news.image.url(:blog)) %></a></div>
+
+            <div class="post-meta">
+              <div class="info_row"><span>Escrito en:</span> <%= @news.created_at.strftime("%m. %d. %y.") %></div>
+              <div class="info_row"><span>Por:</span> <%= @news.author %></div>
+            </div>
+
+            <div class="entry">
+              <%=raw @news.content %>
+            </div>
+
+            <!-- author description -->
+            <div class="author-description author_box_bottom">
+              <div class="author-text">
+                <p><span class="author-title">Acerca de Nosotros:</span> <%= @news.about %></p>
+                <div class="author-name"><strong><%= @news.author %></strong></div>
+              </div>
+              <div class="author-image" style="background-image:url(<%= asset_path(@news.author_image.url) %>)"><span class="circle"></span></div>
+            </div>
+            <!--/ author description -->
+
+          </div>
+
+        </article>
+        <!--/ post details -->
+
+      </div>
+      <!--/ content -->
+
+      <!-- sidebar -->
+      <div class="sidebar">
+        <div class="box">
+
+          <!-- widget_categories -->
+          <div class="widget-container widget_categories">
+            <h3 class="widget-title">Categorías:</h3>
+            <ul>
+              <% @categories.each do |category| %>
+                <% if @news.category.id == category.id %>
+                  <li class="current-menu-item"><a href="<%= pages_news_path(category_id: category.id) %>"><span><%= category.name %></span> <em>(<%= category.news.count %>)</em></a></li>
+                <% else %>
+                  <li><a href="<%= pages_news_path(category_id: category.id) %>"><span><%= category.name %></span> <em>(<%= category.news.count %>)</em></a></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <!--/ widget_categories -->
+
+          <div class="box_bot"></div>
+        </div>
+
+
+
+      </div>
+      <!--/ sidebar -->
+
+    </div>
+  </div>
+  <!--/ middle -->
+
+  <!-- popular brands -->
+  <div class="middle_row row_light_gray brand_list">
+  <div style="height: 100px"></div>
+
+    <%= image_tag 'banner.jpg' %>
+
+  </div>

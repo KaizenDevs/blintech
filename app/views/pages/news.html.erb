@@ -1,0 +1,102 @@
+<!-- header -->
+<div class="header header_thin" style="background-image:url(<%= asset_path('slider_1_1.jpg') %>)">
+	<div class="header_title">
+		<strong>Bienvenido <span>a nuestro blog</span> Blintech</strong>
+	</div>
+</div>
+<!--/ header -->
+
+<!-- breadcrumbs -->
+<div class="middle_row row_white breadcrumbs">
+	<div class="container">
+		<p><a href="<%= root_path(id: 1) %>">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="<%= pages_news_path %>">Blog</a>  <span class="separator">&rsaquo;</span> </p>
+		<a href="<%= pages_contact_path(id: 6) %>" class="link_search"><i class="fa fa-user"></i> Contáctenos</a>
+	</div>
+</div>
+<!--/ breadcrumbs -->
+
+<!-- middle -->
+<div id="middle" class="cols2">
+	<div class="container clearfix">
+		<!-- content -->
+		<div class="content">
+
+			<!-- posts list -->
+			<div class="postlist">
+
+        <% @news.each do |news| %>
+          <div class="post-item">
+            <div class="post-title">
+              <h2><a href="<%= news_path(news) %>"><%= news.title %></a></h2>
+            </div>
+            <div class="post-aside clearfix">
+              <div class="post-image"><a href="<%= news_path(news) %>"><%= image_tag news.image.url(:blog) %></a></div>
+              <div class="post-meta">
+                <div class="info_row"><span>Fecha:</span> <%= news.created_at.strftime("%m. %d. %y.") %></div>
+                <div class="info_row"><span>Escrito por:</span> <%= news.author %></div>
+                <a href="<%= news_path(news) %>" class="link_more">VER MÁS <span>&gt;</span></a>
+              </div>
+              <div class="entry">
+                <%=raw news.content.split(" ").first(50).join(" ") %>...
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+			</div>
+			<!--/ posts list -->
+
+			<!-- pagination -->
+			<div class="tf_pagination">
+				<div class="inner">
+					<span class="page-numbers page_current">
+						<% if @news.empty? %>
+						  <span class="manage_title"><strong>No hay noticias en nuestro registro</strong></span>
+						<% else %>
+						  <span class="manage_title"><strong><%= will_paginate @news, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
+						<% end %>
+					</span>
+				</div>
+			</div>
+			<!--/ pagination -->
+
+		</div>
+		<!--/ content -->
+
+		<!-- sidebar -->
+		<div class="sidebar">
+			<div class="box">
+
+				<!-- widget_categories -->
+				<div class="widget-container widget_categories">
+					<h3 class="widget-title">Categorias de noticias:</h3>
+					<ul>
+            <% @categories.each do |category| %>
+              <% if @params.has_key?(:category_id) && @params[:category_id].to_i == category.id %>
+                <li class="current-menu-item"><a href="<%= pages_news_path(category_id: category.id) %>"><span><%= category.name %></span> <em>(<%= category.news.count %>)</em></a></li>
+              <% else %>
+    						<li><a href="<%= pages_news_path(category_id: category.id) %>"><span><%= category.name %></span> <em>(<%= category.news.count %>)</em></a></li>
+              <% end %>
+            <% end %>
+					</ul>
+				</div>
+				<!--/ widget_categories -->
+
+				<!-- widget_recent_comments -->
+				<div class="widget-container widget_popular">
+					<h3 class="widget-title">Ultimas 5 noticias</h3>
+					<ul>
+            <% @last_news.each do |news| %>
+  						<li><a href="<%= news_path(news) %>"><%= news.title %></a></li>
+            <% end %>
+					</ul>
+				</div>
+				<!--/ widget_recent_comments -->
+			<div class="box_bot"></div>
+			</div>
+		</div>
+		<!--/ sidebar -->
+
+	</div>
+</div>
+<!--/ middle -->

@@ -1,14 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" class="no-js">
 <head>
-  <title>Blindtech</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Blintech Security</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="ThemeFuse">
+  <meta name="keywords" content="">
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="body_wrap homepage">
+    <%= render 'layouts/menu' %>
+    <div class="alerts">
+      <% if notice %> <div class="alert alert-success"><%= notice %> <span>x</span></div> <% end %>
+      <% if alert %> <div class="alert alert-danger"><%= alert %> <span>x</span></div> <% end %>
+    </div>
+    <%= yield %>
+    <!--/ testimonials -->
+    <!-- popular brands -->
+    <div class="middle_row row_light_gray brand_list">
+      <img id="page_banner" data-mercury="image"  src="<%= render inline: Page.find(1).banner %>">
+    </div>
+    <!--/ popular brands -->
+    <!--/ middle -->
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
+<script>
+  $(".alert").fadeIn(500).css("opacity","0.85").delay( 6000 ).fadeOut( 1000 );
+  $('.alerts').on('click','.alert',function(){ $(this).remove() });
+</script>
