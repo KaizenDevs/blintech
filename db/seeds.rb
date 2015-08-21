@@ -52,14 +52,14 @@
 	  content15: 'Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.',
 	  content16: 'BLINDAJE OPACO',
 	  content17: 'Fringilla, orci ac euismod semper, magna diam <a href="#">porttitor mauris</a>, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam.',
-    image1: 'prod_img_cuadro.jpg',
-    image2: 'prod_img_cuadro.jpg',
-    image3: 'prod_img_cuadro.jpg',
-    image4: 'prod_img_cuadro.jpg',
-    image5: 'slider_img_1.jpg',
-    image6: 'slider_img_2.jpg',
-    image7: 'post_img_1',
-    image8: 'post_img_1',
+    image1: "<%= asset_path('prod_img_cuadro.jpg') %>",
+    image2: "<%= asset_path('prod_img_cuadro.jpg') %>",
+    image3: "<%= asset_path('prod_img_cuadro.jpg') %>",
+    image4: "<%= asset_path('prod_img_cuadro.jpg') %>",
+    image5: "<%= asset_path('slider_img_1.jpg') %>",
+    image6: "<%= asset_path('slider_img_2.jpg') %>",
+    image7: "<%= asset_path('post_img_1.jpg') %>",
+    image8: "<%= asset_path('post_img_1.jpg') %>",
     content18: 'Nuestros procesos de <span>Blindaje</span>'
 	)
 
@@ -102,4 +102,4 @@
     {id:4, :image => File.new("#{Rails.root}/app/assets/images/slider_1_4.jpg"),:name => "Image Seed"}
   ])
 
-  Slider.create(id: 5, name: "Video Sección Blindaje", video: "http://player.vimeo.com/video/51333291?byline=0&amp;portrait=0&amp;title=0" )
+  Slider.create(id: 5, name: "Video Sección Blindaje", video: "https://player.vimeo.com/video/51333291?byline=0&amp;portrait=0&amp;title=0" )
