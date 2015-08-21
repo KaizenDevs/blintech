@@ -2,15 +2,21 @@
 #
 # Table name: vehicles
 #
-#  id           :integer          not null, primary key
-#  name         :string
-#  shielding    :integer
-#  engine       :string
-#  gas          :integer
-#  transmission :integer
-#  description  :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                :integer          not null, primary key
+#  name              :string
+#  shielding         :integer
+#  engine            :string
+#  gas               :integer
+#  transmission      :integer
+#  description       :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  description1      :text
+#  description2      :text
+#  internal_features :text
+#  external_features :text
+#  safety_features   :text
+#  extras            :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
