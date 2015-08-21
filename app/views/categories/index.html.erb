@@ -3,9 +3,8 @@
 <div class="container">
   <h1>Listando Categorías</h1>
   <p>Crea categorías que asignarás a las noticias. Esto lo podrás hacer en la página de creación de las noticias</p>
-  <%= link_to new_category_path do %>
-    <button class="btn-success" style="margin-bottom: 5px"><span class="fa fa-plus"> Nueva Categoría</span></button>
-  <% end %>
+  <%= link_to ' Nueva Categoría', new_category_path, class: 'fa fa-plus btn-edit' %>
+
   <table class="table">
     <tr>
       <th>Categoría</th>
