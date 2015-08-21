@@ -1,3 +1,4 @@
+<%= render 'shared/bootstrap_table' %>
 <div style="height: 150px"></div>
 <div class="container">
   <h1>Listado Slides</h1>
@@ -11,7 +12,13 @@
     <tbody>
       <% @sliders.each do |slider| %>
       <tr class="text-center">
+        <% if slider.video != nil %>
+          <td>
+            <iframe src="<%= slider.video %>?byline=0&amp;portrait=0&amp;title=0" width="100" height="100" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          </td>
+        <% else %>
         <td class="lead lead-sm vert-align text-center"><%= image_tag slider.image.url(:thumb) %></td>
+        <% end %>
         <td class="lead lead-sm vert-align text-center"><%= slider.name %></td>
         <td class="lead lead-sm vert-align text-center" style="width: 15%">
           <%= link_to "Editar #{slider.id}", edit_slider_path(slider), class: "btn btn-ar btn-warning", title: "Editar Imagen" %>

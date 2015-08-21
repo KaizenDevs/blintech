@@ -18,6 +18,7 @@ class PagesController < ApplicationController
 
   def shield
     @page = Page.find(params[:id])
+    @video = Slider.find(5).video
   end
 
   def rent

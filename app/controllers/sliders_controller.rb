@@ -17,6 +17,6 @@ class SlidersController < ApplicationController
 
   private
   def slider_params
-    params.require(:slider).permit(:name, :image)
+    params.require(:slider).permit(:name, :image, :video)
   end
 end
