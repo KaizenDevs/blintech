@@ -39,8 +39,11 @@
                   <div class="price_col_head">
                     <strong>Nivel II</strong>
 
-                    <span class="price"><div id="page_image1" data-mercury="image">
-                      <%= image_tag @page.image1, class: "frame_right" %></div></span>
+                    <span class="price">
+                      <div>
+                        <img src="<%= render inline: @page.image1 %>" class="frame_right" alt="" id="page_image1" data-mercury="image">
+                      </div>
+                    </span>
                   </div>
                   <div class="price_col_body">
                     <ul style="height: 220px">
@@ -58,7 +61,11 @@
                 <div class="price_item">
                   <div class="price_col_head">
                     <strong>Nivel III</strong>
-                      <span class="price"><span id="page_image2" data-mercury="image"><%= image_tag @page.image2, class: "frame_right" %></span></span>
+                      <span class="price">
+                        <div>
+                          <img src="<%= render inline: @page.image2 %>" class="frame_right" alt="" id="page_image2" data-mercury="image">
+                        </div>
+                      </span>
                   </div>
                   <div class="price_col_body">
                     <ul>
@@ -77,7 +84,11 @@
                   <div class="price_col_head">
                     <strong>Nivel IV</strong>
 
-                    <span class="price" id="page_image3" data-mercury="image"><%= image_tag @page.image3, class: "frame_right" %></span>
+                    <span class="price">
+                      <div>
+                        <img src="<%= render inline: @page.image3 %>" class="frame_right" alt="" id="page_image3" data-mercury="image">
+                      </div>
+                    </span>
                   </div>
                   <div class="price_col_body">
                     <ul>
@@ -95,7 +106,11 @@
                 <div class="price_item">
                   <div class="price_col_head">
                     <strong>Nivel V</strong>
-                    <span class="price" id="page_image4" data-mercury="image"><%= image_tag @page.image4, class: "frame_right" %></span>
+                    <span class="price">
+                      <div>
+                        <img src="<%= render inline: @page.image4 %>" class="frame_right" alt="" id="page_image4" data-mercury="image">
+                      </div>
+                    </span>
                   </div>
                   <div class="price_col_body">
                     <ul>
@@ -128,7 +143,9 @@
               </div>
               <div class="slider-item">
 
-                <a href="#" id="page_image5" data-mercury="image"><%= image_tag @page.image5 %></a>
+                <a href="#">
+                  <img src="<%= render inline: @page.image5 %>" class="frame_right" alt="" id="page_image5" data-mercury="image">
+                </a>
               </div>
               <div class="slider-item text_slide">
                 <div class="inner">
@@ -137,8 +154,8 @@
                   <p id="content13" data-mercury="full"><%=raw @page.content13 %></p>
                 </div>
               </div>
-              <div class="slider-item" id="page_image6" data-mercury="image">
-                <%= image_tag @page.image6 %>
+              <div class="slider-item">
+                <img src="<%= render inline: @page.image6 %>" class="frame_right" alt="" id="page_image6" data-mercury="image">
               </div>
             </div>
             <div class="slider_pagination" id="slider_pag"></div>
@@ -164,13 +181,25 @@
             <div class="col col_1_2">
               <h4 id="content14" data-mercury="full"><%=raw @page.content14 %></h4>
 
-              <p><div>
-                <img src="<%= asset_path(@page.image7) %>" width="312px" class="frame_right" id="page_image7" data-mercury="image">
-              </div><div id="content15" data-mercury="full"><%=raw @page.content15 %></div>  </p>
+              <p>
+                <div>
+                  <img src="<%= render inline: @page.image7 %>" width="312px" class="frame_right" id="page_image7" data-mercury="image">
+                </div>
+                <div id="content15" data-mercury="full">
+                  <%=raw @page.content15 %>
+                </div>
+              </p>
             </div>
             <div class="col col_1_2">
               <h4 id="content16" data-mercury="full"><%=raw @page.content16 %></h4>
-              <p><div><img src="<%= asset_path(@page.image8) %>" width="312px" class="frame_right" id="page_image8" data-mercury="image"></div><div id="content17" data-mercury="full"><%=raw @page.content17 %></div>  </p>
+              <p>
+                <div>
+                  <img src="<%= render inline: @page.image8 %>" width="312px" class="frame_right" id="page_image8" data-mercury="image">
+                </div>
+                <div id="content17" data-mercury="full">
+                  <%=raw @page.content17 %>
+                </div>
+              </p>
             </div>
 
           </div>
