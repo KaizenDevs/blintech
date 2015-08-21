@@ -150,52 +150,39 @@
 	</ul>
 	<div id="t_overview" class="tabcontent clearfix">
 		<div class="col col_1_4">
-			<h3>Interior Features</h3>
+			<h3>Caracteristicas Internas</h3>
 			<ul>
-				<li>Full Leather Interior</li>
-				<li>Central locking</li>
-				<li>Automatic air conditioning</li>
-				<li>Cruise control</li>
-				<li>Electric heated seats</li>
-				<li>Electric windows</li>
-				<li>Navigation system</li>
-				<li>Parking sensors</li>
-				<li>Power Assisted Steering</li>
+				<% items = @vehicle.internal_features.split(";") %>
+				<% items.each do |item| %>
+					<li><%= item.humanize %></li>
+				<% end %>				
 			</ul>
 		</div>
 		<div class="col col_1_4">
-			<h3>Exterior Features</h3>
+			<h3>Caracteristicas Externas</h3>
 			<ul>
-				<li> 20” Alloy wheels</li>
-				<li>Pearl White metallic paint</li>
-				<li>Automatic air conditioning</li>
-				<li>Trailer coupling</li>
-				<li>Sunroof</li>
-				<li>Double Exhaust</li>
-				<li>Electric Mirrors</li>
+				<% items = @vehicle.external_features.split(";") %>
+				<% items.each do |item| %>
+					<li><%= item.humanize %></li>
+				<% end %>		
 			</ul>
 		</div>
 		<div class="col col_1_4">
-			<h3>Safety Features</h3>
+			<h3>Caracteristicas de seguridad</h3>
 			<ul>
-				<li>ABS</li>
-				<li>ESP with EDL + ASR</li>
-				<li>Four Wheel Drive</li>
-				<li>Immobilizer</li>
-				<li>Xenon headlights</li>
-				<li>Passenger Airbag</li>
-				<li>Curtain Airbags</li>
-				<li>Drivers knee airbag</li>
+				<% items = @vehicle.safety_features.split(";") %>
+				<% items.each do |item| %>
+					<li><%= item.humanize %></li>
+				<% end %>	
 			</ul>
 		</div>
 		<div class="col col_1_4">
 			<h3>Extras</h3>
 			<ul>
-				<li>Full Service History</li>
-				<li>2 year Warranty</li>
-				<li>CD / DVD / MP3 Audio</li>
-				<li>Auxiliary Audio Input</li>
-				<li>Vehicle Anti-Theft</li>
+				<% items = @vehicle.extras.split(";") %>
+				<% items.each do |item| %>
+					<li><%= item.humanize %></li>
+				<% end %>	
 			</ul>
 		</div>
 	</div>
@@ -203,7 +190,10 @@
 	<div id="t_description" class="tabcontent clearfix">
 		<h3>Descripción</h3>
 		<div class="col col_1_2 alpha">
-			<p><%= @vehicle.description %></p>
+			<p><%= @vehicle.description1 %></p>
+		</div>
+		<div class="col col_1_2">
+			<p><%= @vehicle.description2 %></p>
 		</div>
 	</div>
 
@@ -246,9 +236,8 @@
 	<div class="text_box">
 		<p>
 			<a href="#" class="btn btn_big btn_white"><span>Llámanos: <strong>+57 440 50 00</strong></span></a>
-			<a href="#" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
+			<a href="<%= pages_contact_path %>" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
 		</p>
-		<p><em>lectus tempor non enim, quisque in consequat tincidunt, justo donec,<a href="#">Privacy Policy</a> for more info</em></p>
 	</div>
 
 </div>
