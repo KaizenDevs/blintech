@@ -152,37 +152,37 @@
 		<div class="col col_1_4">
 			<h3>Caracteristicas Internas</h3>
 			<ul>
-				<% items = @vehicle.internal_features.split(";") %>
+				<% items = @vehicle.internal_features.split(",") %>
 				<% items.each do |item| %>
 					<li><%= item.humanize %></li>
-				<% end %>				
+				<% end %>
 			</ul>
 		</div>
 		<div class="col col_1_4">
 			<h3>Caracteristicas Externas</h3>
 			<ul>
-				<% items = @vehicle.external_features.split(";") %>
+				<% items = @vehicle.external_features.split(",") %>
 				<% items.each do |item| %>
 					<li><%= item.humanize %></li>
-				<% end %>		
+				<% end %>
 			</ul>
 		</div>
 		<div class="col col_1_4">
 			<h3>Caracteristicas de seguridad</h3>
 			<ul>
-				<% items = @vehicle.safety_features.split(";") %>
+				<% items = @vehicle.safety_features.split(",") %>
 				<% items.each do |item| %>
 					<li><%= item.humanize %></li>
-				<% end %>	
+				<% end %>
 			</ul>
 		</div>
 		<div class="col col_1_4">
 			<h3>Extras</h3>
 			<ul>
-				<% items = @vehicle.extras.split(";") %>
+				<% items = @vehicle.extras.split(",") %>
 				<% items.each do |item| %>
 					<li><%= item.humanize %></li>
-				<% end %>	
+				<% end %>
 			</ul>
 		</div>
 	</div>
