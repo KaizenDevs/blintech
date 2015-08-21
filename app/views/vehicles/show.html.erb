@@ -1,413 +1,387 @@
 	<!-- header -->
 	<div class="header header_thin" style="background-image:url(images/temp/slider_1_1.jpg)">
-	            
+
 		<div class="header_title">
-	    	<h1><span>Mercedes-Benz</span> ML 320 CDI 4Matic</h1>
-	    </div>
+			<h1><%= @vehicle.name %></h1>
+		</div>
 
 	</div>
 	<!--/ header -->
 
 	<!-- breadcrumbs -->
 	<div class="middle_row row_white breadcrumbs">
-	    <div class="container">
-	        <p><a href="index.html">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="alquiler.php">Alquiler</a> <span class="separator">&rsaquo;</span>  <a href="producto.php">productos</a> </p>
-	        <a href="alquiler.php" class="link_back">Página anterior</a>
-	    </div>
+		<div class="container">
+			<p><a href="<%= root_path %>">Inicio</a>  <span class="separator">&rsaquo;</span>  <a href="<%= pages_rent_path %>p">Alquiler</a> <span class="separator">&rsaquo;</span> <%= @vehicle.name %> </p>
+			<a href="<%= pages_rent_path %>" class="link_back">Página anterior</a>
+		</div>
 	</div>
 	<!--/ breadcrumbs -->
 
-	<!-- middle -->   
+	<!-- middle -->
 	<div id="middle" class="full_width">
-		<div class="container clearfix">  
-	    
+		<div class="container clearfix">
+
 			<!-- content -->
-	        <div class="content">
-	        	
-	            <div class="offer_details clearfix">
-	            	<!-- offer left -->
-	            	<div class="offer_gallery">
-	                	<div class="gallery_images">
-	                    	<div id="gallery_images">
-	                        	<div class="gallery_image_item">
-	                            <img src="images/temp/prod_gallery_1.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_1.jpg" data-rel="prettyPhoto[gal]">
-	                            <span>Exterior view - 20” rims and inteligent headlights <em class="ico_large"></em></span></a>
-	                            </div>
-	                            <div class="gallery_image_item">
-	                            <img src="images/temp/prod_gallery_2.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_2.jpg" data-rel="prettyPhoto[gal]">
-	                            <span>7G-Tronic Plus seven-speed automatic transmission <em class="ico_large"></em></span></a>
-	                            </div>
-	                            <div class="gallery_image_item"> 
-	                            <img src="images/temp/prod_gallery_3.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_3.jpg" data-rel="prettyPhoto[gal]"></a> <!-- example without caption -->
-	                            </div>
-	                            <div class="gallery_image_item">
-	                            <img src="images/temp/prod_gallery_4.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_4.jpg" data-rel="prettyPhoto[gal]">
-	                            <span>Adaptive Cruise Control (Distronic Plus) <em class="ico_large"></em></span></a>
-	                            </div>
-	                            <div class="gallery_image_item">
-	                            <img src="images/temp/prod_gallery_5.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_5.jpg" data-rel="prettyPhoto[gal]">
-	                            <span>Lane Departure Warning System and an adjustable-height air suspension <em class="ico_large"></em></span></a>
-	                            </div>
-	                            <div class="gallery_image_item">
-	                            <img src="images/temp/prod_gallery_6.jpg" alt="">
-	                            <a href="images/temp/prod_gallery_6.jpg" data-rel="prettyPhoto[gal]">
-	                            <span>3.2-litre V6 engine <em class="ico_large"></em></span></a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    
-	                    <div class="gallery_thumbs">
-	                    	<div id="gallery_thumbs">
-	                        	<a href="#"><img src="images/temp/prod_gallery_1.jpg" alt=""></a>
-	                            <a href="#"><img src="images/temp/prod_gallery_2.jpg" alt=""></a>
-	                            <a href="#"><img src="images/temp/prod_gallery_3.jpg" alt=""></a>
-	                            <a href="#"><img src="images/temp/prod_gallery_4.jpg" alt=""></a>
-	                            <a href="#"><img src="images/temp/prod_gallery_5.jpg" alt=""></a>
-	                            <a href="#"><img src="images/temp/prod_gallery_6.jpg" alt=""></a>
-	                        </div>
-	                        <a href="#" class="prev" id="gallery_thumbs_prev"></a>
-	                        <a href="#" class="next" id="gallery_thumbs_next"></a>
-	                    </div>
-	                    
-	                    <script>	
-						jQuery(document).ready(function($) {	
-							function carGalleryInit() {
-								$('#gallery_thumbs').children().each(function(i) {
-									$(this).addClass( 'itm'+i );
-									$(this).click(function() {
-										$('#gallery_images').trigger('slideTo',[i, 0, true]);
-										$('#gallery_thumbs a').removeClass('selected');
-										$(this).addClass('selected');
-										return false;
-									});
-								});
-								$('#gallery_thumbs a.itm0').addClass('selected');
-									
-								$('#gallery_images').carouFredSel({
-									infinite: false,
-									circular: false,
-									auto: false,
-									width: '100%',
-									scroll: {
-										items : 1,
-										fx : "crossfade"
-									}
-								});
-								$('#gallery_thumbs').carouFredSel({
-									prev : "#gallery_thumbs_prev",
-									next : "#gallery_thumbs_next", 
-									infinite: false,
-									circular: false,
-									auto: false,
-									width: '100%',
-									scroll: {
-										items : 1
-									}
-								});		
-							}
-							
-							$(window).load(function() {
-								carGalleryInit();
-							}); 
-							var resizeTimer;
-							$(window).resize(function() {
-								clearTimeout(resizeTimer);
-								resizeTimer = setTimeout(carGalleryInit, 100);
-							});	          
-						});
-					    </script> 
-	                
-	                </div>
-	                <!--/ offer left -->
-	                <!-- offer right -->
-	                <div class="offer_aside">
-	                	<div class="offer_price">
-	                    	<strong>Marca de Carro</strong><br>
-							<em>Nivel de blindaje: 1</em>
-	                        
-	                        <a href="contacto.php" class="btn_save">Cotizar</a>
-	                    </div>
-	                    
-	                    <div class="offer_data">
-	                    	<ul>
-	                    		<li>07/2009</li>
-	                    		<li>197,391 KM</li>
-	                    		<li>Diesel</li>
-	                    		<li>375kW (510 BHP)</li>
-	                    	</ul>
-	                    </div>
-	                    
-	                    <div class="offer_descr">
-	                        <p>Lorem ipsum dolor sit amet, lectus tempor non enim, quisque in consequat tincidunt, justo donec, suspendisse vel. Distinctio quis nunc tempor. Sagittis nec, rerum eleifend quam tempus. Ullamcorper ac vel luctus suspendisse, quis facilisis, pede tincidunt dapibus nunc diam lacus magna. 
-	                        </p>
-	                    </div>
-	                    
-	                    <div class="offer_specification">
-	                    	<ul>
-	                    		<li><span class="spec_name">Capacidad de Motor:</span> <strong class="spec_value">3598 cm³</strong> (Power 510 BHP / 375 kW)</li>
-	                            <li><span class="spec_name">Tanque tipo:</span> <strong class="spec_value">Diesel</strong> (Unleaded)</li>
-	                            <li><span class="spec_name">Cuerpo:</span> <strong class="spec_value">SUV</strong> (5 doors)</li>
-	                            <li><span class="spec_name">Cambios:</span> <strong class="spec_value">Automatic</strong> (DSG 7 speed)</li>
-	                            <li><span class="spec_name">Blindaje:</span> <strong class="spec_value">Nivel Blindaje</strong> II</li>
-	                            
-	                    	</ul>
-	                    </div>
-	                    
-	                </div>
-	                <!--/ offer right -->
-	            </div>
-	            
-	            <!-- details tabs -->
-	            <div class="details_tabs">
-		            <ul class="tabs linked">
-		                <li><a href="#t_overview"><span>RESUMEN</span></a></li>
-		                <li><a href="#t_description"><span>DESCRIPCIÓN</span></a></li>
-		                <li><a href="#t_contacts"><span>CONTÁCTENOS</span></a></li>
-		                <li><a href="#t_send"><span>ENVIAR A UN AMIGO</span></a></li>
-		            </ul>
-		            <div id="t_overview" class="tabcontent clearfix">
-	                	<div class="col col_1_4">
-			            	<h3>Interior Features</h3>	
-		                    <ul>
-		                    	<li>Full Leather Interior</li>
-		                    	<li>Central locking</li>
-		                        <li>Automatic air conditioning</li>
-		                        <li>Cruise control</li>
-		                        <li>Electric heated seats</li>
-		                        <li>Electric windows</li>
-		                        <li>Navigation system</li>
-		                        <li>Parking sensors</li>
-		                        <li>Power Assisted Steering</li>
-		                    </ul>
-	                    </div>
-	                    <div class="col col_1_4">
-			            	<h3>Exterior Features</h3>	
-		                    <ul>
-		                    	<li> 20” Alloy wheels</li>
-		                    	<li>Pearl White metallic paint</li>
-		                    	<li>Automatic air conditioning</li>
-		                    	<li>Trailer coupling</li>
-		                    	<li>Sunroof</li>
-		                    	<li>Double Exhaust</li>
-	                            <li>Electric Mirrors</li>
-							</ul>
-	                    </div>
-	                    <div class="col col_1_4">
-			            	<h3>Safety Features</h3>	
-		                    <ul>
-		                    	<li>ABS</li>
-		                    	<li>ESP with EDL + ASR</li>
-		                    	<li>Four Wheel Drive</li>
-		                    	<li>Immobilizer</li>
-		                    	<li>Xenon headlights</li>
-		                    	<li>Passenger Airbag</li>
-		                    	<li>Curtain Airbags</li>
-		                    	<li>Drivers knee airbag</li>
-		                    </ul>
-	                    </div>
-	                    <div class="col col_1_4">
-			            	<h3>Extras</h3>	
-		                    <ul>
-		                    	<li>Full Service History</li>
-		                    	<li>2 year Warranty</li>
-		                    	<li>CD / DVD / MP3 Audio</li>
-		                    	<li>Auxiliary Audio Input</li>
-		                    	<li>Vehicle Anti-Theft</li>
-		                    </ul>
-	                    </div>
-		            </div>
-	                
-		            <div id="t_description" class="tabcontent clearfix">
-		            	<h3>Descripción</h3>
-	                    <div class="col col_1_2 alpha">
-	                    	<p>Hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse.</p>
+			<div class="content">
 
-							<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet.</p>
-	                    </div>
-	                    <div class="col col_1_2">
-	                    	<p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet acus lacus orna acus lacus orna.</p>
+				<div class="offer_details clearfix">
+					<!-- offer left -->
+					<div class="offer_gallery">
+						<div class="gallery_images">
+							<div id="gallery_images">
+									<% @vehicle.vehicle_images.each do |vehicle_image| %>
+										<div class="gallery_image_item">
+											<img src="<%= vehicle_image.image.url %>" alt="">
+											<a href="<%= vehicle_image.image.url %>" data-rel="prettyPhoto[gal]">
+												<span><%= @vehicle.name %> <em class="ico_large"></em></span></a>
+											</div>
+									<% end %>
+								</div>
+							</div>
 
-							<p>Curabitur Vulputate, Ligula Lacinia Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet regularsao.</p>
-	                    </div>
-	                    
-		            </div>
-		            
-	                <div id="t_contacts" class="tabcontent clearfix">
-		            	<form action="#" class="details_form ajax_form" id="offer_contact">
-	                    	<div class="form_col_1">
-	                        	<div class="row input_styled inlinelist">
-	                            	<label class="label_title">Formulario:</label>
-	                                <input type="radio" name="title" value="mrs" id="mrs" checked> <label for="mrs">Señora</label>
-			                        <input type="radio" name="title" value="mr" id="mr"> <label for="mr">Señor.</label>
-			                        <input type="radio" name="title" value="company" id="company"> <label for="company">Empresa</label>
-	                            </div>
-	                            <div class="row">
-			                    	<label class="label_title">Nombre completo:</label>
-			                        <input type="text" name="yourname" id="name" class="inputField required" value="">
-			                    </div>
-	                            <div class="row">
-			                    	<label class="label_title">e-mail:</label>
-			                        <input type="text" name="email" id="email" class="inputField required" value="">
-			                    </div>                            
-	                        </div>
-	                        <!--/ form col 1 -->
-	                        <div class="form_col_2">
-	                        	<div class="row">
-			                    	<label class="label_title">Mensaje:</label>
-			                        <textarea rows="4" cols="5" name="message" id="message" class="textareaField required"></textarea>
-			                    </div>
-	                            <div class="row rowSubmit">
-	                            	<a href="#" class="link_reset" onclick="document.getElementById('offer_contact').reset();return false">Limpiar todos los campos</a>
-	                            	<input type="submit" value="Enviar Mensaje" id="send" class="btn_send">
-	                            </div>
-	                        </div>
-	                        <!--/ form col 2 -->
-	                        
-	                    </form>                    
-		            </div>
-		            
-	                <div id="t_send" class="tabcontent clearfix feedback_ajax_form">
-		            	<form action="#" class="details_form" id="offer_send_friend">
-	                    	<div class="form_col_1">                            
-	                            <div class="row">
-			                    	<label class="label_title">Tu e-mail:</label>
-			                        <input type="text" name="email_from" name="email_from" class="inputField required" value="">
-			                    </div>   
-	                            <div class="row">
-			                    	<label class="label_title">E-mail de tu amigo:</label>
-			                        <input type="text" name="email" id="email_f" class="inputField required" value="">
-			                    </div>                         
-	                        </div>
-	                        <!--/ form col 1 -->
-	                        <div class="form_col_2 col_thin">
-	                        	<div class="row">
-			                    	<label class="label_title">Mensaje:</label>
-			                        <textarea rows="4" cols="5" name="message" name="message_f" class="textareaField required">Check out this cool car:
-	http://mobile.de/auto-inserat/mercedes-benz-ml-63</textarea>
-			                    </div>
-	                            <div class="row rowSubmit">
-	                            	<a href="#" class="link_reset" onclick="document.getElementById('offer_send_friend').reset();return false">Reset All Form Fields</a>
-	                            	<input type="submit" value="SEND MESSAGE" id="send_f" class="btn_send">
-	                            </div>
-	                        </div>
-	                        <!--/ form col 2 -->
-	                        <div class="form_col_3">
-	                        	<div class="row">
-			                    	<label class="label_title">Compartir en:</label>
-	                            	<a href="#" class="btn_share"><img src="images/btn_share_tweet.png" alt=""></a>
-	                                <a href="#" class="btn_share"><img src="images/btn_share_like.png" alt=""></a>
-	                                <a href="#" class="btn_share"><img src="images/btn_share_g1.png" alt=""></a>
-	                            </div>
-	                        </div>
-	                        <!--/ form col 3 -->
-	                        
-	                    </form>
-		            </div>
-	            </div>
-	            <!--/ details tabs -->
-	            
-	            <div class="text_box">
-	            	<p>
-	                <a href="#" class="btn btn_big btn_white"><span>Llámanos: <strong>+57 440 50 00</strong></span></a>
-	                <a href="#" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
-	                </p>
-	            	<p><em>lectus tempor non enim, quisque in consequat tincidunt, justo donec,<a href="#">Privacy Policy</a> for more info</em></p>
-	            </div>
-	            
-	        </div>
-	        <!--/ content -->
-	        
-	              
-	    </div>
+											<div class="gallery_thumbs">
+												<div id="gallery_thumbs">
+													<% @vehicle.vehicle_images.each do |vehicle_images| %>
+														<a href="#"><img src="<%= vehicle_images.image.url(:rent_show) %>" alt=""></a>
+													<% end %>
+												</div>
+												<a href="#" class="prev" id="gallery_thumbs_prev"></a>
+												<a href="#" class="next" id="gallery_thumbs_next"></a>
+											</div>
+
+											<script>
+											jQuery(document).ready(function($) {
+												function carGalleryInit() {
+													$('#gallery_thumbs').children().each(function(i) {
+														$(this).addClass( 'itm'+i );
+														$(this).click(function() {
+															$('#gallery_images').trigger('slideTo',[i, 0, true]);
+															$('#gallery_thumbs a').removeClass('selected');
+															$(this).addClass('selected');
+															return false;
+														});
+													});
+													$('#gallery_thumbs a.itm0').addClass('selected');
+
+													$('#gallery_images').carouFredSel({
+														infinite: false,
+														circular: false,
+														auto: false,
+														width: '100%',
+														scroll: {
+															items : 1,
+															fx : "crossfade"
+														}
+													});
+													$('#gallery_thumbs').carouFredSel({
+														prev : "#gallery_thumbs_prev",
+														next : "#gallery_thumbs_next",
+														infinite: false,
+														circular: false,
+														auto: false,
+														width: '100%',
+														scroll: {
+															items : 1
+														}
+													});
+												}
+
+												$(window).load(function() {
+													carGalleryInit();
+												});
+												var resizeTimer;
+												$(window).resize(function() {
+													clearTimeout(resizeTimer);
+													resizeTimer = setTimeout(carGalleryInit, 100);
+												});
+											});
+	</script>
+
+</div>
+<!--/ offer left -->
+<!-- offer right -->
+<div class="offer_aside">
+	<div class="offer_price">
+		<strong><%= @vehicle.name %></strong><br>
+		<em>Nivel de blindaje: <%= @vehicle.shielding %></em>
+
+		<a href="<%= pages_contact_path %>" class="btn_save">Cotizar</a>
 	</div>
-	<!--/ middle -->
 
-		<!-- latest_offers -->
-		<div class="middle_row latest_offers">
-			<div class="container clearfix">         			
-	        	<h2>Conozca más de nuestra empresa</h2>                    
-			</div>
-	            
-	        <div id="latest_offers">
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_01.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_02.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_03.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_04.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_05.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_06.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_07.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_08.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	            <div class="latest_item">
-	            <a href="offers-details.html"><img src="images/temp/prod_img_09.jpg" alt=""></a>
-	            <a href="offers-details.html">Titular noticia</a>
-	            </div>
-	        </div>
-	        
-	        <a class="prev" id="latest_offers_prev" href="#"></a>
-	        <a class="next" id="latest_offers_next" href="#"></a>
-	                    
-	        <script>	
-	        jQuery(document).ready(function($) {	
-				var screenRes = $(window).width();
-				
-	            $('#latest_offers').carouFredSel({
-	                prev : "#latest_offers_prev",
-	                next : "#latest_offers_next", 
-	                infinite: false,
-	                circular: true,
-	                auto: false,
-	                width: '100%',				
-	                scroll: {
-	                    items : 1,
-						onBefore: function (data) {
-							if (screenRes > 900) {
-							data.items.visible.eq(0).animate({opacity: 0.15},300);
-							data.items.old.eq(-1).animate({opacity: 1},300);
-							data.items.visible.eq(-1).animate({opacity: 0.15},300);		               
-							}
-			            },
-						onAfter: function (data) {
-							if (screenRes > 900) {
-							data.items.old.eq(0).animate({opacity: 1},300);	
-							}
-			            }
-	                }
-	            });			
-				if (screenRes > 900) {
-					var vis_items = $("#latest_offers").triggerHandler("currentVisible");
-					vis_items.eq(-1).animate({opacity: 0.15},100);
-					vis_items.eq(0).animate({opacity: 0.15},100);
-				}
-	        });
-	        </script>             
+	<div class="offer_data">
+		<ul>
+			<li><%= @vehicle.engine %></li>
+			<li><%= @vehicle.gas.capitalize %></li>
+			<li><%= @vehicle.transmission.capitalize %></li>
+		</ul>
+	</div>
+
+	<div class="offer_descr">
+		<p>
+			<%= @vehicle.description %>
+		</p>
+	</div>
+
+	<div class="offer_specification">
+		<ul>
+			<li><span class="spec_name">Capacidad de Motor:</span> <strong class="spec_value"><%= @vehicle.engine %></strong></li>
+			<li><span class="spec_name">Tanque tipo:</span> <strong class="spec_value"><%= @vehicle.gas.capitalize %></strong></li>
+			<li><span class="spec_name">Cambios:</span> <strong class="spec_value"><%= @vehicle.transmission.capitalize %></strong> </li>
+			<li><span class="spec_name">Blindaje:</span> <strong class="spec_value">Nivel Blindaje</strong> <%= @vehicle.shielding %></li>
+
+		</ul>
+	</div>
+
+</div>
+<!--/ offer right -->
+</div>
+
+<!-- details tabs -->
+<div class="details_tabs">
+	<ul class="tabs linked">
+		<li><a href="#t_overview"><span>RESUMEN</span></a></li>
+		<li><a href="#t_description"><span>DESCRIPCIÓN</span></a></li>
+		<li><a href="#t_contacts"><span>CONTÁCTENOS</span></a></li>
+		<li><a href="#t_send"><span>ENVIAR A UN AMIGO</span></a></li>
+	</ul>
+	<div id="t_overview" class="tabcontent clearfix">
+		<div class="col col_1_4">
+			<h3>Interior Features</h3>
+			<ul>
+				<li>Full Leather Interior</li>
+				<li>Central locking</li>
+				<li>Automatic air conditioning</li>
+				<li>Cruise control</li>
+				<li>Electric heated seats</li>
+				<li>Electric windows</li>
+				<li>Navigation system</li>
+				<li>Parking sensors</li>
+				<li>Power Assisted Steering</li>
+			</ul>
 		</div>
+		<div class="col col_1_4">
+			<h3>Exterior Features</h3>
+			<ul>
+				<li> 20” Alloy wheels</li>
+				<li>Pearl White metallic paint</li>
+				<li>Automatic air conditioning</li>
+				<li>Trailer coupling</li>
+				<li>Sunroof</li>
+				<li>Double Exhaust</li>
+				<li>Electric Mirrors</li>
+			</ul>
+		</div>
+		<div class="col col_1_4">
+			<h3>Safety Features</h3>
+			<ul>
+				<li>ABS</li>
+				<li>ESP with EDL + ASR</li>
+				<li>Four Wheel Drive</li>
+				<li>Immobilizer</li>
+				<li>Xenon headlights</li>
+				<li>Passenger Airbag</li>
+				<li>Curtain Airbags</li>
+				<li>Drivers knee airbag</li>
+			</ul>
+		</div>
+		<div class="col col_1_4">
+			<h3>Extras</h3>
+			<ul>
+				<li>Full Service History</li>
+				<li>2 year Warranty</li>
+				<li>CD / DVD / MP3 Audio</li>
+				<li>Auxiliary Audio Input</li>
+				<li>Vehicle Anti-Theft</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="t_description" class="tabcontent clearfix">
+		<h3>Descripción</h3>
+		<div class="col col_1_2 alpha">
+			<p>Hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse.</p>
+
+			<p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet.</p>
+		</div>
+		<div class="col col_1_2">
+			<p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet acus lacus orna acus lacus orna.</p>
+
+			<p>Curabitur Vulputate, Ligula Lacinia Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu lorem ipsum dolor sit amet regularsao.</p>
+		</div>
+
+	</div>
+
+	<div id="t_contacts" class="tabcontent clearfix">
+		<form action="#" class="details_form ajax_form" id="offer_contact">
+			<div class="form_col_1">
+				<div class="row input_styled inlinelist">
+					<label class="label_title">Formulario:</label>
+					<input type="radio" name="title" value="mrs" id="mrs" checked> <label for="mrs">Señora</label>
+					<input type="radio" name="title" value="mr" id="mr"> <label for="mr">Señor.</label>
+					<input type="radio" name="title" value="company" id="company"> <label for="company">Empresa</label>
+				</div>
+				<div class="row">
+					<label class="label_title">Nombre completo:</label>
+					<input type="text" name="yourname" id="name" class="inputField required" value="">
+				</div>
+				<div class="row">
+					<label class="label_title">e-mail:</label>
+					<input type="text" name="email" id="email" class="inputField required" value="">
+				</div>
+			</div>
+			<!--/ form col 1 -->
+			<div class="form_col_2">
+				<div class="row">
+					<label class="label_title">Mensaje:</label>
+					<textarea rows="4" cols="5" name="message" id="message" class="textareaField required"></textarea>
+				</div>
+				<div class="row rowSubmit">
+					<a href="#" class="link_reset" onclick="document.getElementById('offer_contact').reset();return false">Limpiar todos los campos</a>
+					<input type="submit" value="Enviar Mensaje" id="send" class="btn_send">
+				</div>
+			</div>
+			<!--/ form col 2 -->
+
+		</form>
+	</div>
+
+	<div id="t_send" class="tabcontent clearfix feedback_ajax_form">
+		<form action="#" class="details_form" id="offer_send_friend">
+			<div class="form_col_1">
+				<div class="row">
+					<label class="label_title">Tu e-mail:</label>
+					<input type="text" name="email_from" name="email_from" class="inputField required" value="">
+				</div>
+				<div class="row">
+					<label class="label_title">E-mail de tu amigo:</label>
+					<input type="text" name="email" id="email_f" class="inputField required" value="">
+				</div>
+			</div>
+			<!--/ form col 1 -->
+			<div class="form_col_2 col_thin">
+				<div class="row">
+					<label class="label_title">Mensaje:</label>
+					<textarea rows="4" cols="5" name="message" name="message_f" class="textareaField required">Check out this cool car:
+						http://mobile.de/auto-inserat/mercedes-benz-ml-63</textarea>
+					</div>
+					<div class="row rowSubmit">
+						<a href="#" class="link_reset" onclick="document.getElementById('offer_send_friend').reset();return false">Reset All Form Fields</a>
+						<input type="submit" value="SEND MESSAGE" id="send_f" class="btn_send">
+					</div>
+				</div>
+				<!--/ form col 2 -->
+				<div class="form_col_3">
+					<div class="row">
+						<label class="label_title">Compartir en:</label>
+						<a href="#" class="btn_share"><img src="images/btn_share_tweet.png" alt=""></a>
+						<a href="#" class="btn_share"><img src="images/btn_share_like.png" alt=""></a>
+						<a href="#" class="btn_share"><img src="images/btn_share_g1.png" alt=""></a>
+					</div>
+				</div>
+				<!--/ form col 3 -->
+
+			</form>
+		</div>
+	</div>
+	<!--/ details tabs -->
+
+	<div class="text_box">
+		<p>
+			<a href="#" class="btn btn_big btn_white"><span>Llámanos: <strong>+57 440 50 00</strong></span></a>
+			<a href="#" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
+		</p>
+		<p><em>lectus tempor non enim, quisque in consequat tincidunt, justo donec,<a href="#">Privacy Policy</a> for more info</em></p>
+	</div>
+
+</div>
+<!--/ content -->
+
+
+</div>
+</div>
+<!--/ middle -->
+
+<!-- latest_offers -->
+<div class="middle_row latest_offers">
+	<div class="container clearfix">
+		<h2>Conozca más de nuestra empresa</h2>
+	</div>
+
+	<div id="latest_offers">
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_01.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_02.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_03.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_04.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_05.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_06.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_07.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_08.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+		<div class="latest_item">
+			<a href="offers-details.html"><img src="images/temp/prod_img_09.jpg" alt=""></a>
+			<a href="offers-details.html">Titular noticia</a>
+		</div>
+	</div>
+
+	<a class="prev" id="latest_offers_prev" href="#"></a>
+	<a class="next" id="latest_offers_next" href="#"></a>
+
+	<script>
+	jQuery(document).ready(function($) {
+		var screenRes = $(window).width();
+
+		$('#latest_offers').carouFredSel({
+			prev : "#latest_offers_prev",
+			next : "#latest_offers_next",
+			infinite: false,
+			circular: true,
+			auto: false,
+			width: '100%',
+			scroll: {
+				items : 1,
+				onBefore: function (data) {
+					if (screenRes > 900) {
+						data.items.visible.eq(0).animate({opacity: 0.15},300);
+						data.items.old.eq(-1).animate({opacity: 1},300);
+						data.items.visible.eq(-1).animate({opacity: 0.15},300);
+					}
+				},
+				onAfter: function (data) {
+					if (screenRes > 900) {
+						data.items.old.eq(0).animate({opacity: 1},300);
+					}
+				}
+			}
+		});
+		if (screenRes > 900) {
+			var vis_items = $("#latest_offers").triggerHandler("currentVisible");
+			vis_items.eq(-1).animate({opacity: 0.15},100);
+			vis_items.eq(0).animate({opacity: 0.15},100);
+		}
+	});
+	</script>
+</div>
 	    <!--/ latest_offers -->
