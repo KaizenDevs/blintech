@@ -8,6 +8,7 @@ class VehiclesController < ApplicationController
   def show
     @vehicle = Vehicle.find(params[:id])
     @contact = Contact.new
+    @news = News.where(highlight: true)
   end
 
   def new
