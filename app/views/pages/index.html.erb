@@ -140,7 +140,7 @@
         </li>
 
       </ul>
-      <a href="#" class="link_more">CONOZCA NUESTROS SERVICIOS</a>
+      <a href="<%= pages_shield_path(id: 3) %>" class="link_more">CONOZCA NUESTROS SERVICIOS</a>
     </div>
     <script>
       jQuery(document).ready(function($) {
@@ -170,9 +170,9 @@
           <% if @last_news == nil %>
             <p>No hay noticias en nuestra base de datos</p>
           <% else %>
-            <div class="offer_image"><a href="<%= @last_news %>"><%= image_tag @last_news.image.url %></a></div>
+            <div class="offer_image"><a href="<%= news_path(@last_news) %>"><%= image_tag @last_news.image.url %></a></div>
             <div class="offer_text">
-              <h3><a href="<%= @last_news %>"><%= @last_news.title %></a></h3>
+              <h3><a href="<%= news_path(@last_news) %>"><%= @last_news.title %></a></h3>
               <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
               <div class="offer_descr">
                 <%= raw @last_news.content.split(" ").first(25).join(" ") %>...
@@ -191,7 +191,7 @@
         <% if @vehicles.empty? %>
           <p>No hay vehiculos en nuestra base de datos</p>
         <% else %>
-          <% @vehicles.each do |vehicle| %>          
+          <% @vehicles.each do |vehicle| %>
             <div class="special_item">
               <div class="special_image">
                 <a href="offers-details.html"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
@@ -203,14 +203,14 @@
                 <div class="info_row"><span>Combustible</span> <%= vehicle.gas.capitalize %></div>
                 <div class="special_price"><%= link_to 'Más detalles', vehicle_path(vehicle) %></div>
               </div>
-            </div>          
+            </div>
           <% end %>
         <% end %>
       </div>
       <a class="prev" id="special_offers_prev" href="#"></a>
       <a class="next" id="special_offers_next" href="#"></a>
 
-      <div class="link_more"><a href="#">Conozca nuestros vehículos <i class="fa fa-arrow-circle-right"></i></a></div>
+      <div class="link_more"><a href="<%= pages_rent_path(id: 4) %>">Conozca nuestros vehículos <i class="fa fa-arrow-circle-right"></i></a></div>
 
       <script>
         jQuery(document).ready(function($) {
@@ -256,11 +256,13 @@
         <p style="color:white;">No hay noticias en nuestra base de datos</p>
       <% else %>
         <% @news.each do |notice| %>
-          <%= link_to image_tag(notice.image.url, :border => 0), notice %>
-          <%= link_to '<i class="fa fa-newspaper-o"></i> Titular noticia'.html_safe, notice%>
-        <% end %>   
+          <div class="latest_item">
+            <%= link_to image_tag(notice.image.url, :border => 0), notice %>
+            <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
+          </div>
+        <% end %>
       <% end %>
-         
+
     </div>
     <a class="prev" id="latest_offers_prev" href="#"></a>
     <a class="next" id="latest_offers_next" href="#"></a>
