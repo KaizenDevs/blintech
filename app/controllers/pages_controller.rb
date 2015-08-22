@@ -41,7 +41,7 @@ class PagesController < ApplicationController
       @params = params
       @news = News.all.reverse
     end
-    @news = News.paginate(:page => params[:page], :per_page => 5)
+    @news_paginate = News.paginate(:page => params[:page], :per_page => 5)
     @categories = Category.all
   end
 

@@ -53,7 +53,7 @@
 						<% if @news.empty? %>
 						  <span class="manage_title"><strong>No hay noticias en nuestro registro</strong></span>
 						<% else %>
-						  <span class="manage_title"><strong><%= will_paginate @news, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
+						  <span class="manage_title"><strong><%= will_paginate @news_paginate, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
 						<% end %>
 					</span>
 				</div>
@@ -71,6 +71,11 @@
 				<div class="widget-container widget_categories">
 					<h3 class="widget-title">Categorias de noticias:</h3>
 					<ul>
+            <% if @news.count == News.count %>
+              <li class="current-menu-item"><a href="<%= pages_news_path %>"><span>Todas</span> <em>(<%= News.count %>)</em></a></li>
+            <% else %>
+              <li><a href="<%= pages_news_path %>"><span>Todas</span> <em>(<%= News.count %>)</em></a></li>
+            <% end %>
             <% @categories.each do |category| %>
               <% if @params.has_key?(:category_id) && @params[:category_id].to_i == category.id %>
                 <li class="current-menu-item"><a href="<%= pages_news_path(category_id: category.id) %>"><span><%= category.name %></span> <em>(<%= category.news.count %>)</em></a></li>
