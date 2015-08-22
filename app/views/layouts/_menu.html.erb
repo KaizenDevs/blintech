@@ -8,7 +8,7 @@
     <nav id="topmenu" class="clearfix">
       <ul class="dropdown">
           <% if user_signed_in? %><li class="edit-icon"><a href="/editor"><span><i class='fa fa-edit'></i></span></a></li><% end %>
-        <li class="menu-level-0 current-menu-ancestor"><%= link_to "<span>Inicio</span>".html_safe , root_path %></li>
+        <li class="menu-level-0"><%= link_to "<span>Inicio</span>".html_safe , root_path %></li>
           <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/company"><span><i class='fa fa-edit'></i></span></a></li><% end %>
         <li class="menu-level-0"><%= link_to "<span>Empresa</span>".html_safe , pages_company_path %></li>
           <% if user_signed_in? %><li class="edit-icon"><a href="/editor/pages/shield"><span><i class='fa fa-edit'></i></span></a></li><% end %>
@@ -21,8 +21,8 @@
         <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, pages_news_path %></li>
 
         <li class="menu-level-0">
-          <%= link_to "<span>Contacto <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %>
           <% if user_signed_in? %><a href="/editor/pages/contact"><i class='fa fa-edit'></i></a><% end %>
+          <%= link_to "<span>Contacto <i class='fa fa-map-marker'></i></span>".html_safe, pages_contact_path %>
         </li>
       </ul>
       <% if user_signed_in? %>
@@ -55,7 +55,7 @@
     display:inline-block;
     border: none;
     background:none;
-    margin: -3px -25px 0 5px;
+    margin: -3px -3px 0 5px;
     padding:0;
    }
   #topmenu ul li.edit-icon { margin:0; }

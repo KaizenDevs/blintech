@@ -23,36 +23,36 @@
 <div class="middle_row row_white search_row contact_form">
 	<div class="container">
 		<%= form_for @contact do |contact| %>
-        <div class="form_col_1">
-          <div class="row alignleft field_text">
-            <%= contact.label :name, "Nombre:", class: "label_title" %>
-            <%= contact.text_field :name, required: true, class: "inputField required" %>
-          </div>
-          <div class="row alignleft field_text omega">
-            <%= contact.label :email, "Email:", class: "label_title" %>
-            <%= contact.text_field :email, required: true, class: "inputField required" %>
-          </div>
-          <div class="row field_select alignleft">
-            <%= contact.label :reason, "Motivo:", class: "label_title" %>
-            <%= contact.select :reason, options_for_select(Contact.reasons.keys), {}, { :class => "select_styled" } %>
-          </div>
-          <div class="row field_text alignleft omega">
-            <%= contact.label :phone, "Teléfono:", class: "label_title" %>
-            <%= contact.text_field :phone, class: "inputField" %>
-          </div>
-        </div>
-        <div class="form_col_2">
-          <div class="row">
-            <%= contact.label :message, "Mensaje:", class: "label_title" %>
-            <%= contact.text_area :message, class: "textareaField required", required: true %>
-          </div>
-        </div>
-        <div class="form_col_3">
-          <a onclick="document.getElementById('new_contact').reset();return false" href="#" class="link-reset">Limpiar todos los campos</a>
-          <div class="row rowSubmit clearfix">
-            <%= contact.submit "Enviar mensaje", class: "btn btn-submit" %>
-          </div>
-        </div>
+    <div class="form_col_1">
+      <div class="row alignleft field_text">
+        <%= contact.label :name, "Nombre:", class: "label_title" %>
+        <%= contact.text_field :name, required: true, class: "inputField required" %>
+      </div>
+      <div class="row alignleft field_text omega">
+        <%= contact.label :email, "Email:", class: "label_title" %>
+        <%= contact.text_field :email, required: true, class: "inputField required" %>
+      </div>
+      <div class="row field_select alignleft">
+        <%= contact.label :reason, "Motivo:", class: "label_title" %>
+        <%= contact.select :reason, options_for_select(Contact.reasons.keys), {}, { :class => "select_styled" } %>
+      </div>
+      <div class="row field_text alignleft omega">
+        <%= contact.label :phone, "Teléfono:", class: "label_title" %>
+        <%= contact.text_field :phone, class: "inputField" %>
+      </div>
+    </div>
+    <div class="form_col_2">
+      <div class="row">
+        <%= contact.label :message, "Mensaje:", class: "label_title" %>
+        <%= contact.text_area :message, class: "textareaField required", required: true %>
+      </div>
+    </div>
+    <div class="form_col_3">
+      <a onclick="document.getElementById('new_contact').reset();return false" href="#" class="link-reset">Limpiar todos los campos</a>
+      <div class="row rowSubmit clearfix">
+        <%= contact.submit "Enviar mensaje", class: "btn btn-submit" %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
@@ -85,6 +85,22 @@
 
  </div>
  <!--/ content -->
+ <div class="sidebar">
+
+   <!-- flickr widget -->
+   <div class="widget-container widget_twitter">
+     <h3 class="widget-title">Redes Sociales</h3>
+     <div class="footer_social" style="border: none">
+
+       <a href="https://www.facebook.com/pages/Blintech-Security"  target="_blank"class="social-fb"><span>Facebook</span></a>
+       <a href="https://twitter.com/BlintechS" target="_blank" class="social-twitter"><span>Twitter</span></a>
+       <a href="https://instagram.com/blintechsecurity/" target="_blank" class="social-dribble"><span>Instagram</span></a>
+     </div>
+   </div>
+   <!--/ flickr widget -->
+
+ </div>
+ <!--/ sidebar -->
 </div>
 </div>
 <!--/ middle -->
@@ -107,6 +123,9 @@ $(document).on("ready page:load", function() {
     }],
     zoom: 13,
     scrollwheel: false
+  });
+  $( "form" ).submit(function() {
+    alert("¡Gracias por confíar en nosotros! Muy pronto nos pondremos en contacto.");
   });
 });
 </script>

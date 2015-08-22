@@ -7,9 +7,9 @@
 <div style="height: 150px"></div>
 <div class="container">
   <h1>Listando Noticias</h1>
-  <%= link_to new_news_path do %>
-    <button class="btn-success" style="margin-bottom: 5px"><span class="fa fa-plus"> Nueva Noticia</span></button>
-  <% end %>
+
+  <%= link_to ' Nueva Noticia', new_news_path, class: 'fa fa-plus btn-edit' %>
+
   <table class="table">
     <tr>
       <th>Título</th>
