@@ -260,7 +260,7 @@
     <% else %>
       <% @news.each do |notice| %>
         <div class="latest_item">
-          <%= link_to image_tag(notice.image.url, :border => 0), notice %>
+          <%= link_to image_tag(notice.image.url(:home), :border => 0), notice %>
           <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
         </div>
       <% end %>

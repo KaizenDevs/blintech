@@ -170,7 +170,7 @@
           <% if @last_news == nil %>
             <p>No hay noticias en nuestra base de datos</p>
           <% else %>
-            <div class="offer_image"><a href="<%= news_path(@last_news) %>"><%= image_tag @last_news.image.url %></a></div>
+            <div class="offer_image"><a href="<%= news_path(@last_news) %>"><%= image_tag @last_news.image.url(:home_main) %></a></div>
             <div class="offer_text">
               <h3><a href="<%= news_path(@last_news) %>"><%= @last_news.title %></a></h3>
               <div class="offer_price"><%= link_to 'LEER MÁS', news_path(@last_news) %></div>
@@ -256,7 +256,7 @@
       <% else %>
         <% @news.each do |notice| %>
           <div class="latest_item">
-            <%= link_to image_tag(notice.image.url, :border => 0), notice %>
+            <%= link_to image_tag(notice.image.url(:home), :border => 0), notice %>
             <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
           </div>
         <% end %>
