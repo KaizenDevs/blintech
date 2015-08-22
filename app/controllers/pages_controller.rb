@@ -23,8 +23,7 @@ class PagesController < ApplicationController
 
   def rent
     @page = Page.find(params[:id])
-    @vehicles = Vehicle.all
-    @vehicles = Vehicle.paginate(:page => params[:page], :per_page => 9)
+    @vehicles = Vehicle.all.paginate(:page => params[:page], :per_page => 9)
     @last_vehicles = Vehicle.last(6)
   end
 
@@ -36,12 +35,11 @@ class PagesController < ApplicationController
     @last_news = News.last(5)
     if params.has_key?(:category_id)
       @params = params
-      @news = News.where(category_id: params[:category_id])
+      @news = News.where(category_id: params[:category_id]).paginate(:page => params[:page], :per_page => 5).order('id DESC')
     else
       @params = params
-      @news = News.all.reverse
+      @news = News.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
     end
-    @news = News.paginate(:page => params[:page], :per_page => 5)
     @categories = Category.all
   end
 

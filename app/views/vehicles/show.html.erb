@@ -235,7 +235,7 @@
 
 	<div class="text_box">
 		<p>
-			<a href="#" class="btn btn_big btn_white"><span>Llámanos: <strong>+57 440 50 00</strong></span></a>
+			<a href="callto:0344445000" class="btn btn_big btn_white"><span>Llámanos: <strong>+574 444 50 00</strong></span></a>
 			<a href="<%= pages_contact_path %>" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
 		</p>
 	</div>
@@ -260,7 +260,7 @@
     <% else %>
       <% @news.each do |notice| %>
         <div class="latest_item">
-          <%= link_to image_tag(notice.image.url, :border => 0), notice %>
+          <%= link_to image_tag(notice.image.url(:home), :border => 0), notice %>
           <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
         </div>
       <% end %>
@@ -302,6 +302,10 @@
 			vis_items.eq(-1).animate({opacity: 0.15},100);
 			vis_items.eq(0).animate({opacity: 0.15},100);
 		}
+	});
+
+	$( "form" ).submit(function() {
+	  alert("¡Gracias por confíar en nosotros! Muy pronto nos pondremos en contacto.");
 	});
 	</script>
 </div>

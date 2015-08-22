@@ -28,8 +28,18 @@
       <div class="list_manage">
         <div class="inner clearfix">
           <div class="pages">
-            <% if @vehicles.empty? %>            
-              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% if @vehicles.empty? %>
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span>
+            <% elsif @vehicles.count < 10 %>
+              <span class="manage_title">
+                <strong>
+                  <div class="pagination">
+                    <span class="previous_page disabled">Página Anterior</span>
+                      <em class="current">1</em>
+                    <span class="previous_page disabled">Página Siguiente</span>
+                  </div>
+                </strong>
+              </span>
             <% else %>
               <%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %>
             <% end %>
@@ -43,21 +53,22 @@
       <div class="offer_list clearfix">
 
         <% @vehicles.each do |vehicle| %>
-          <div class="offer_item clearfix">
-            <div class="offer_image">
-            <a href="<%= vehicle_path(vehicle) %>"><%= image_tag vehicle.vehicle_images.first.image.url(:rent) %></a></div>
-            <div class="offer_aside">
-              <h2><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></h2>
-              <div class="offer_descr">
-                <p><%= vehicle.description %></p>
-              </div>
-              <div class="offer_data">
-                <div class="offer_price">Blindaje <%= vehicle.shielding %></div>
-                <span class="offer_miliage"><%= vehicle.transmission.capitalize %></span>
-                <span class="offer_regist"><%= vehicle.gas.capitalize %></span>
-              </div>
+        <div class="offer_item clearfix">
+          <div class="offer_image">
+            <a href="<%= vehicle_path(vehicle) %>"><%= image_tag vehicle.vehicle_images.first.image.url(:rent) %></a>
+          </div>
+          <div class="offer_aside">
+            <h2><a href="<%= vehicle_path(vehicle) %>"><%= vehicle.name %></a></h2>
+            <div class="offer_descr">
+              <p><%= vehicle.description.split(" ").first(25).join(" ") %></p>
+            </div>
+            <div class="offer_data">
+              <div class="offer_price">Blindaje <%= vehicle.shielding %></div>
+              <span class="offer_miliage"><%= vehicle.transmission.capitalize %></span>
+              <span class="offer_regist"><%= vehicle.gas.capitalize %></span>
             </div>
           </div>
+        </div>
         <% end %>
 
       </div>
@@ -67,12 +78,22 @@
       <div class="tf_pagination">
         <div class="inner">
           <span class="page-numbers page_current">
-            <% if @vehicles.empty? %>            
-              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span> 
+            <% if @vehicles.empty? %>
+              <span class="manage_title"><strong>No hay vehiculos en nuestro registro</strong></span>
+            <% elsif @vehicles.count < 10 %>
+              <span class="manage_title">
+                <strong>
+                  <div class="pagination">
+                    <span class="previous_page disabled">Página Anterior</span>
+                      <em class="current">1</em>
+                    <span class="previous_page disabled">Página Siguiente</span>
+                  </div>
+                </strong>
+              </span>
             <% else %>
               <span class="manage_title"><strong><%= will_paginate @vehicles, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
             <% end %>
-          </span> 
+          </span>
         </div>
       </div>
       <!--/ pagination -->
