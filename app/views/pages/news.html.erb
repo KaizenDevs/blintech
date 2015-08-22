@@ -52,8 +52,18 @@
 					<span class="page-numbers page_current">
 						<% if @news.empty? %>
 						  <span class="manage_title"><strong>No hay noticias en nuestro registro</strong></span>
+            <% elsif @news.count < 6 %>
+              <span class="manage_title">
+                <strong>
+                  <div class="pagination">
+                    <span class="previous_page disabled">Página Anterior</span>
+                      <em class="current">1</em>
+                    <span class="previous_page disabled">Página Siguiente</span>
+                  </div>
+                </strong>
+              </span>
 						<% else %>
-						  <span class="manage_title"><strong><%= will_paginate @news_paginate, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
+						  <span class="manage_title"><strong><%= will_paginate @news, :previous_label => 'Página Anterior', :next_label => 'Página Siguiente' %></strong></span>
 						<% end %>
 					</span>
 				</div>
