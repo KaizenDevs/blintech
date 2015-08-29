@@ -1,0 +1,20 @@
+<style>
+  label {
+    display: block;
+  }
+</style>
+
+<%= bootstrap_form_for @home_picture do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.text_field :title, required: true, label: "Título:" %>
+      <%= f.file_field :image, label: "Agrega una imagen:" %>
+      <br>
+      <%= f.submit form_submit, class: 'btn btn-submit' %>
+    </div>
+  </div>
+<% end %>
+
+<hr>
+
+<%= link_to ' Atrás'.html_safe, :back , class: 'fa fa-arrow-left btn-edit' %>

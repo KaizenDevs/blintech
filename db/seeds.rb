@@ -65,8 +65,8 @@
 
   Page.create(
     id:4,
-    content1: "<h1><span>Alquiler</span> de vehículos blindados y convenconales</h1>",
-    content2: "<h2>¡Vehículos con la más alta tecnología!</h2>",
+    content1: "<h1><span>Alquiler</span> de vehículos blindados y convencionales</h1>",
+    content2: "<h2>¡Menor peso, mayor tecnología!</h2>",
     image1: "<%= asset_path('banner-282×579.jpg') %>"
   )
 

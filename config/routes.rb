@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'home_pictures/index'
+
+  get 'home_pictures/new'
+
+  get 'home_pictures/edit'
+
   namespace :mercury do
     resources :images
   end
@@ -27,6 +33,7 @@ Rails.application.routes.draw do
   resources :sliders, only: [:edit,:update, :index]
   resources :contacts
   resources :vehicles
+  resources :home_pictures
 
   put '/', to: 'pages#save_page', id: '1'
   put '/pages/company', to: 'pages#save_page', id: '2'

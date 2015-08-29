@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821015747) do
+ActiveRecord::Schema.define(version: 20150828234131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20150821015747) do
     t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "home_pictures", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "mercury_images", force: :cascade do |t|
@@ -159,6 +169,7 @@ ActiveRecord::Schema.define(version: 20150821015747) do
     t.text     "external_features"
     t.text     "safety_features"
     t.text     "extras"
+    t.text     "accessories"
   end
 
   add_foreign_key "news", "categories"

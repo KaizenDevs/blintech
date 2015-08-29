@@ -27,6 +27,7 @@
       </ul>
       <% if user_signed_in? %>
         <ul class="dropdown">
+          <li class="menu-level-0"><%= link_to "<span>Fotos</span>".html_safe, home_pictures_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Slides Home</span>".html_safe, sliders_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Vehículos</span>".html_safe, vehicles_path %></li>
           <li class="menu-level-0"><%= link_to "<span>Noticias</span>".html_safe, news_index_path %></li>

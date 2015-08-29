@@ -50,6 +50,7 @@
           <%= f.select :transmission, options_for_select(Vehicle.transmissions.keys), label: "Tipo de tansmisión:" %>
           <%= f.select :gas, options_for_select(Vehicle.gas.keys), label: "Tipo de combustible:" %>
           <%= f.select :shielding, options_for_select(Vehicle.shieldings.keys), label: "Categoría de blindaje:" %>
+          <%= f.text_area :accessories, required: true, label: "Accesorios:" %>
           <%= f.text_area :description, required: true, label: "Descripción General:" %>
           <%= f.text_area :description1, required: true, label: "Descripción Columna 1 - Para vista del vehiculo:" %>
           <%= f.text_area :description2, required: true, label: "Descripción Columna 2 - Para vista del vehiculo:" %>
