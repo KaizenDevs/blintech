@@ -1,3 +1,30 @@
+<style>
+  .search_row .row .label_title {
+    font-size: 14px;
+  }
+
+  .contact_box .right_side h3 {
+    font-size: 18px;
+  }
+
+  .contact_box .left_side .name strong, .contact_box .right_side h3 {
+    font-size: 18px;
+  }
+
+  .contact_box .left_side .address {
+    font-size: 16px;
+  }
+
+  .contact_box .left_side .row {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+</style>
+
 <!-- gMap -->
 <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 <script>
@@ -70,10 +97,10 @@
        <div class="box_content clearfix">
          <div class="left_side contact-address">
           <div class="name" id="content2" data-mercury="full"><%= @page.content2.html_safe %></div>
-          <div class="address" id="content3" data-mercury="full"><%= @page.content3.html_safe %></div>
+          <div class="address contact-font" id="content3" data-mercury="full"><%= @page.content3.html_safe %></div>
 
-          <div class="row phone" id="content4" data-mercury="full"><%= @page.content4.html_safe %></div>
-          <div class="row mail" id="content5" data-mercury="full"><%= @page.content5.html_safe %></div>
+          <div class="row phone contact-font" id="content4" data-mercury="full"><%= @page.content4.html_safe %></div>
+          <div class="row mail contact-font" id="content5" data-mercury="full"><%= @page.content5.html_safe %></div>
 
         </div>
         <div class="right_side">

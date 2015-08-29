@@ -1,7 +1,7 @@
 <!-- header -->
 <div class="header header_thin" style="background-image:url(<%= asset_path('slider_1_1.jpg') %>)">
 	<div class="header_title">
-		<strong>Bienvenido <span>a nuestro blog</span> Blintech</strong>
+		<strong>Lo último en <span>blindaje y tecnología</span> </strong>
 	</div>
 </div>
 <!--/ header -->
@@ -97,15 +97,6 @@
 				</div>
 				<!--/ widget_categories -->
 
-				<!-- widget_recent_comments -->
-				<div class="widget-container widget_popular">
-					<h3 class="widget-title">Ultimas 5 noticias</h3>
-					<ul>
-            <% @last_news.each do |news| %>
-  						<li><a href="<%= news_path(news) %>"><%= news.title %></a></li>
-            <% end %>
-					</ul>
-				</div>
 				<!--/ widget_recent_comments -->
 			<div class="box_bot"></div>
 			</div>
