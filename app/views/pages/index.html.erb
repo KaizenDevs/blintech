@@ -120,7 +120,7 @@
   <div class="container clearfix">
 
     <div class="car_types_list">
-      <h2>Somos Expertos en Blindaje <br><i class="fa fa-bullseye"></i></h2>
+      <h2>Mayor protección, menor peso <br><i class="fa fa-bullseye"></i></h2>
       <ul>
         <li class="type_hover cart_type_1">
           <a href="<%= pages_shield_path %>" class="front"><strong>PROTECCIÓN <br></strong> <em>Leer más</em></a>
@@ -194,7 +194,7 @@
           <% @vehicles.each do |vehicle| %>
             <div class="special_item">
               <div class="special_image">
-                <a href="offers-details.html"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
+                <a href="<%= vehicle_path(vehicle) %>"><%= image_tag vehicle.vehicle_images.first.image.url(:offer) %></a>
               </div>
               <div class="special_text">
                 <h3><a href="offers-details.html"><%= vehicle.name %></a></h3>
@@ -251,13 +251,13 @@
     </div>
 
     <div id="latest_offers">
-      <% if @news.empty? %>
-        <p style="color:white;">No hay noticias en nuestra base de datos</p>
+      <% if @home_pictures.empty? %>
+        <p style="color:white;">No hay imágenes en nuestra base de datos</p>
       <% else %>
-        <% @news.each do |notice| %>
+        <% @home_pictures.each do |picture| %>
           <div class="latest_item">
-            <%= link_to image_tag(notice.image.url(:home), :border => 0), notice %>
-            <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
+            <%= link_to image_tag(picture.image.url(:home), :border => 0), notice %>
+            <%= link_to "<i class='fa fa-newspaper-o'></i> #{picture.title}".html_safe %>
           </div>
         <% end %>
       <% end %>

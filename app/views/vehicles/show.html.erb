@@ -129,10 +129,10 @@
 
 	<div class="offer_specification">
 		<ul>
-			<li><span class="spec_name">Capacidad de Motor:</span> <strong class="spec_value"><%= @vehicle.engine %></strong></li>
-			<li><span class="spec_name">Tanque tipo:</span> <strong class="spec_value"><%= @vehicle.gas.capitalize %></strong></li>
-			<li><span class="spec_name">Cambios:</span> <strong class="spec_value"><%= @vehicle.transmission.capitalize %></strong> </li>
+			<li><span class="spec_name">Motor:</span> <strong class="spec_value"><%= @vehicle.engine %></strong></li>
+			<li><span class="spec_name">Combustible:</span> <strong class="spec_value"><%= @vehicle.gas.capitalize %></strong></li>
 			<li><span class="spec_name">Blindaje:</span> <strong class="spec_value">Nivel Blindaje</strong> <%= @vehicle.shielding %></li>
+			<li><span class="spec_name">Accesorios:</span> <strong class="spec_value"><%= @vehicle.accessories %></strong> </li>
 
 		</ul>
 	</div>
@@ -238,6 +238,7 @@
 			<a href="callto:0344445000" class="btn btn_big btn_white"><span>Llámanos: <strong>+574 444 50 00</strong></span></a>
 			<a href="<%= pages_contact_path %>" class="btn btn_big btn_orange"><span>Escríbenos</span></a>
 		</p>
+		<p><em><a href="">Blintech</a> &copy; - Todos los derechos reservados</p>
 	</div>
 
 </div>
@@ -249,26 +250,6 @@
 <!--/ middle -->
 
 <!-- latest_offers -->
-<div class="middle_row latest_offers">
-	<div class="container clearfix">
-		<h2 style="text-align:center">Conozca más de nuestra empresa</h2>
-	</div>
-
-	<div id="latest_offers">
-    <% if @news.empty? %>
-      <p style="color:white;">No hay noticias en nuestra base de datos</p>
-    <% else %>
-      <% @news.each do |notice| %>
-        <div class="latest_item">
-          <%= link_to image_tag(notice.image.url(:home), :border => 0), notice %>
-          <%= link_to "<i class='fa fa-newspaper-o'></i> #{notice.title}".html_safe, notice%>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-	<a class="prev" id="latest_offers_prev" href="#"></a>
-	<a class="next" id="latest_offers_next" href="#"></a>
 
 	<script>
 	jQuery(document).ready(function($) {

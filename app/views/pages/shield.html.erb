@@ -31,6 +31,48 @@
           <%=raw @page.content1 %>
         </div>
 
+        <div class="slider slider_small" style="padding-left:25%; padding-bottom:5%; padding-top:5%">
+          <div class="slider_container clearfix" id="slider1">
+
+            <div class="slider-item video_slide">
+              <iframe src="<%= @video %>?byline=0&amp;portrait=0&amp;title=0" width="430" height="242" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+            <div class="slider-item">
+
+              <a href="#">
+                <img src="<%= render inline: @page.image5 %>" class="frame_right" alt="" id="page_image5" data-mercury="image">
+              </a>
+            </div>
+            <div class="slider-item text_slide">
+              <div class="inner">
+                <h2 id="content11" data-mercury="full"><%=raw @page.content11 %></h2>
+                <p id="content12" data-mercury="full"><%=raw @page.content12 %> </p>
+                <p id="content13" data-mercury="full"><%=raw @page.content13 %></p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img src="<%= render inline: @page.image6 %>" class="frame_right" alt="" id="page_image6" data-mercury="image">
+            </div>
+          </div>
+          <div class="slider_pagination" id="slider_pag"></div>
+        </div>
+
+        <script>
+          jQuery(document).ready(function($) {
+            $('#slider1').carouFredSel({
+              pagination : "#slider_pag",
+              infinite: false,
+              auto: false,
+              height: "auto",
+              items: 1,
+              scroll: {
+                fx: "fade",
+                duration: 200
+              }
+            });
+          });
+        </script>
+
           <!-- pricing table -->
           <div class="pricing_box">
             <ul>
@@ -135,47 +177,7 @@
             <h1 id="content10" data-mercury="full"><%=raw @page.content10 %></h1>
           </div>
 
-          <div class="slider slider_small" style="padding-left:25%; padding-bottom:5%; padding-top:5%">
-            <div class="slider_container clearfix" id="slider1">
-
-              <div class="slider-item video_slide">
-                <iframe src="<%= @video %>?byline=0&amp;portrait=0&amp;title=0" width="430" height="242" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-              </div>
-              <div class="slider-item">
-
-                <a href="#">
-                  <img src="<%= render inline: @page.image5 %>" class="frame_right" alt="" id="page_image5" data-mercury="image">
-                </a>
-              </div>
-              <div class="slider-item text_slide">
-                <div class="inner">
-                  <h2 id="content11" data-mercury="full"><%=raw @page.content11 %></h2>
-                  <p id="content12" data-mercury="full"><%=raw @page.content12 %> </p>
-                  <p id="content13" data-mercury="full"><%=raw @page.content13 %></p>
-                </div>
-              </div>
-              <div class="slider-item">
-                <img src="<%= render inline: @page.image6 %>" class="frame_right" alt="" id="page_image6" data-mercury="image">
-              </div>
-            </div>
-            <div class="slider_pagination" id="slider_pag"></div>
-          </div>
-
-          <script>
-            jQuery(document).ready(function($) {
-              $('#slider1').carouFredSel({
-                pagination : "#slider_pag",
-                infinite: false,
-                auto: false,
-                height: "auto",
-                items: 1,
-                scroll: {
-                  fx: "fade",
-                  duration: 200
-                }
-              });
-            });
-          </script>
+          <div style="height: 100px"></div>
 
           <div class="row clearfix">
             <div class="col col_1_2">
