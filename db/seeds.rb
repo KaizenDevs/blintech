@@ -44,7 +44,7 @@
     content7: 'de Fragmentación',
     content8: 'Petardos y granadas',
     content9: 'de Fragmentación',
-	  content10: 'Nuestros tipos de <span>Blindaje</span>',
+	  content10: 'Tipos de <span>Blindaje</span>',
 	  content11: 'Example of Slide with Text',
 	  content12: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sem nisi. Duis elit sem, ullamcorper a tempus ac, lacinia a nisl. Pellentesque tincidunt gravida molestie. Nullam in nulla eget turpis pretium commodo. Morbi tincidunt venenatis est eget consequat.',
 	  content13: 'Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',
@@ -66,7 +66,7 @@
   Page.create(
     id:4,
     content1: "<h1><span>Alquiler</span> de vehículos blindados y convencionales</h1>",
-    content2: "<h2>¡Menor peso, mayor tecnología!</h2>",
+    content2: "<h2>Menor peso, mayor tecnología</h2>",
     image1: "<%= asset_path('banner-282×579.jpg') %>"
   )
 
