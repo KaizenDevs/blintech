@@ -257,7 +257,6 @@
         <% @home_pictures.each do |picture| %>
           <div class="latest_item">
             <%= link_to image_tag(picture.image.url(:home), :border => 0), notice %>
-            <%= link_to "<i class='fa fa-newspaper-o'></i> #{picture.title}".html_safe %>
           </div>
         <% end %>
       <% end %>
