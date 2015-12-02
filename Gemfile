@@ -18,6 +18,7 @@ gem "font-awesome-rails"
 gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 gem 'annotate'
 gem 'responders', '~> 2.0'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
